@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $row = $result->fetch_assoc();
 
     if (!$row) {
-        header("location: /document-fill-up-automation-website/residentsdata.php");
+        header("location:/document-fill-up-automation-website/residentsdata.php");
         exit;
     }
 
@@ -59,6 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 else {
     //POST method: Update the data of the residents
 
+    $Rin = $_POST["rin"];
     $Lname = $_POST["lname"];
     $Fname = $_POST["fname"];
     $Initial = $_POST["initial"];
@@ -77,7 +78,11 @@ else {
             break;
         }  
          
-        $sql = "UPDATE table_residents " . "SET lname = '$Lname', fname = '$Fname', mi = '$Initial', housenum = '$Housenum',street = '$Street', gender = '$Gender', age = '$Age', yearofstay = '$Yos', birthday = '$Bday', birthplace = '$Bplace', contact = '$Contact' " . "WHERE rin = $Rin";
+        $sql = "UPDATE table_residents" .
+        "SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street',
+         gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', 
+         birthplace='$Bplace', contact='$Contact' " .
+        "WHERE rin = $Rin";
                
         $result = $connection->query($sql);
 
@@ -86,6 +91,7 @@ else {
                 break;
             }
             $successMessage = "Record updated succesfully";
+
             header("location: /document-fill-up-automation-website/residentsdata.php");
             exit;
                
@@ -117,7 +123,7 @@ else {
         }
         ?>
             <form method="POST" id="form" class="residents-form">
-                <input type="hidden" value="<?php echo $Rin;?>">
+                <input type="text" name="rin" value="<?php echo $Rin;?>">
                 <div class>
                 <label for="lname">Last Name</label>
                 <input type="text" name="lname" id="fname" placeholder="Enter your last name" value="<?php echo $Lname;?>">

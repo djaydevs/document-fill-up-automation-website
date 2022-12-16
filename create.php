@@ -129,7 +129,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class>
                     <label for="age">Age</label>
-                    <input type="number" name="age" id="age" placeholder="Enter your age" value="<?php echo $Age;>">
+                    <input type="number" name="age" id="age" placeholder="Enter your age" value="<?php echo $Age;?>">
                 </div>
 
                 <div class>
