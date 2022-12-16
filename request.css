@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    background: url(assets/bg.svg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+}
+
+.leftsection img {
+    position: absolute;
+    width: 350px;
+    height: 50%;
+    left: 180px;
+    top: 70px;
+}
+
+.title {
+    position: absolute;
+    width: 540px;
+    height: 53px;
+    left: 90px;
+    top: 470px;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 52px;
+    text-align: center;
+    color: #161730;
+}
+
+.description {
+    position: absolute;
+    width: 446px;
+    height: 23px;
+    left: 137px;
+    top: 530px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    color: #161730;
+}
+
+form {
+    font-size: 18px;
+}
+.select-menu{
+    width: 350px;
+}
+.select-menu .select-btn{
+    display: flex;
+    height: 55px;
+    background: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.select-menu .options{
+    position: relative;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.select-menu.active .options{
+    display: block;
+}
+
+.option {
+    list-style-type: none;
+}
+
+.option .option-text{
+    display: flex;
+    border-radius: 8px;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    align-items: center;
+    background: #fff;
+}
+
+.options .option:hover .option-text:hover{
+    background: #0D4C92;
+    color: #fff;
+}
+
+.option .option-text{
+    font-size: 18px;
+    color: #000000;
+}
+
+button {
+    position: absolute;
+    top: 500px;
+}
+
+
+

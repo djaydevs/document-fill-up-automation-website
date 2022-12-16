@@ -22,5 +22,36 @@
             </ul>
         </nav>
     </div>
+<!--
+    <div class="grid-container">
+            <div class="left-section">
+                <form>
+                    <div class ="select-doc">
+                        <span class="choosedocument">Choose Document</span><br>
+                        <input type="radio" id="rdCOI" name="choosedoc" value="Certificate of Indgency">
+                        <label for="html">Certificate of Indigency</label>
+                        <input type="radio" id="rdCOR" name="choosedoc" value="Certificate of Residency">
+                        <label for="html">Certificate of Residency</label>
+                        <input type="radio" id="rdCOR" name="choosedoc" value="Barangay Clearance">
+                        <label for="html">Barangay Clearance</label>
+                    </div>
+                    <div class="choose-purpose">
+                        <label for ="purpose">Purpose</label><br>
+                        <select  name="purpose" id="purpose" required>
+                            <option value="Scholarship">Scholarship</option>
+                            <option value="Food Assistance">Food Assistance</option>
+                            <option value="Medical Assistance">Medical Assistance</option>
+                            <option value="Cash Assistance">Cash Assistance</option>
+                            <option value="Educational Assistance">Educational Assitance</option>
+                            <option value="Police Clearance">Police Clearance</option>
+                            <option value="Employment">Employment</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="right-section">
+        </div>
+    </div>
+-->
 </body>
 </html>
