@@ -78,7 +78,7 @@ else {
             break;
         }  
          
-        $sql = "UPDATE 'table_residents' SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street', gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', birthplace='$Bplace', contact='$Contact' 
+        $sql = "UPDATE table_residents SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street', gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', birthplace='$Bplace', contact='$Contact' 
          WHERE rin=$rin";  
 
         $result = $connection->query($sql);
