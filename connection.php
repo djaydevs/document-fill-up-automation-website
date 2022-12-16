@@ -2,7 +2,7 @@
     $sname = "localhost";
     $uname = "root";
     $password = "";
-    $db_name = "brgyDB";
+    $db_name = "brgydb";
 
     $conn = mysqli_connect($sname, $uname, $password, $db_name);
 
