@@ -72,7 +72,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }while (false);
 }
 
-
 ?>
 
 <!DOCTYPE html>
