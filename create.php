@@ -123,8 +123,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class>
                     <span class="gender-title">Gender</span>
-                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender?>"> Male
-                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender?>"> Female
+                    <input type="radio" name="gender" id="gender" value="Male"> Male
+                    <input type="radio" name="gender" id="gender" value="Female"> Female
                 </div>
 
                 <div class>

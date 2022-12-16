@@ -79,21 +79,20 @@ else {
         }  
          
         $sql = "UPDATE table_residents" .
-        "SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street',
-         gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', 
-         birthplace='$Bplace', contact='$Contact' " .
-        "WHERE rin = $Rin";
-               
-        $result = $connection->query($sql);
+        "SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street', gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', birthplace='$Bplace', contact='$Contact' " . 
+         "WHERE rin = $Rin";  
 
-            if (!$result) {
-                $errorMessage = "Invalid query:" . $connection->error;
-                break;
-            }
-            $successMessage = "Record updated succesfully";
+        // $result = $connection->query($sql);
 
-            header("location: /document-fill-up-automation-website/residentsdata.php");
-            exit;
+        //     if (!$result) {
+        //         $errorMessage = "Invalid query:" . $connection->error;
+        //         break;
+        //     }
+
+        //     $successMessage = "Record updated succesfully";
+
+        //     header("location: /document-fill-up-automation-website/residentsdata.php");
+        //     exit;
                
     } while (false);
 
@@ -143,13 +142,13 @@ else {
                 <div class>
                 <label for="lname">Address</label>
                 <input type="number" name="housenum" id="housenum" placeholder="Enter house number" value="<?php echo $Housenum;?>">
-                <input type="text" name="street" id="street" placeholder="Enter street" value="<?php echo $Street?>">
+                <input type="text" name="street" id="street" placeholder="Enter street" value="<?php echo $Street;?>">
                 </div>
 
                 <div class>
                     <span class="gender-title">Gender</span>
-                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender?>"> Male
-                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender?>"> Female
+                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender;?>"> Male
+                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender;?>"> Female
                 </div>
 
                 <div class>
