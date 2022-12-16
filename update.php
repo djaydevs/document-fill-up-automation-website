@@ -7,7 +7,7 @@ $database = "brgydb";
 //Create connection
 $connection = new mysqli($servername, $username, $password, $database);
 
-$Rin = "";
+$rin = "";
 $Lname = "";
 $Fname = "";
 $Initial = "";
@@ -31,10 +31,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
         exit;
     }
 
-    $Rin = $_GET["rin"];
+    $rin = $_GET["rin"];
 
     // read the row of the selected record from the database table
-    $sql = "SELECT * FROM table_residents WHERE rin=$Rin";
+    $sql = "SELECT * FROM table_residents WHERE rin=$rin";
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
 
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 else {
     //POST method: Update the data of the residents
 
-    $Rin = $_POST["rin"];
+    $rin = $_POST["rin"];
     $Lname = $_POST["lname"];
     $Fname = $_POST["fname"];
     $Initial = $_POST["initial"];
@@ -78,21 +78,20 @@ else {
             break;
         }  
          
-        $sql = "UPDATE table_residents" .
-        "SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street', gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', birthplace='$Bplace', contact='$Contact' " . 
-         "WHERE rin = $Rin";  
+        $sql = "UPDATE 'table_residents' SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street', gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', birthplace='$Bplace', contact='$Contact' 
+         WHERE rin=$rin";  
 
-        // $result = $connection->query($sql);
+        $result = $connection->query($sql);
 
-        //     if (!$result) {
-        //         $errorMessage = "Invalid query:" . $connection->error;
-        //         break;
-        //     }
+            if (!$result) {
+                $errorMessage = "Invalid query:" . $connection->error;
+               break;
+             }
 
-        //     $successMessage = "Record updated succesfully";
+            $successMessage = "Record updated succesfully";
 
-        //     header("location: /document-fill-up-automation-website/residentsdata.php");
-        //     exit;
+            header("location: /document-fill-up-automation-website/residentsdata.php");
+            exit;
                
     } while (false);
 
@@ -122,7 +121,7 @@ else {
         }
         ?>
             <form method="POST" id="form" class="residents-form">
-                <input type="text" name="rin" value="<?php echo $Rin;?>">
+                <input type="hidden" name="rin" value="<?php echo $rin;?>">
                 <div class>
                 <label for="lname">Last Name</label>
                 <input type="text" name="lname" id="fname" placeholder="Enter your last name" value="<?php echo $Lname;?>">
@@ -147,8 +146,8 @@ else {
 
                 <div class>
                     <span class="gender-title">Gender</span>
-                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender;?>"> Male
-                    <input type="radio" name="gender" id="gender" value="<?php echo $Gender;?>"> Female
+                    <input type="radio" name="gender" id="gender" value="Male"> Male
+                    <input type="radio" name="gender" id="gender" value="Female"> Female
                 </div>
 
                 <div class>
