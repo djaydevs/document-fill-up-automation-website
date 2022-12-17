@@ -39,6 +39,7 @@
     </nav>
     <div class="grid-container">
         <div class="request-container">
+        <p class="request-text">Residents Request</p>
             <!--TABLE-->
             <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;">
                 <table class="request-table" id="table" >
@@ -60,7 +61,10 @@
             </div>
         </div>
         <div class="pdf-container">
-
+            <div class="pdf-view">
+                <img src="assets/docindigency.svg" alt="">
+            </div>
+            <button>Save Document</button>
         </div>
     </div>
 </body>
