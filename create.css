@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    background: url(assets/bg.svg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: url(assets/topbarbg.svg) no-repeat;
+    background-size: cover;
+    height: 65px;
+}
+
+.logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 14px;
+    top: 5px;
+}
+
+.tntitle {
+    position: absolute;
+    top: 9px;
+    left: 80px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.topnav ul li {
+    float: right;
+    list-style-type: none;
+    position: relative;
+}
+
+.topnav ul li a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    padding: 17px 25px;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+}
+
+.topnav ul li ul {
+    display: none;
+    right: 0%;
+    position: absolute;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.topnav ul li:hover ul {
+    display: block;
+}
+
+.topnav ul li ul li {
+    width: 280px;
+    border-radius: 8px;
+}
+
+.ul-acc {
+    width: 178px;
+    padding: 15px;
+}
+
+.ul-acc li {
+    left: 101.5px;
+    width: 150px;
+    border-radius: 8px;
+}
+
+.topnav ul li ul li a {
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #0D4C92;
+}
+
+.ul-li-acc a {
+    width: 130px;
+    padding: 15px 40px;
+}
+
+.topnav a.active {
+    background-color: #68B9E1;
+}
+
+.topnav ul li a:hover {
+    background-color: #ffffff;
+    color: #0D4C92;
+}
+
+.topnav ul li ul li a:hover {
+    background-color: #68B9E1;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.residents-form {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    margin-left: 4%;
+    background: rgb(255, 255, 255, 0.3);
+    outline: solid #0A93E3;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 0 10px 10px 0;
+}
+
+.form-title {
+    color: #0D4C92;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0.3em 0.8em 0.6em 0.8em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.user_info, .userAY, .u-bp {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gender-title {
+    display: flex;
+}
+
+.rbtn_gender #gender {
+    display: inline;
+}
+
+#lname, #fname, #initial, #housenum, #street, #age, #yos, #bday, #bplace, #contact {
+    height: 20px;
+    width: fit-content;
+    outline: solid #0A93E3;
+    border: none;
+    border-radius: 8px;
+    padding: 0.3em 0.8em 0.2em 0.2em;
+}
+
+#lname, #fname, #initial {
+    margin-top: 3%;
+    width: 155px;
+}
+
+.input_lname, .input_fname, .input_mi, .u-stay, .u-age, .u-bday, .u-bplace, .contact, .rbtn_gender, .user_address{
+    padding: 0.3em 3em 0.5em 3em;
+}
+
+.u-bplace {
+    margin-left: 2em;
+}
+
+/*button*/
+.form-btn {
+    display: flow-root;
+    padding: 1em 0 0 31em;
+}
+
+.btn-save, .btn-cancel {
+    width: 80px;
+    height: 35px;
+    color: #ffffff;
+    border: none;
+    border-radius: 1.5em;
+    background: #0D4C92;
+    transition: background .3s;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.btn-cancel  {
+    margin-left: 5em;
+    color: #0A93E3;
+    background: white;
+    outline: solid #0D4C92;
+}
