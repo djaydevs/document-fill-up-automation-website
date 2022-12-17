@@ -51,10 +51,9 @@
                 </div>
                 <button type="submit">Send Request</button>
             </form>
-            
+            <a href="">Administrator</a>
         </div>
     </div>
     <script src="request.js"></script>
 </body>
-
 </html>

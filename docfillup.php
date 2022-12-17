@@ -28,7 +28,13 @@
                     <li><a href="">Residents Modification</a></li>
                 </ul>
             </li>
-            <li><a class="active" href="#">Document Fill-Up</a></li>
+            <li><a class="active" href="#">Document Fill-Up</a>
+                <ul>
+                    <li><a href="documents/indigency.php">Certificate of Indigency</a></li>
+                    <li><a href="documents/residency.php">Certificate of Residency</a></li>
+                    <li><a href="documents/clearance.php">Barangay Clearance</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 <!--
