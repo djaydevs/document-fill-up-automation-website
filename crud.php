@@ -25,12 +25,12 @@ if(isset($_POST['save_record']))
 
     if ($result) {
         $_SESSION['alert']= "Residents Data Added Successfully !";
-        header("Location: createtest.php");
+        header("Location: create.php");
         exit(0);
     }
     else {
         $_SESSION['alert']= "Residents Data failed to save !";
-        header("Location: createtest.php");
+        header("Location: create.php");
         exit(0);
     }
 }
