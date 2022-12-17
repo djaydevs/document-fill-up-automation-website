@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require 'connection.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +29,9 @@
         </ul>
     </nav>
     <div class="container">
+        <div>
+        <?php include('alert.php'); ?>
+        </div>
         <h2 class="header">RESIDENTS TABLE</h2>
         <a class="new-btn" id="btn-new"href="/document-fill-up-automation-website/create.php" role = button>
         <ion-icon name="add-outline"></ion-icon>New Record
@@ -49,56 +57,47 @@
                 </thead>
                 <tbody>
                     <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "brgydb";
+                        $sql = "SELECT *FROM table_residents";
+                        $result = mysqli_query($conn, $sql);
 
-                    //Create connection
-                    $connection = new mysqli($servername, $username, $password, $database);
+                        if( mysqli_num_rows($result) > 0) {
+                            foreach($result as $row){
+                                ?>
+                                <tr>
+                                    <td><?= $row['rin']; ?></td>
+                                    <td><?= $row['lname']; ?></td>
+                                    <td><?= $row['fname']; ?></td>
+                                    <td><?= $row['mi']; ?></td>
+                                    <td><?= $row['housenum']; ?></td>
+                                    <td><?= $row['street']; ?></td>
+                                    <td><?= $row['gender']; ?></td>
+                                    <td><?= $row['age']; ?></td>
+                                    <td><?= $row['yearofstay']; ?></td>
+                                    <td><?= $row['birthday']; ?></td>
+                                    <td><?= $row['birthplace']; ?></td>
+                                    <td><?= $row['contact']; ?></td>
+                                    <td>
+                                        <a href="update.php?rin=<?=$row['rin'];?>">Update</a>
+                                        <form action="crud.php" method="POST" class="">
+                                            <button type="submit" name="delete_record" value="<?=$row['rin'];?>">Delete</button>
+                                        </form>   
+                                    </td>
+                                </tr>
 
-                    //Check connection
-                    if($connection->connect_error) {
-                        die("Connection failed: " . $connection->connect_error);
-                    }
+                                <?php
 
-                    //read all row from database table
-                    $sql = "SELECT * FROM table_residents";
-                    $result = $connection->query($sql);
+                            }
 
-                    if (!$result) {
-                        die("Invalid query: " . $connection->error);
-                    }
-
-                    //read data of each row
-                    while($row = $result->fetch_assoc()) {
-                        echo"
-                        <tr>
-                        <td>$row[rin]</td>
-                        <td>$row[lname]</td>
-                        <td>$row[fname]</td>
-                        <td>$row[mi]</td>
-                        <td>$row[housenum]</td>
-                        <td>$row[street]</td>
-                        <td>$row[gender]</td>
-                        <td>$row[age]</td>
-                        <td>$row[yearofstay]</td>
-                        <td>$row[birthday]</td>
-                        <td>$row[birthplace]</td>
-                        <td>$row[contact]</td>
-                        <td>
-                            <a href='/document-fill-up-automation-website/update.php?rin=$row[rin]'>Update</a>
-                            <a href='/document-fill-up-automation-website/delete.php?rin=$row[rin]'>Delete</a>
-                        </td>
-                    </tr> 
-                        ";
-                    }
-
+                        }else {
+                            echo "No Record Found";
+                        }
+                        
                     ?>
                 
                 </tbody>
             </table>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
 </body>
 </html>   

@@ -133,7 +133,4 @@ a{
     place-items: center;
     text-decoration: none;
 }
-a:hover{
-    color: #ffffff;
-    background-color: #ee513c;
-}
+

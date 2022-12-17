@@ -1,101 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "brgydb";
-
-//Create connection
-$connection = new mysqli($servername, $username, $password, $database);
-
-$rin = "";
-$Lname = "";
-$Fname = "";
-$Initial = "";
-$Housenum = "";
-$Street = "";
-$Gender = "";
-$Age = "";
-$Yos = "";
-$Bday = "";
-$Bplace = "";
-$Contact = "";
-
-$errorMessage = "";
-$successMessage = "";
-
-if($_SERVER['REQUEST_METHOD'] == 'GET') {
-    //GET method: Show the data of the client
-
-    if( !isset($_GET["rin"]) ) {
-        header("location:/document-fill-up-automation-website/residentsdata.php");
-        exit;
-    }
-
-    $rin = $_GET["rin"];
-
-    // read the row of the selected record from the database table
-    $sql = "SELECT * FROM table_residents WHERE rin=$rin";
-    $result = $connection->query($sql);
-    $row = $result->fetch_assoc();
-
-    if (!$row) {
-        header("location:/document-fill-up-automation-website/residentsdata.php");
-        exit;
-    }
-
-    $Lname = $row["lname"];
-    $Fname = $row["fname"];
-    $Initial = $row["mi"];
-    $Housenum = $row["housenum"];
-    $Street = $row["street"];
-    $Gender = $row["gender"];
-    $Age = $row["age"];
-    $Yos = $row["yearofstay"];
-    $Bday = $row["birthday"];
-    $Bplace = $row["birthplace"];
-    $Contact = $row["contact"];
-
-}
-else {
-    //POST method: Update the data of the residents
-
-    $rin = $_POST["rin"];
-    $Lname = $_POST["lname"];
-    $Fname = $_POST["fname"];
-    $Initial = $_POST["initial"];
-    $Housenum = $_POST["housenum"];
-    $Street = $_POST["street"];
-    $Gender = $_POST["gender"];
-    $Age = $_POST["age"];
-    $Yos = $_POST["yos"];
-    $Bday = $_POST["bday"];
-    $Bplace = $_POST["bplace"];
-    $Contact = $_POST["contact"];
-
-    do{
-        if ( empty($Lname) || empty ($Fname) || empty ($Initial) ) {
-            $errorMessage = "All the fields are required";
-            break;
-        }  
-         
-        $sql = "UPDATE table_residents SET lname='$Lname', fname='$Fname', mi='$Initial', housenum='$Housenum', street='$Street', gender='$Gender', age='$Age', yearofstay='$Yos', birthday='$Bday', birthplace='$Bplace', contact='$Contact' 
-         WHERE rin=$rin";  
-
-        $result = $connection->query($sql);
-
-            if (!$result) {
-                $errorMessage = "Invalid query:" . $connection->error;
-               break;
-             }
-
-            $successMessage = "Record updated succesfully";
-
-            header("location: /document-fill-up-automation-website/residentsdata.php");
-            exit;
-               
-    } while (false);
-
-}
+session_start();
+require 'connection.php';
 
 ?>
 <!DOCTYPE html>
@@ -104,96 +9,96 @@ else {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Residents Data</title>
 </head>
 <body>
-    <!-- Registration Form -->
-    <div class="container">
-        <h1 class="form-title">Residents Registration</h2>
-        <?php
-        if ( !empty($errorMessage)) {
-            echo "
-            <div class='alert alert-warning alert-dismissable fade show' role='alert'>
-                <strong>$errorMessage</strong>
-                <button type='button' class='btn-cloase' data-bs-dismiss='alert' aria=label='Close'></button>
-            </div>
-            ";
-        }
-        ?>
-            <form method="POST" id="form" class="residents-form">
-                <input type="hidden" name="rin" value="<?php echo $rin;?>">
-                <div class>
+    <?php include('alert.php'); ?>
+    <div class="container"> 
+    <h1 class="form-title">Edit Residents Data</h2>
+    <?php 
+        if(isset($_GET['rin'])){
+
+            $residents_rin = mysqli_real_escape_string($conn, $_GET['rin']);
+            $sql = "SELECT * FROM table_residents WHERE rin='$residents_rin' ";
+            $result = mysqli_query($conn, $sql);
+
+            if(mysqli_num_rows($result) > 0) {
+                
+                $row = mysqli_fetch_array($result);
+                ?>
+                
+            <form action="crud.php" method="POST">
+            <input type="hidden" name="residents_rin"  value="<?=$row ['rin'];?>">
+                <div>
                 <label for="lname">Last Name</label>
-                <input type="text" name="lname" id="fname" placeholder="Enter your last name" value="<?php echo $Lname;?>">
+                <input type="text" name="lname"  placeholder="Enter your last name" value="<?=$row['lname'];?>">
                 </div>
 
                 <div class>
                 <label for="lname">First Name</label>
-                <input type="text" name="fname" id="fname" placeholder="Enter your first name" value="<?php echo $Fname;?>">
+                <input type="text" name="fname"  placeholder="Enter your first name" value="<?=$row['fname'];?>">
                 </div>
 
                 
                 <div class>
                 <label for="lname">Middle Initial</label>
-                <input type="text" name="initial" id="initial" placeholder="Enter your middle initial" value="<?php echo $Initial;?>">
+                <input type="text" name="initial"  placeholder="Enter your middle initial" value="<?=$row['mi'];?>">
                 </div>
 
                 <div class>
                 <label for="lname">Address</label>
-                <input type="number" name="housenum" id="housenum" placeholder="Enter house number" value="<?php echo $Housenum;?>">
-                <input type="text" name="street" id="street" placeholder="Enter street" value="<?php echo $Street;?>">
+                <input type="number" name="housenum"  placeholder="Enter house number" value="<?=$row['housenum'];?>">
+                <input type="text" name="street"  placeholder="Enter street" value="<?=$row['street'];?>">
                 </div>
 
                 <div class>
                     <span class="gender-title">Gender</span>
-                    <input type="radio" name="gender" id="gender" value="Male"> Male
-                    <input type="radio" name="gender" id="gender" value="Female"> Female
+                    <input type="radio" name="gender"  value="Male"> Male
+                    <input type="radio" name="gender"  value="Female"> Female
                 </div>
 
                 <div class>
                     <label for="age">Age</label>
-                    <input type="number" name="age" id="age" placeholder="Enter your age" value="<?php echo $Age;?>">
+                    <input type="number" name="age"  placeholder="Enter your age" value="<?=$row['age'];?>" >
                 </div>
 
                 <div class>
                     <label for="yearofstay">Year of stay</label>
-                    <input type="number" name="yos" id="yos" placeholder="Enter year of stay" value="<?php echo $Yos;?>">
+                    <input type="number" name="yos"  placeholder="Enter year of stay"value="<?=$row['yearofstay'];?>">
                 </div>
 
                 <div class>
                     <label for="birthday">Date of birth</label>
-                    <input type="date" name="bday" id="bday" placeholder="Enter your birthday" value="<?php echo $Bday;?>">
+                    <input type="date" name="bday" placeholder="Enter your birthday" value="<?=$row['birthday'];?>">
                 </div>
 
                 <div class>
                 <label for="birthplace">Place of birth</label>
-                <input type="text" name="bplace" id="bplace" placeholder="Enter your birthplace" value="<?php echo $Bplace;?>">
+                <input type="text" name="bplace" placeholder="Enter your birthplace" value="<?=$row['birthplace'];?>">
                 </div>
 
                 <div class>
                     <label for="contactnum">Contact number</label>
-                    <input type="number" name="contact" id="contact" placeholder="Enter your contact number" value="<?php echo $Contact;?>">
-                </div>
-
-                <?php
-                if ( !empty($errorMessage)) {
-                    echo "
-                    <div class='alert alert-warning alert-dismissable fade show' role='alert'>
-                        <strong>$successMessage</strong>
-                        <button type='button' class='btn-cloase' data-bs-dismiss='alert' aria=label='Close'></button>
-                    </div>
-                    ";
-                }
-                ?>
-
-                <div class>
-                    <button type="submt">Save</button>
+                    <input type="number" name="contact" placeholder="Enter your contact number" value="<?=$row['contact'];?>">
                 </div>
                 <div class>
-                    <a href="/document-fill-up-automation-website/residentsdata.php" role=""button>Cancel</a>
+                    <button type="submit" name="update_record" >Update</button>
+                </div>
+                <div class>
+                    <a href="residentsdata.php">Back</a>
                 </div>
             </form>
-    </div>
-    
+            <?php
+                
+
+            } else {
+                echo"No Such RIN Found";
+            }
+        }  
+    ?>    
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>   
 </body>
 </html>
