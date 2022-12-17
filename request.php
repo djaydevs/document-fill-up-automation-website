@@ -20,11 +20,13 @@
         </div>
         <div class="rightsection">
             <form action="" method="POST">
-                <h2>Request Document</h2>      
-                <label>Resident No. :</label>
-                <input type="text" name="residentnum" placeholder="Ex. 202201"><br>
-                <label>Name : </label>
-                <input type="text" name="residentname" placeholder="Firstname MI. Surname"><br>
+                <h2>Request Document</h2> 
+                <div class="user-input">     
+                    <label>Resident No. :</label>
+                    <input type="text" name="residentnum" placeholder="Ex. 202201" class="input-rin"><br>
+                    <label>Name : </label>
+                    <input type="text" name="residentname" placeholder="Firstname MI. Surname" class="input-name"><br>
+                </div>
                 <div class="select-menu">
                     <div class="select-btn">
                         <span class="sBtn-text">Purpose of Document</span>
@@ -41,17 +43,17 @@
                     </ul>
                 </div>
                 <div class ="select-doc">
-                        <span class="choosedocument">Choose Document</span><br>
-                        <input type="radio" id="rdCOI" name="choosedoc" value="Certificate of Indgency">
-                        <label for="html">Certificate of Indigency</label>
-                        <input type="radio" id="rdCOR" name="choosedoc" value="Certificate of Residency">
-                        <label for="html">Certificate of Residency</label>
-                        <input type="radio" id="rdCOR" name="choosedoc" value="Barangay Clearance">
-                        <label for="html">Barangay Clearance</label>
+                        <span class="choosedocument">Choose Document</span>
+                        <input type="radio" id="rdCOI" class="rdCOI" name="choosedoc" value="Certificate of Indgency">
+                        <label for="html">Certificate of Indigency</label> <br>
+                        <input type="radio" id="rdCOR" class="rdCOR" name="choosedoc" value="Certificate of Residency">
+                        <label for="html">Certificate of Residency</label> <br>
+                        <input type="radio" id="rdCOC" class="rdCOc" name="choosedoc" value="Barangay Clearance">
+                        <label for="html">Barangay Clearance</label> <br>
                 </div>
-                <button type="submit">Send Request</button>
+                <input type="submit" class="btn-send" value="SEND REQUEST">
             </form>
-            <a href="">Administrator</a>
+            <a href="http://localhost/document-fill-up-automation-website/login.php" class="link">Administrator</a>
         </div>
     </div>
     <script src="request.js"></script>
