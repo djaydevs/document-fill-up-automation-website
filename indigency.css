@@ -12,7 +12,7 @@ html {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 550px;
 }
 
 .topnav {
@@ -70,7 +70,7 @@ html {
     background-color: #fff;
     padding: 8px;
     border-radius: 0px 0px 8px 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(13, 76, 146, 0.5);
 }
 
 .topnav ul li:hover ul {
@@ -123,14 +123,28 @@ html {
 
 .request-container{
     width: fit-content;
-    align-items: center;
+    align-items: left;
     margin: auto;
     margin-top: 100px;
 }
 
+.request-text {
+    position: fixed;
+    margin: 0% auto 0% auto;
+    color: #0D4C92;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 3px 1px 1px rgba(89, 193, 189, 1);
+}
+
 .tableview {
+    position: fixed;
+    align-items: left;
     width: max-content;
-    height: 554.92px;
+    height: 550px;
+    margin-top: 4.5em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -143,9 +157,9 @@ html {
 }
 
 .request-table thead tr {
-    background-color: #B84823;
+    background-color: cornflowerblue;
     color: #ffffff;
-    font-weight: bold;
+    font-size: 12px;
     text-align: left;
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -157,13 +171,42 @@ html {
 }
 
 .request-table tbody tr {
-    border-bottom: 1px solid rgba(184, 72, 35, 0.5);
+    border-bottom: 1px solid rgba(35, 50, 184, 0.5);
 }
 
 .request-table tbody tr:nth-of-type(even) {
-    background-color: rgba(184, 72, 35, 0.1);
+    background-color: rgba(46, 77, 216, 0.1);
 }
 
 .request-table tbody tr:last-of-type {
-    border-bottom: 2px solid #B84823;
+    border-bottom: 2px solid rgba(35, 50, 184, 0.5);
+}
+
+/********************** PDF VIEW ***************************/
+
+.pdf-container {
+    width: fit-content;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    margin-right: 2em;
+    margin-bottom: 3em;
+}
+
+.pdf-view {
+    width: 816px;
+    height: 1056px;
+}
+
+button {
+    position: fixed;
+    margin: 0% auto 0% auto;
+    left: 61.5%;
+    top: 670px;
+    width: 320px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0D4C92;
+    color: white;
 }

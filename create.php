@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel="stylesheet">
-    <link rel="stylesheet" href="residentsdata.css">
+    <link rel="stylesheet" href="create.css">
     <title>Document Fill-Up Automation Website - Resident Data</title>
 </head>
 <body>
