@@ -97,12 +97,43 @@ h2{
     padding: 1em 1em;
     text-align: left;
 }
+
 .content-table tbody tr{
     border-bottom: 1px solid rgba(35, 50, 184, 0.5);
 }
+
 .content-table tr:nth-of-type(even) {
     background-color: rgba(46, 77, 216, 0.1);
 }
+
 .content-table tbody tr:last-of-type {
     border-bottom: 2px solid rgba(35, 50, 184, 0.5);
+}
+.new-btn {  
+    display: grid;
+    position: absolute;
+    height: 40px;
+    width: 150px;
+    color: #ffffff;
+    background-color: #0651dd;
+    border-radius: 5px 5px 5px 5px;
+    place-items: center;
+    text-decoration: none;
+    
+}
+.new-btn:hover{
+    color: #ffffff;
+    background-color: rgb(12, 129, 51);
+}
+
+a{  
+    color: #ffffff;
+    background-color: #0651dd;
+    border-radius: 3px 3px 3px 3px;
+    place-items: center;
+    text-decoration: none;
+}
+a:hover{
+    color: #ffffff;
+    background-color: #ee513c;
 }

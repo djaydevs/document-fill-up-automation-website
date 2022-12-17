@@ -12,6 +12,8 @@
   
 </head>
 <body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <nav class="topnav">
         <img class="logo" src="assets/fatimalogo.svg" alt="logo">
         <p class="tntitle">Barangay Fatima 1</p>
@@ -23,7 +25,9 @@
     </nav>
     <div class="container">
         <h2 class="header">RESIDENTS TABLE</h2>
-        <a class="new-btn"href="/document-fill-up-automation-website/create.php" role = button>New Record</a>
+        <a class="new-btn" id="btn-new"href="/document-fill-up-automation-website/create.php" role = button>
+        <ion-icon name="add-outline"></ion-icon>New Record
+        </a>
         <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;"> 
             <table class="content-table">
                 <thead>
