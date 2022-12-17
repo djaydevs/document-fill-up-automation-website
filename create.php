@@ -41,9 +41,12 @@ session_start();
             </li>
         </ul>
     </nav>
-    <?php include('alert.php'); ?>
+    
     <div class="container"> 
         <div class="left-column">
+            <div>
+                <?php include('alert.php'); ?>
+            </div>
             <form action="crud.php" method="POST" class="residents-form">
                 <h1 class="form-title">Residents Registration</h2>
 
