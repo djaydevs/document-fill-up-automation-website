@@ -18,7 +18,7 @@
         <ul>
             <li><a href="#">Account</a></li>
             <li><a class="active">Residents Data</a></li>
-            <li><a href="#" href="#">Document Fill-Up</a></li>
+            <li><a href="docfillup.php">Document Fill-Up</a></li>
         </ul>
     </nav>
     <div class="container">

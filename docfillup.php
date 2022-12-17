@@ -16,7 +16,7 @@
         <p class="tntitle">Barangay Fatima 1</p>
         <ul>
             <li><a href="#">Account</a></li>
-            <li><a href="#">Residents Data</a></li>
+            <li><a href="residentsdata.php">Residents Data</a></li>
             <li><a class="active" href="#">Document Fill-Up</a></li>
         </ul>
     </nav>
