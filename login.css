@@ -1,46 +1,88 @@
 * {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/*BACKGROUND*/
 html {
     background: url(assets/bg.svg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+}
+
+.leftsection img {
+    position: absolute;
+    width: 350px;
+    height: 50%;
+    left: 180px;
+    top: 70px;
+}
+
+.title {
+    position: absolute;
+    width: 540px;
+    height: 53px;
+    left: 90px;
+    top: 470px;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 52px;
+    text-align: center;
+    color: #161730;
+}
+
+.description {
+    position: absolute;
+    width: 446px;
+    height: 23px;
+    left: 137px;
+    top: 530px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    color: #161730;
+}
+
+/*
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
 form {
-    width: 500px;
-    border: 2px solid #ccc;
-    padding: 30px;
-    background: #fff;
-    border-radius: 15px;
-}
-
-.logo {
     position: absolute;
-    width: 130px;
-    height: 130px;
-    left: 46%;
-    top: 30px;
+    width: max-content;
+    height: max-content;
+    margin-left: 4%;
+    background: rgb(255, 255, 255, 0.3);
+    outline: solid #0D4C92;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 0.9em 2em 0.5em 2em;
+    margin-top: 8em;
+    margin-left: 5em;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 40px;
+    padding: 0.5em 0.8em 1em 0.1em;
+    letter-spacing: 1.5px;
+    color: #0D4C92;
+    font-size: 30px;
 }
 
-input {
-    display: block;
+.input-user, .input-pass {
+    display: flex;
     border: 2px solid #ccc;
     width: 95%;
     padding: 10px;
@@ -54,18 +96,17 @@ label {
     padding: 10px;
 }
 
-button {
+.btn-login {
     float: center;
     background: #0D4C92;    
-    padding: 10px 100px;
+    padding: 0.9em 1em 0.7em 0.6em;
     color: #fff;    
     border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 100px;
+    margin: auto;
     border: none;
 }
 
-button:hover {
+.btn-login:hover {
     background: linear-gradient(117.79deg, #0D4C92 20.47%, #9584CD 67.26%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     font-weight: bold;
