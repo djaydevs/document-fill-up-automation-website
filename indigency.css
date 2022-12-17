@@ -9,6 +9,12 @@ html {
     height: 100%;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 550px;
+}
+
 .topnav {
     position: fixed;
     top: 0;
@@ -113,75 +119,94 @@ html {
     color: #fff;
 }
 
-/**********************************************************/
+/******************** REQUEST TABLE ************************/
 
-h2{
-    font-size: 40px;
-    text-align: center;
-    color: #1074b8;
-    text-shadow: 3px 1px 1px rgb(255, 255, 255);
-}
-
-.container{
+.request-container{
     width: fit-content;
-    align-items: center;
+    align-items: left;
     margin: auto;
     margin-top: 100px;
 }
-.tableview {
-    height: 650px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-top: 50px;
+
+.request-text {
+    position: fixed;
+    margin: 0% auto 0% auto;
+    color: #0D4C92;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 3px 1px 1px rgba(89, 193, 189, 1);
 }
-.content-table{
+
+.tableview {
+    position: fixed;
+    align-items: left;
+    width: max-content;
+    height: 550px;
+    margin-top: 4.5em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.request-table {
     border-collapse: collapse;
-    font-size: 1em;
+    font-size: 0.7em;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-.content-table thead tr {
+
+.request-table thead tr {
     background-color: cornflowerblue;
     color: #ffffff;
+    font-size: 12px;
     text-align: left;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-.content-table th, td {
+
+.request-table th, td {
     padding: 1em 1em;
     text-align: left;
 }
 
-.content-table tbody tr{
+.request-table tbody tr {
     border-bottom: 1px solid rgba(35, 50, 184, 0.5);
 }
 
-.content-table tr:nth-of-type(even) {
+.request-table tbody tr:nth-of-type(even) {
     background-color: rgba(46, 77, 216, 0.1);
 }
 
-.content-table tbody tr:last-of-type {
+.request-table tbody tr:last-of-type {
     border-bottom: 2px solid rgba(35, 50, 184, 0.5);
 }
-.new-btn {  
-    display: grid;
-    position: absolute;
-    height: 40px;
-    width: 150px;
-    color: #ffffff;
-    background-color: #0651dd;
-    border-radius: 5px 5px 5px 5px;
-    place-items: center;
-    text-decoration: none;
-    
-}
-.new-btn:hover{
-    color: #ffffff;
-    background-color: rgb(12, 129, 51);
+
+/********************** PDF VIEW ***************************/
+
+.pdf-container {
+    width: fit-content;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    margin-right: 2em;
+    margin-bottom: 3em;
 }
 
-.new-btn{  
-    color: #ffffff;
-    background-color: #0651dd;
-    border-radius: 3px 3px 3px 3px;
-    place-items: center;
-    text-decoration: none;
+.pdf-view {
+    width: 816px;
+    height: 1056px;
+}
+
+button {
+    position: fixed;
+    margin: 0% auto 0% auto;
+    left: 61.5%;
+    top: 670px;
+    width: 320px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0D4C92;
+    color: white;
 }

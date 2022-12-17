@@ -51,9 +51,12 @@ html {
     color: #161730;
 }
 
+/**************** RIGHT SECTION ******************/
+
 form {
     font-size: 18px;
 }
+
 .select-menu{
     width: 350px;
 }
@@ -79,6 +82,7 @@ form {
 .select-menu.active .select-btn i{
     transform: rotate(-180deg);
 }
+
 .select-menu .options{
     position: relative;
     margin-top: 10px;
@@ -117,8 +121,7 @@ form {
 }
 
 button {
-    position: absolute;
-    top: 500px;
+    position: relative;
 }
 
 

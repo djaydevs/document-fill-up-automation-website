@@ -112,3 +112,92 @@ html {
     background-color: #68B9E1;
     color: #fff;
 }
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.residents-form {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    margin-left: 4%;
+    background: rgb(255, 255, 255, 0.3);
+    outline: solid #0A93E3;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 0 10px 10px 0;
+}
+
+.form-title {
+    color: #0D4C92;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0.3em 0.8em 0.6em 0.8em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.user_info, .userAY, .u-bp {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gender-title {
+    display: flex;
+}
+
+.rbtn_gender #gender {
+    display: inline;
+}
+
+#lname, #fname, #initial, #housenum, #street, #age, #yos, #bday, #bplace, #contact {
+    height: 20px;
+    width: fit-content;
+    outline: solid #0A93E3;
+    border: none;
+    border-radius: 8px;
+    padding: 0.3em 0.8em 0.2em 0.2em;
+}
+
+#lname, #fname, #initial {
+    margin-top: 3%;
+    width: 155px;
+}
+
+.input_lname, .input_fname, .input_mi, .u-stay, .u-age, .u-bday, .u-bplace, .contact, .rbtn_gender, .user_address{
+    padding: 0.3em 3em 0.5em 3em;
+}
+
+.u-bplace {
+    margin-left: 2em;
+}
+
+/*button*/
+.form-btn {
+    display: flow-root;
+    padding: 1em 0 0 31em;
+}
+
+.btn-save, .btn-cancel {
+    width: 80px;
+    height: 35px;
+    color: #ffffff;
+    border: none;
+    border-radius: 1.5em;
+    background: #0D4C92;
+    transition: background .3s;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.btn-cancel  {
+    margin-left: 5em;
+    color: #0A93E3;
+    background: white;
+    outline: solid #0D4C92;
+}
