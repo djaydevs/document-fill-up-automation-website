@@ -1,83 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "brgydb";
-
-//Create connection
-$connection = new mysqli($servername, $username, $password, $database);
-
-$Lname = "";
-$Fname = "";
-$Initial = "";
-$Housenum = "";
-$Street = "";
-$Gender = "";
-$Age = "";
-$Yos = "";
-$Bday = "";
-$Bplace = "";
-$Contact = "";
-
-$errorMessage = "";
-$successMessage = "";
-
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $Lname = $_POST["lname"];
-    $Fname = $_POST["fname"];
-    $Initial = $_POST["initial"];
-    $Housenum = $_POST["housenum"];
-    $Street = $_POST["street"];
-    $Gender = $_POST["gender"];
-    $Age = $_POST["age"];
-    $Yos = $_POST["yos"];
-    $Bday = $_POST["bday"];
-    $Bplace = $_POST["bplace"];
-    $Contact = $_POST["contact"];
-
-    do {
-        if ( empty($Lname) || empty ($Fname) || empty ($Initial) ) {
-            $errorMessage = "All the fields are required";
-            break;
-        }
-
-        //add new record to database
-        $sql = "INSERT INTO table_residents (lname, fname, mi, housenum, street, gender, age,
-                yearofstay, birthday, birthplace, contact)" . "VALUES('$Lname', '$Fname', 
-                '$Initial', '$Housenum', '$Street', '$Gender', '$Age', '$Yos', '$Bday',
-                '$Bplace ', '$Contact')";
-        $result = $connection->query($sql);
-
-        if (!$result) {
-            $errorMessage = "Invalid query:" . $connection->error;
-            break;
-        }
-
-        $Lname = "";
-        $Fname = "";
-        $Initial = "";
-        $Housenum = "";
-        $Street = "";
-        $Gender = "";
-        $Age = "";
-        $Yos = "";
-        $Bday = "";
-        $Bplace = "";
-        $Contact = "";
-
-        $successMessage = "Record added succesfully";
-        header("location: /document-fill-up-automation-website/residentsdata.php");
-        exit;
-
-    }while (false);
-}
-
+session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,7 +15,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Document Fill-Up Automation Website - Resident Data</title>
 </head>
 <body>
-    <!-- Registration Form -->
     <nav class="topnav">
         <img class="logo" src="assets/fatimalogo.svg" alt="logo">
         <p class="tntitle">Barangay Fatima 1</p>
@@ -115,99 +41,78 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             </li>
         </ul>
     </nav>
-        <div class="container">
-            <?php
-            if ( !empty($errorMessage)) {
-                echo "
-                    <div class='alert alert-warning alert-dismissable fade show' role='alert'>
-                    <strong>$errorMessage</strong>
-                    <button type='button' class='btn-cloase' data-bs-dismiss='alert' aria=label='Close'></button>
+    <?php include('alert.php'); ?>
+    <div class="container"> 
+        <div class="left-column">
+            <form action="crud.php" method="POST" class="residents-form">
+                <h1 class="form-title">Residents Registration</h2>
+
+                <div class="user_info">
+                    <div class="input_lname">
+                        <label for="lname">Last Name</label><br>
+                        <input type="text" name="lname" id="lname" placeholder="Enter your last name">
+                    </div>
+                    <div class="input_fname">
+                        <label for="fname">First Name</label><br>
+                        <input type="text" name="fname" id="fname"  placeholder="Enter your first name">
+                    </div>
+                    <div class="input_mi">
+                        <label for="mi">Middle Initial</label><br>
+                        <input type="text" name="initial" id="initial"  placeholder="Enter your middle initial">
+                    </div>
+
                 </div>
-                ";
-            }
-            ?>
-            <div class="left-column">
-                <form method="POST" id="form" class="residents-form">
-                    <h1 class="form-title">Residents Registration</h1>
 
-                    <div class="user_info">
-                        <div class="input_lname">
-                            <label for="lname">Last Name</label><br>
-                            <input type="text" name="lname" id="lname" placeholder="Enter your last name" value="<?php echo $Lname;?>">
-                        </div>
-                        <div class="input_fname">
-                            <label for="lname">First Name</label><br>
-                            <input type="text" name="fname" id="fname" placeholder="Enter your first name" value="<?php echo $Fname;?>">                
-                        </div>
-                        <div class="input_mi">
-                        <label for="lname">Middle Initial</label><br>
-                        <input type="text" name="initial" id="initial" placeholder="Enter your middle initial" value="<?php echo $Initial;?>">
-                        </div>
+                <div class="user_address">
+                    <label for="address">Address</label>
+                    <br>
+                    <input type="number" name="housenum" id="housenum"  placeholder="Enter house number" > &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="street" id="street"  placeholder="Enter street">
+                </div>
+
+                <div class="rbtn_gender">
+                    <span class="gender-title">Gender</span>
+                    <input type="radio" name="gender"  id="gender" value="Male"> Male
+                    <input type="radio" name="gender"  id="gender" value="Female"> Female
+                </div>
+                <div class="userAY">
+
+                    <div class="u-age">
+                        <label for="age">Age</label><br>
+                        <input type="number" name="age" id="age"  placeholder="Enter your age" >
                     </div>
 
-                    <div class="user_address">
-                        <label for="lname">Address</label>
-                        <br>
-                        <input type="number" name="housenum" id="housenum" placeholder="Enter house number" value="<?php echo $Housenum;?>"> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="street" id="street" placeholder="Enter street" value="<?php echo $Street?>">
+                    <div class="u-stay">
+                        <label for="yearofstay">Year of stay</label><br>
+                        <input type="number" name="yos" id="yos" placeholder="Enter year of stay">
                     </div>
 
-                    <div class="rbtn_gender">
-                        <span class="gender-title">Gender</span>
-                        <input type="radio" name="gender" id="gender" value="Male"> Male
-                        <input type="radio" name="gender" id="gender" value="Female"> Female
+                </div>
+                <div class="u-bp">
+                    <div class="u-bday">
+                        <label for="birthday">Date of birth</label><br>
+                        <input type="date" name="bday" id="bday" placeholder="Enter your birthday">
                     </div>
 
-                    <div class=userAY>
-                        <div class="u-age">
-                            <label for="age">Age</label><br>
-                            <input type="number" name="age" id="age" placeholder="Enter your age" value="<?php echo $Age;?>">
-                        </div>
-
-                        <div class="u-stay">
-                            <label for="yearofstay">Year of stay</label><br>
-                            <input type="number" name="yos" id="yos" placeholder="Enter year of stay" value="<?php echo $Yos;?>">
-                        </div>
+                    <div class="u-bplace">
+                    <label for="birthplace">Place of birth</label><br>
+                    <input type="text" name="bplace"  id="bplace" placeholder="Enter your birthplace">
                     </div>
+                </div>
 
-                    <div class="u-bp">
-                        <div class="u-bday">
-                            <label for="birthday">Date of birth</label><br>
-                            <input type="date" name="bday" id="bday" placeholder="Enter your birthday" value="<?php echo $Bday;?>">
-                        </div>
+                <div class="contact">
+                    <label for="contactnum">Contact number</label>
+                    <br>
+                    <input type="number" name="contact" id="contact" placeholder="Enter your contact number">
+                </div>
 
-                        <div class="u-bplace">
-                            <label for="birthplace">Place of birth</label><br>
-                            <input type="text" name="bplace" id="bplace" placeholder="Enter your birthplace" value="<?php echo $Bplace;?>">
-                        </div>
-                    </div>
-
-                    <div class="contact">
-                        <label for="contactnum">Contact number</label>
-                        <br>
-                        <input type="number" name="contact" id="contact" placeholder="Enter your contact number" value="<?php echo $Contact;?>">
-                    </div>
-
-                    <?php
-                    if ( !empty($errorMessage)) {
-                        echo "
-                        <div class='alert alert-warning alert-dismissable fade show' role='alert'>
-                            <strong>$successMessage</strong>
-                            <button type='button' class='btn-cloase' data-bs-dismiss='alert' aria=label='Close'></button>
-                        </div>
-                        ";
-                    }
-                    ?>
-
-                    <div class="form-btn">
-                        <input type="submit" value="SAVE" class="btn-save" id="save">
-                        <!--<a href="/document-fill-up-automation-website/residentsdata.php" class="btn-cancel" role=""button>Cancel</a>-->
-                        <input type="reset" value="CANCEL" class="btn-save" onclick="residentsdata.php">
-                    </div>
-                </form>
-            </div>
+                <div class="form-btn">
+                <input type="submit" value="SAVE" class="btn-save" name="save_record">
+                <a href="residentsdata.php" class="btn-cancel">Back</a>
+                </div>
+            </form>
         </div>
-    
-    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>   
 </body>
 </html>
