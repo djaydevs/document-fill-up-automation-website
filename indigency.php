@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="indigency.css ?v=<?php echo time(); ?>">
     <title>Document Fill-Up Automation - Certificate of Indigency</title>
 </head>
@@ -39,7 +37,7 @@
     </nav>
     <div class="grid-container">
         <div class="request-container">
-        <p class="request-text">Residents Request</p>
+        <p class="request-text">RESIDENTS REQUEST</p>
             <!--TABLE-->
             <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;">
                 <table class="request-table" id="table" >
@@ -61,11 +59,24 @@
             </div>
         </div>
         <div class="pdf-container">
-            <div class="pdf-view">
-                <img src="assets/docindigency.svg" alt="">
+            <div class="pdf-border">
+                <div id="pdf-view">
+                    <img src="assets/docindigency.svg" alt="">
+                    <input type="text" name="resname" id="resname" value="">
+                    <input type="text" name="resage" id="resage" value="">
+                    <input type="text" name="resaddress" id="resaddress" value="">
+                    <input type="text" name="respurpose" id="respurpose" value="">
+                </div>
             </div>
-            <button>Save Document</button>
+            <button id="btnsave">Save Document</button>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script
+		src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+		integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+		crossorigin="anonymous"
+		referrerpolicy="no-referrer"></script>
+    <script src="indigency.js"></script>
 </body>
 </html>
