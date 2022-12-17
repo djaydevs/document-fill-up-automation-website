@@ -7,21 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="docfillup.css">
+    <link rel="stylesheet" href="docfillup.css ?v=<?php echo time(); ?>">
     <title>Document Fill-Up Automation Website</title>
 </head>
 <body>
-    <div class="topnav">
+    <nav class="topnav">
         <img class="logo" src="assets/fatimalogo.svg" alt="logo">
         <p class="tntitle">Barangay Fatima 1</p>
-        <nav>
-            <ul>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Residents Data</a></li>
-                <li><a class="active" href="#">Document Fill-Up</a></li>
-            </ul>
-        </nav>
-    </div>
+        <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Residents Data</a></li>
+            <li><a class="active" href="#">Document Fill-Up</a></li>
+        </ul>
+    </nav>
 <!--
     <div class="grid-container">
             <div class="left-section">
