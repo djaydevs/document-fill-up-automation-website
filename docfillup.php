@@ -15,8 +15,19 @@
         <img class="logo" src="assets/fatimalogo.svg" alt="logo">
         <p class="tntitle">Barangay Fatima 1</p>
         <ul>
-            <li><a href="#">Account</a></li>
-            <li><a href="residentsdata.php">Residents Data</a></li>
+            <li><a href="#">Account</a>
+                <ul class="ul-acc">
+                    <li class="ul-li-acc"><a href="">Admin</a></li>
+                    <li class="ul-li-acc"><a href="request.php">Log Out</a></li>
+                </ul>
+            </li>
+            <li><a href="residentsdata.php">Residents Data</a>
+                <ul>
+                    <li><a href="residentsdata.php">Residents Table View</a></li>
+                    <li><a href="create.php">Residents Registration</a></li>
+                    <li><a href="">Residents Modification</a></li>
+                </ul>
+            </li>
             <li><a class="active" href="#">Document Fill-Up</a></li>
         </ul>
     </nav>
