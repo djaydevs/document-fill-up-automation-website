@@ -200,6 +200,7 @@ html {
 }
 
 #pdf-view {
+    position: relative;
     width: 816px;
     height: 1056px;
 }
@@ -215,34 +216,63 @@ input {
     font-family: 'Open Sans', sans-serif;
 }
 
-#resname, #resage, #resaddress, #respurpose {
+#resname, #resage, #resaddress, #respurpose, #month, #day, #year, #date {
     position: absolute;
     width: 235px;
     height: 20px;
-    left: 1168px;
-    top: 455px;
+    left: 502px;
+    top: 349px;
     text-align: center;
 }
 
 #resage {
     width: 32px;
+    left: 749px;
     height: 20px;
-    left: 1417px;
-    top: 455px;
+    
 }
 
 #resaddress {
     width: 224px;
     height: 20px;
-    left: 960px;
-    top: 500px;
+    left: 290px;
+    top: 394px;
 }
 
 #respurpose {
     width: 207px;
     height: 20px;
-    left: 1101px;
-    top: 650px;
+    left: 431px;
+    top: 545px;
+}
+
+#month {
+    width: 111px;
+    height: 20px;
+    left: 437px;
+    top: 583px;
+}
+
+#day {
+    width: 30px;
+    height: 20px;
+    left: 555px;
+    top: 583px;
+}
+
+#year {
+    width: 47px;
+    height: 20px;
+    left: 597px;
+    top: 583px;
+}
+
+#date {
+    width: 72px;
+    height: 12px;
+    left: 606px;
+    top: 770px;
+    font-size: 10px;
 }
 
 #btnsave {
