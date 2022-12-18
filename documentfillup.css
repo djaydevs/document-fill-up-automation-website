@@ -123,16 +123,47 @@ html {
 
 .request-container{
     width: fit-content;
-    align-items: left;
     margin: auto;
     margin-top: 100px;
 }
 
+.switchdoc {
+    position: fixed;
+    left: 21%;
+    margin-top: 0.5em;
+    transform: translate(-50%, 0);
+    justify-content: center;
+    border: 3px solid #68B9E1;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.btndoc {
+    width: 400px;
+    height: 50px;
+    padding: 1em;
+    margin: 0.4em;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    background: #0D4C92;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btndoc:hover {
+    background: linear-gradient(90deg, #68B9E1 0%, #59C1BD 100%);
+    color: #0D4C92;
+    font-weight: bold;
+}
+
 .request-text {
     position: fixed;
-    margin: 0% auto 0% auto;
+    margin-top: 10em;
     color: #0D4C92;
-    font-size: 2.2em;
+    font-size: 1.5em;
     text-align: center;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -143,8 +174,8 @@ html {
     position: fixed;
     align-items: left;
     width: max-content;
-    height: 550px;
-    margin-top: 4em;
+    height: 350px;
+    margin-top: 18em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -194,6 +225,7 @@ html {
 }
 
 .pdf-border {
+    position: relative;
     border: 3px solid #68B9E1;
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
@@ -205,85 +237,105 @@ html {
     height: 1056px;
 }
 
-img {
-    border-radius: 15px;
+#docCOI {
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+#docCOR, #docCOC {
+    display: none;
+    border-radius: 15px 15px 0 0;
 }
 
 input {
     border: none;
     outline: none;
-    background-color: rgba(192, 192, 192, 0.626);
+    background: none;
+    background-color: none;
     font-family: 'Open Sans', sans-serif;
 }
 
-#resname, #resage, #resaddress, #respurpose, #month, #day, #year, #date {
+#resname1, #resage1, #resaddress1, #respurpose1, #month1, #day1, #year1, #date1 {
     position: absolute;
+    display: block;
     width: 235px;
     height: 20px;
     left: 502px;
     top: 349px;
     text-align: center;
+    font-weight: 600;
 }
 
-#resage {
+#resage1 {
     width: 32px;
     left: 749px;
     height: 20px;
     
 }
 
-#resaddress {
+#resaddress1 {
     width: 224px;
     height: 20px;
     left: 290px;
-    top: 394px;
+    top: 395px;
 }
 
-#respurpose {
+#respurpose1 {
     width: 207px;
     height: 20px;
     left: 431px;
     top: 545px;
 }
 
-#month {
+#month1 {
     width: 111px;
     height: 20px;
     left: 437px;
-    top: 583px;
+    top: 581px;
 }
 
-#day {
+#day1 {
     width: 30px;
     height: 20px;
     left: 555px;
-    top: 583px;
+    top: 581px;
 }
 
-#year {
+#year1 {
     width: 47px;
     height: 20px;
     left: 597px;
-    top: 583px;
+    top: 581px;
 }
 
-#date {
+#date1 {
     width: 72px;
-    height: 12px;
+    height: 20px;
     left: 606px;
-    top: 770px;
+    top: 761.5px;
     font-size: 10px;
 }
 
+#resname2, #resage2, #resaddress2, #stay2, #resname_2, #respurpose2, #month2, #day2, #year2, #date2, #res_name_2 {
+    position: absolute;
+    display: none;
+    width: 230px;
+    height: 20px;
+    left: 507px;
+    top: 296px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
 #btnsave {
-    position: fixed;
-    left: 61.5%;
-    top: 670px;
-    width: 320px;
+    position: relative;
+    display: block;
+    width: 816px;
     height: 60px;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 0 0 12.5px 12.5px;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 1.2px;

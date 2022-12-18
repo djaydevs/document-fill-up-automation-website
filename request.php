@@ -1,3 +1,7 @@
+<?php
+include('requestAuthentication.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,28 +23,28 @@
             <p class="description">Document request and fill-up is now easy and convenient!</p>
         </div>
         <div class="rightsection">
-            <form action="" method="POST">
+            <form action="request.php" method="POST">
                 <h2>Request Document</h2> 
+                <?php if (isset($_GET['error'])) { ?>
+                    <p class="error"><?php echo $_GET['error']; ?></p>
+                <?php } ?> 
                 <div class="user-input">     
                     <label>Resident No. :</label>
                     <input type="text" name="residentnum" placeholder="Ex. 202201" class="input-rin"><br>
                     <label>Name : </label>
                     <input type="text" name="residentname" placeholder="Firstname MI. Surname" class="input-name"><br>
                 </div>
-                <div class="select-menu">
-                    <div class="select-btn">
-                        <span class="sBtn-text">Purpose of Document</span>
-                        <i class="bx bx-chevron-down"></i>
-                    </div>
-                    <ul class="options">
-                        <li class="option"><span class="option-text">Scholarship</span></li>
-                        <li class="option"><span class="option-text">Food Assistance</span></li>
-                        <li class="option"><span class="option-text">Medical Assistance</span></li>
-                        <li class="option"><span class="option-text">Cash Assistance</span></li>
-                        <li class="option"><span class="option-text">Educational Assistance</span></li>
-                        <li class="option"><span class="option-text">Police Clearance</span></li>
-                        <li class="option"><span class="option-text">Employment</span></li>
-                    </ul>
+                <div class="choose-purpose">
+                        <label for ="purpose">Purpose</label><br>
+                        <select  name="purpose" id="purpose" required>
+                            <option value="Scholarship">Scholarship</option>
+                            <option value="Food Assistance">Food Assistance</option>
+                            <option value="Medical Assistance">Medical Assistance</option>
+                            <option value="Cash Assistance">Cash Assistance</option>
+                            <option value="Educational Assistance">Educational Assitance</option>
+                            <option value="Police Clearance">Police Clearance</option>
+                            <option value="Employment">Employment</option>
+                        </select>
                 </div>
                 <div class ="select-doc">
                         <span class="choosedocument">Choose Document</span>
@@ -51,7 +55,7 @@
                         <input type="radio" id="rdCOC" class="rdCOc" name="choosedoc" value="Barangay Clearance">
                         <label for="html">Barangay Clearance</label> <br>
                 </div>
-                <input type="submit" class="btn-send" value="SEND REQUEST">
+                <input type="submit" name="request" class="btn-send" value="SEND REQUEST">
             </form>
             <a href="http://localhost/document-fill-up-automation-website/login.php" class="link">Administrator</a>
         </div>
