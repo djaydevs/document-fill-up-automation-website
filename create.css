@@ -164,6 +164,7 @@ html {
     height: 20px;
     width: 215px;
     outline: solid #0A93E3;
+    outline-width: 2.2px;
     border: none;
     border-radius: 8px;
     padding: 0.7em 0.8em 0.7em 1em;
@@ -189,25 +190,36 @@ html {
     padding: 1em 0 0 31em;
 }
 
-.btn-save, .btn-cancel {
+.btn-save, .btn-back {
     width: 120px;
     height: 45px;
     color: #ffffff;
     border: none;
-    border-radius: 1.5em;
+    border-radius: 0.8em;
     background: #0D4C92;
     transition: background .3s;
     cursor: pointer;
     margin-left: 15.5em;
     font-size: 15px;
 }
+.btn-save:hover {
+    color: #ffffff;
+    background: rgb(12, 129, 51);;
 
-.btn-cancel  {
-    margin-left: 2em;
+}
+
+.btn-back {
+    margin-left: 1em;
     color: #0A93E3;
     background: white;
     outline: solid #0D4C92;
+    outline-width: 2px;
     height: 100px;
     text-decoration: none;
     padding: 10px 35px 10px 35px;
+    font-size: 17px;
+}
+.btn-back:hover {
+    background: rgb(8, 81, 238);
+    color: #ffffff;
 }

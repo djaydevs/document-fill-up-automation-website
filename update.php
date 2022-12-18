@@ -12,7 +12,7 @@ require 'connection.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel="stylesheet">
-    <link rel="stylesheet" href="create.css">
+    <link rel="stylesheet" href="create.css?v=<?php echo time(); ?>">
     <title>Residents Data</title>
 </head>
 <body>
@@ -121,7 +121,7 @@ require 'connection.php';
 
                 <div class="form-btn">
                     <button type="submit" name="update_record" class="btn-save" >Update</button>
-                    <a href="residentsdata.php" class="btn-cancel">Back</a>
+                    <a href="residentsdata.php" class="btn-back">Back</a>
                 </div>
                 
             </form>
