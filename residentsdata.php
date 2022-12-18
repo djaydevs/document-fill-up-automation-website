@@ -94,7 +94,8 @@
                                         <a class="u-btn"href="update.php?rin=<?=$row['rin'];?>">Update</a>
                                         <form action="crud.php" method="POST" class="btn-form">
                                             <button type="submit" name="delete_record" value="<?=$row['rin'];?>">Delete</button>
-                                        </form>   
+                                        </form> 
+                                        <button type="button" value="<?=$row['rin'];?>" class="confirm_del_btn">Deletetest</button>  
                                     </td>
                                 </tr>
 
@@ -114,14 +115,5 @@
     </div> 
     <script src="js/sweetalert.min.js"></script>
     <?php include('js/scriptforstatus.php')?>
-    <!-- <script>
-        swal({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success",
-            button: "Aww yiss!",
-        });
-    </script> -->
-    
 </body>
 </html>   

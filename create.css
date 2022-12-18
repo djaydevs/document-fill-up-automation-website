@@ -155,19 +155,24 @@ html {
 .rbtn_gender #gender {
     display: inline;
 }
+#gender{
+    width: 50px;
+    font-size: 50px;
+}
 
 #lname, #fname, #initial, #housenum, #street, #age, #yos, #bday, #bplace, #contact {
     height: 20px;
-    width: fit-content;
+    width: 215px;
     outline: solid #0A93E3;
     border: none;
     border-radius: 8px;
-    padding: 0.3em 0.8em 0.2em 0.2em;
+    padding: 0.7em 0.8em 0.7em 1em;
+    font-size: 15px;
 }
 
 #lname, #fname, #initial {
     margin-top: 3%;
-    width: 155px;
+    
 }
 
 .input_lname, .input_fname, .input_mi, .u-stay, .u-age, .u-bday, .u-bplace, .contact, .rbtn_gender, .user_address{
@@ -175,7 +180,7 @@ html {
 }
 
 .u-bplace {
-    margin-left: 2em;
+    margin-left: 0.08em;
 }
 
 /*button*/
@@ -185,22 +190,24 @@ html {
 }
 
 .btn-save, .btn-cancel {
-    width: 80px;
-    height: 35px;
+    width: 120px;
+    height: 45px;
     color: #ffffff;
     border: none;
     border-radius: 1.5em;
     background: #0D4C92;
     transition: background .3s;
     cursor: pointer;
-    margin-left: 1em;
+    margin-left: 15.5em;
+    font-size: 15px;
 }
 
 .btn-cancel  {
-    margin-left: 5em;
+    margin-left: 2em;
     color: #0A93E3;
     background: white;
     outline: solid #0D4C92;
     height: 100px;
     text-decoration: none;
+    padding: 10px 35px 10px 35px;
 }
