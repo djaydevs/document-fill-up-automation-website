@@ -51,7 +51,7 @@
         </div>
         <h2 class="header">RESIDENTS TABLE</h2>
         <a class="new-btn" id="btn-new"href="/document-fill-up-automation-website/create.php" role = button>
-        <ion-icon name="add-outline"></ion-icon>New Record
+        <ion-icon name="add-outline"></ion-icon>NEW RECORD
         </a>
         <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;"> 
             <table class="content-table">
@@ -94,9 +94,9 @@
                                     <td><?= $row['birthplace']; ?></td>
                                     <td><?= $row['contact']; ?></td>
                                     <td>
-                                        <a href="update.php?rin=<?=$row['rin'];?>">Update</a>
-                                        <form action="crud.php" method="POST" class="">
-                                            <button type="submit" name="delete_record" value="<?=$row['rin'];?>">Delete</button>
+                                        <a class="u-btn"href="update.php?rin=<?=$row['rin'];?>">Update</a>
+                                        <form action="crud.php" method="POST" class="btn-form">
+                                            <button class="d-btn"type="submit" name="delete_record" value="<?=$row['rin'];?>">Delete</button>
                                         </form>   
                                     </td>
                                 </tr>
