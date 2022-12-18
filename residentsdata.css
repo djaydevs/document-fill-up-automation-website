@@ -119,7 +119,7 @@ h2{
     font-size: 40px;
     text-align: center;
     color: #1074b8;
-    text-shadow: 3px 1px 1px rgb(17, 218, 107);
+    text-shadow: 3px 1px 1px rgb(29, 236, 122);
 }
 
 .container{
@@ -132,6 +132,8 @@ h2{
     height: 650px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin-top: 50px;
+    border-radius: 13px 13px 0 0;
+
 }
 .content-table{
     border-collapse: collapse;
@@ -185,4 +187,34 @@ h2{
 .btn-form{
     display: inline;
     padding-left: 10px;
+}
+.u-btn {
+    color: #0A93E3;
+    background: white;
+    outline: solid #0D4C92;
+    outline-width: 2px;
+    height: 100px;
+    text-decoration: none;
+    padding: 5px 15px 5px 15px;
+    border-radius: 0.5em;
+}
+.u-btn:hover{
+    background: rgb(8, 81, 238);
+    color: #ffffff;
+}
+button {
+    width: 90px;
+    height: 34px;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5em;
+    background: #0D4C92;
+    transition: background .3s;
+    cursor: pointer;
+    font-size: 15px;
+}
+button:hover {
+    background: rgb(214, 8, 8);
+    color: #ffffff;
+
 }

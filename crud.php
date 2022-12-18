@@ -71,7 +71,7 @@ if(isset($_POST['delete_record'])) {
 
     $sql = "DELETE FROM table_residents WHERE rin='$residents_rin' ";
     $result = mysqli_query($conn, $sql);
-
+  
     if($result){
 
         $_SESSION['status']= "Residents Data Deleted Successfully !";
@@ -81,8 +81,8 @@ if(isset($_POST['delete_record'])) {
 
         $_SESSION['status']= "Residents Data failed to delete !";
         header("Location: residentsdata.php");
-
     }
 }
+
 
 ?>

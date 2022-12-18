@@ -93,9 +93,9 @@
                                     <td>
                                         <a class="u-btn"href="update.php?rin=<?=$row['rin'];?>">Update</a>
                                         <form action="crud.php" method="POST" class="btn-form">
-                                            <button type="submit" name="delete_record" value="<?=$row['rin'];?>">Delete</button>
+                                            <button type="submit" name="delete_record" value="<?=$row['rin'];?>" onclick="return confirmDelete();">Delete</button>
                                         </form> 
-                                        <button type="button" value="<?=$row['rin'];?>" class="confirm_del_btn">Deletetest</button>  
+                                        <!-- <button type="button" value="<?=$row['rin'];?>" class="confirm_del_btn">Deletetest</button>   -->
                                     </td>
                                 </tr>
 
@@ -115,5 +115,10 @@
     </div> 
     <script src="js/sweetalert.min.js"></script>
     <?php include('js/scriptforstatus.php')?>
+    <script>
+    function confirmDelete() {
+    return confirm('Are you sure you want to delete this record?');
+    }
+    </script>
 </body>
 </html>   

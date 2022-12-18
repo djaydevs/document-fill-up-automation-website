@@ -11,7 +11,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel="stylesheet">
-    <link rel="stylesheet" href="create.css">
+    <link rel="stylesheet" href="create.css?v=<?php echo time(); ?>">
     <title>Document Fill-Up Automation Website - Resident Data</title>
 </head>
 <body>
@@ -111,7 +111,7 @@ session_start();
 
                 <div class="form-btn">
                 <input type="submit" value="SAVE" class="btn-save" name="save_record">
-                <a href="residentsdata.php" class="btn-cancel">Back</a>
+                <a href="residentsdata.php" class="btn-back">Back</a>
                 </div>
             </form>
         </div>
