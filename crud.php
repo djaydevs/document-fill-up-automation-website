@@ -24,14 +24,13 @@ if(isset($_POST['save_record']))
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        $_SESSION['alert']= "Residents Data Added Successfully !";
-        header("Location: create.php");
-        exit(0);
+
+        $_SESSION['status'] = "Residents Data Added Successfully !";
+        header("Location: residentsdata.php");
     }
     else {
-        $_SESSION['alert']= "Residents Data failed to save !";
+        $_SESSION['status']= "Residents Data failed to save !";
         header("Location: create.php");
-        exit(0);
     }
 }
 
@@ -56,15 +55,13 @@ if(isset($_POST['update_record'])){
 
     if($result){
 
-        $_SESSION['alert']= "Residents Data Updated Successfully !";
+        $_SESSION['status']= "Residents Data Updated Successfully !";
         header("Location: residentsdata.php");
-        exit(0);
 
     }else {
 
-        $_SESSION['alert']= "Residents Data failed to update !";
+        $_SESSION['status']= "Residents Data failed to update !";
         header("Location: residentsdata.php");
-        exit(0);
 
     }
 }
@@ -77,19 +74,15 @@ if(isset($_POST['delete_record'])) {
 
     if($result){
 
-        $_SESSION['alert']= "Residents Data Deleted Successfully !";
+        $_SESSION['status']= "Residents Data Deleted Successfully !";
         header("Location: residentsdata.php");
-        exit(0);
 
     }else {
 
-        $_SESSION['alert']= "Residents Data failed to delete !";
+        $_SESSION['status']= "Residents Data failed to delete !";
         header("Location: residentsdata.php");
-        exit(0);
 
     }
-
-
-
 }
+
 ?>

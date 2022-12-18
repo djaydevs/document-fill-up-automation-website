@@ -44,9 +44,6 @@ session_start();
     
     <div class="container"> 
         <div class="left-column">
-            <div>
-                <?php include('alert.php'); ?>
-            </div>
             <form action="crud.php" method="POST" class="residents-form">
                 <h1 class="form-title">Residents Registration</h2>
 
@@ -69,7 +66,8 @@ session_start();
                 <div class="user_address">
                     <label for="address">Address</label>
                     <br>
-                    <input type="number" name="housenum" id="housenum"  placeholder="Enter house number" > &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="housenum" id="housenum"  placeholder="Enter house number" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="text" name="street" id="street"  placeholder="Enter street">
                 </div>
 
@@ -78,6 +76,7 @@ session_start();
                     <input type="radio" name="gender"  id="gender" value="Male"> Male
                     <input type="radio" name="gender"  id="gender" value="Female"> Female
                 </div>
+
                 <div class="userAY">
 
                     <div class="u-age">
@@ -91,6 +90,7 @@ session_start();
                     </div>
 
                 </div>
+
                 <div class="u-bp">
                     <div class="u-bday">
                         <label for="birthday">Date of birth</label><br>
@@ -115,7 +115,6 @@ session_start();
                 </div>
             </form>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>   
+    </div> 
 </body>
 </html>
