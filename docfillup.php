@@ -67,6 +67,23 @@
             <div class="right-section">
         </div>
     </div>
+
+
+    <div class="select-menu">
+                    <div class="select-btn">
+                        <span class="sBtn-text">Purpose of Document</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </div>
+                    <ul class="options">
+                        <li class="option"><span class="option-text" name="purpose" value="Scholarship">Scholarship</span></li>
+                        <li class="option"><span class="option-text" name="purpose" value="Food Assistance">Food Assistance</span></li>
+                        <li class="option"><span class="option-text" name="purpose" value="Medical Assistance">Medical Assistance</span></li>
+                        <li class="option"><span class="option-text">Cash Assistance</span></li>
+                        <li class="option"><span class="option-text">Educational Assistance</span></li>
+                        <li class="option"><span class="option-text">Police Clearance</span></li>
+                        <li class="option"><span class="option-text">Employment</span></li>
+                    </ul>
+                </div>
 -->
 </body>
 </html>
