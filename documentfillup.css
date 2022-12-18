@@ -12,7 +12,7 @@ html {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 550px;
+    grid-gap: 630px;
 }
 
 .topnav {
@@ -202,11 +202,12 @@ html {
 }
 
 .request-table tbody tr {
+    font-size: 15px;
     border-bottom: 1px solid #59C1BD;
 }
 
 .request-table tbody tr:nth-of-type(even) {
-    background-color: rgba(46, 77, 216, 0.1);
+    background-color: rgb(222, 226, 241);
 }
 
 .request-table tbody tr:last-of-type {
@@ -220,7 +221,7 @@ html {
     align-items: center;
     margin: auto;
     margin-top: 100px;
-    margin-right: 2em;
+    margin-right: 1em;
     margin-bottom: 3em;
 }
 
@@ -319,12 +320,156 @@ input {
 #resname2, #resage2, #resaddress2, #stay2, #resname_2, #respurpose2, #month2, #day2, #year2, #date2, #res_name_2 {
     position: absolute;
     display: none;
-    width: 230px;
+    width: 227px;
     height: 20px;
     left: 507px;
-    top: 296px;
+    top: 292px;
     text-align: center;
     font-weight: 600;
+}
+
+#resage2 {
+    width: 30px;
+    left: 749px;
+    height: 20px;
+}
+
+#resaddress2 {
+    width: 201px;
+    height: 20px;
+    left: 527px;
+    top: 315px;
+}
+
+#stay2 {
+    width: 47px;
+    height: 20px;
+    left: 694px;
+    top: 338px;
+}
+
+#resname_2 {
+    width: 219px;
+    height: 20px;
+    left: 290px;
+    top: 420px;
+}
+
+#respurpose2 {
+    width: 238px;
+    height: 20px;
+    left: 418px;
+    top: 465px;
+}
+
+#month2 {
+    width: 110px;
+    height: 20px;
+    left: 440px;
+    top: 512px;
+}
+
+#day2 {
+    width: 30px;
+    height: 20px;
+    left: 557px;
+    top: 512px;
+}
+
+#year2 {
+    width: 40px;
+    height: 20px;
+    left: 601px;
+    top: 512px;
+}
+
+#date2 {
+    width: 68px;
+    height: 20px;
+    left: 607px;
+    top: 676px;
+    font-size: 10px;
+}
+
+#res_name_2 {
+    width: 210px;
+    height: 20px;
+    left: 290px;
+    top: 816px;
+}
+
+#resname3, #resage3, #resaddress3, #stay3, #respurpose3, #month3, #day3, #year3, #date3, #resname_3 {
+    position: absolute;
+    display: none;
+    width: 235px;
+    height: 20px;
+    left: 493px;
+    top: 301px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#resage3 {
+    width: 35px;
+    left: 744px;
+    height: 20px;
+}
+
+#resaddress3 {
+    width: 207px;
+    height: 20px;
+    left: 292px;
+    top: 345px;
+}
+
+#stay3 {
+    width: 47px;
+    height: 20px;
+    left: 468px;
+    top: 368px;
+}
+
+#respurpose3 {
+    width: 238px;
+    height: 20px;
+    left: 418px;
+    top: 495px;
+}
+
+#month3 {
+    width: 92px;
+    height: 20px;
+    left: 440px;
+    top: 527px;
+}
+
+#day3 {
+    width: 40px;
+    height: 20px;
+    left: 540px;
+    top: 527px;
+}
+
+#year3 {
+    width: 51px;
+    height: 20px;
+    left: 592px;
+    top: 527px;
+}
+
+#date3 {
+    width: 68px;
+    height: 20px;
+    left: 606px;
+    top: 703px;
+    font-size: 10px;
+}
+
+#resname_3 {
+    width: 210px;
+    height: 20px;
+    left: 290px;
+    top: 832px;
 }
 
 

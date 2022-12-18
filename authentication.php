@@ -33,7 +33,7 @@ session_start();
                 if($row['username'] === $uname && $row['password'] === $pass) 
                 {
                     $_SESSION['username'] = $row['username'];
-                    header("Location: docfillup.php");
+                    header("Location: documentfillup.php");
                     exit();
                 }                
             }else {

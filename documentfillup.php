@@ -1,3 +1,37 @@
+<?php require "connection.php"; ?>
+<?php
+    session_start();
+    require "connection.php";
+
+    if(isset($_GET['residentnum'])){
+        //CROSS JOIN to merge the two tables
+        $residents_rin = mysqli_real_escape_string($conn, $_GET['residentnum']);
+        $sql = "INSERT INTO transaction (fname, mi, lname, age, yearofstay, housenum, street, purpose) SELECT table_residents.fname, table_residents.mi, table_residents.lname, 
+        table_residents.age, table_residents.yearofstay, table_residents.housenum, table_residents.street, 
+        tbl_request.purpose FROM table_residents CROSS JOIN tbl_request";
+        $result = mysqli_query($conn, $sql);
+    }
+    
+    //delete the record from the database
+    if(isset($_POST['btn-delete'])) {
+        $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
+    
+        $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
+        $result = mysqli_query($conn, $sql);
+    
+        if($result){
+    
+            $_SESSION['status']= "Residents Data Deleted Successfully !";
+            header("Location: documentfillup.php");
+    
+        }else {
+    
+            $_SESSION['status']= "Residents Data failed to delete !";
+            header("Location: documentfillup.php");
+    
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +60,7 @@
                     <li><a href="create.php">Residents Registration</a></li>
                 </ul>
             </li>
-            <li><a class="active" href="docfillup.php">Document Fill-Up</a></li>
+            <li><a class="active" href="documentfillup.php">Document Fill-Up</a></li>
         </ul>
     </nav>
     <!-- GRID -->
@@ -52,11 +86,57 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <?php
+                            $sql = "SELECT *FROM tbl_request";
+                            $result = mysqli_query($conn, $sql);
+
+                            if( mysqli_num_rows($result) > 0) {
+                                foreach($result as $row){
+                                    ?>
+                                    <tr>
+                                    <td><?= $row['reqid']; ?></td>
+                                    <td><?= $row['residentnum']; ?></td>
+                                    <td><?= $row['name']; ?></td>
+                                    <td><?= $row['purpose']; ?></td>
+                                    <td>
+                                        <a class="u-btn"href="documentfillup.php?residentnum=<?=$row['residentnum'];?>">Create</a>
+                                        <form action="fillup.php" method="POST" class="btn-form">
+                                            <button type="submit" name="btn-delete" value="<?=$row['residentnum'];?>">Delete</button>
+                                        </form> 
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }else {
+                                echo "No Record Found";
+                            } 
+                        ?>
+                    </tbody>
+                    <tbody style="display:none;">
+                        <?php
+                            $sql = "SELECT *FROM transaction";
+                            $result = mysqli_query($conn, $sql);
+
+                            if( mysqli_num_rows($result) > 0) {
+                                foreach($result as $row){
+                                ?>
+                                    <tr>
+                                        <td><?= $row['trans_id']; ?></td>
+                                        <td id="firstname"><?= $row['fname']; ?></td>
+                                        <td id="initial"><?= $row['mi']; ?></td>
+                                        <td id="lastname"><?= $row['lname']; ?></td>
+                                        <td id="age"><?= $row['age']; ?></td>
+                                        <td id="yearstay"><?= $row['yearofstay']; ?></td>
+                                        <td id="housenum"><?= $row['housenum']; ?></td>
+                                        <td id="street"><?= $row['street']; ?></td>
+                                        <td id="purpose"><?= $row['purpose']; ?></td>
+                                    </tr>
+                                    <?php
+                                }
+                            }else {
+                                echo "No Record Found";
+                            } 
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -85,15 +165,17 @@
                     <input type="text" name="year" id="year2" value="">
                     <input type="text" name="date" id="date2" value="">
                     <input type="text" name="resname" id="res_name_2" value="">
-                    <!-- INPUT TYPE FOR CLEARANCE
+                    <!-- INPUT TYPE FOR CLEARANCE -->
                     <input type="text" name="resname" id="resname3" value="">
                     <input type="text" name="resage" id="resage3" value="">
                     <input type="text" name="resaddress" id="resaddress3" value="">
+                    <input type="text" name="stay" id="stay3" value="">
                     <input type="text" name="respurpose" id="respurpose3" value="">
                     <input type="text" name="month" id="month3" value="">
                     <input type="text" name="day" id="day3" value="">
                     <input type="text" name="year" id="year3" value="">
-                    <input type="text" name="date" id="date3" value=""-->
+                    <input type="text" name="date" id="date3" value="">
+                    <input type="text" name="resname" id="resname_3" value=""
                     <!-- DOCUMENT IMAGES -->
                     <img src="assets/docindigency.svg" id="docCOI" alt="">
                     <img src="assets/docresidency.svg" id="docCOR" alt="">
@@ -101,7 +183,6 @@
                 </div>
                 <button id="btnsave">Save or Print Document</button>
             </div>
-            
         </div>
     </div>
     <!-- SCRIPT FOR SAVING/PRINTING DOCUMENT -->
