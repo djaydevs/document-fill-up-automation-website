@@ -192,7 +192,7 @@ h2{
     color: #0A93E3;
     background: white;
     outline: solid #0D4C92;
-    outline-width: 2px;
+    outline-width: 1.5px;
     height: 100px;
     text-decoration: none;
     padding: 5px 15px 5px 15px;
@@ -216,5 +216,10 @@ button {
 button:hover {
     background: rgb(214, 8, 8);
     color: #ffffff;
-
+}
+.search-form{
+    margin-left: 76.5em;
+    display: inline-flex;
+    position: absolute;
+    margin-top: 1em;
 }

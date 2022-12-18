@@ -13,7 +13,7 @@ require 'connection.php';
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel="stylesheet">
     <link rel="stylesheet" href="create.css?v=<?php echo time(); ?>">
-    <title>Residents Data</title>
+    <title>Document Fill-Up Automation Website - Edit Residents Data Form</title>
 </head>
 <body>
 <nav class="topnav">
