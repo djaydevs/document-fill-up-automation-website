@@ -43,6 +43,7 @@
                 <table class="request-table" id="table" >
                     <thead>
                         <tr>
+                            <th>No.</th>
                             <th>Resident No.</th>
                             <th>Name</th>
                             <th>Document Purpose</th>
@@ -54,6 +55,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
                     </tbody>
                 </table>
             </div>
@@ -61,11 +63,15 @@
         <div class="pdf-container">
             <div class="pdf-border">
                 <div id="pdf-view">
-                    <img src="assets/docindigency.svg" alt="">
                     <input type="text" name="resname" id="resname" value="">
                     <input type="text" name="resage" id="resage" value="">
                     <input type="text" name="resaddress" id="resaddress" value="">
                     <input type="text" name="respurpose" id="respurpose" value="">
+                    <input type="text" name="month" id="month" value="">
+                    <input type="text" name="day" id="day" value="">
+                    <input type="text" name="year" id="year" value="">
+                    <input type="text" name="date" id="date" value="">
+                    <img src="assets/docindigency.svg" alt="">
                 </div>
             </div>
             <button id="btnsave">Save Document</button>
