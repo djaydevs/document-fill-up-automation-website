@@ -495,3 +495,19 @@ input {
     color: #0D4C92;
     font-weight: bold;
 }
+.del-btn {
+    background: url(assets/del_black.svg) no-repeat;
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    color:rgb(0, 0, 0,0);
+}
+.del-btn:hover{
+    background: url(assets/del_red.svg) no-repeat;
+    background-size: 29px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    color:rgb(0, 0, 0,0);
+}
