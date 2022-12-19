@@ -57,9 +57,9 @@
                 <!-- ON CLICK SWITCH DOCUMENT -->
                 <p class="doc-text">Choose Document</p>
                 <div class="switchdoc">
-                    <button class="btndoc" onclick="switchDoc1()" >Certificate of Indigency</button><br>
-                    <button class="btndoc" onclick="switchDoc2()" >Certificate of Residency</button><br>
-                    <button class="btndoc" onclick="switchDoc3()" >Barangay Clearance</button>
+                    <button class="btndoc" onclick="switchDoc1()" id="COI">Certificate of Indigency</button><br>
+                    <button class="btndoc" onclick="switchDoc2()" id="COR" >Certificate of Residency</button><br>
+                    <button class="btndoc" onclick="switchDoc3()" id="COC" >Barangay Clearance</button>
                 </div>
                 <p class="request-text">Residents Request</p>
                 <!--TABLE-->
