@@ -47,15 +47,18 @@
     </nav>
     <div class="container">
         <h2 class="header">RESIDENTS TABLE</h2>
-        <form action=""class="search-form" method="GET">
-                <input type="text" name="search" value="<?php if(isset($_GET['search'])) {echo $_GET['search']; }?>" class="" placeholder="Search Record">
-                <button type="submit" class="btn-search">Search</button>
-        </form>
+        
         <a class="new-btn" id="btn-new"href="/document-fill-up-automation-website/create.php" role = button>
         <ion-icon name="add-outline"></ion-icon>NEW RECORD
-       
         </a>
         <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;"> 
+        <div class="float-r">
+            <form action=""class="search-form" method="POST">
+                    <input type="text" name="search" id="search-box" class="txt-search" placeholder="Search Record">
+                    <button id="btn-search">Search</button>
+            </form>
+        </div>
+
             <table class="content-table">
                 <thead>
                     <tr>
@@ -76,6 +79,10 @@
                 </thead>
                 <tbody>
                     <?php
+                    if(isset($_POST['search'])){
+                        $searchKey = $_POST['search'];
+                        $sql = "SELECT *FROM table_residents WHERE lname LIKE '%$searchKey%' ";
+                    }else
                         $sql = "SELECT *FROM table_residents";
                         $result = mysqli_query($conn, $sql);
 
@@ -98,7 +105,7 @@
                                     <td>
                                         <a class="u-btn"href="update.php?rin=<?=$row['rin'];?>">Update</a>
                                         <form action="crud.php" method="POST" class="btn-form">
-                                            <button type="submit" name="delete_record" value="<?=$row['rin'];?>" onclick="return confirmDelete();">Delete</button>
+                                            <button type="submit" id="btn-del" name="delete_record" value="<?=$row['rin'];?>" onclick="return confirmDelete();">Delete</button>
                                         </form> 
                                         <!-- <button type="button" value="<?=$row['rin'];?>" class="confirm_del_btn">Deletetest</button>   -->
                                     </td>

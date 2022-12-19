@@ -1,4 +1,5 @@
 <?php
+session_start();
 $sname = "localhost";
 $uname = "root";
 $password = "";
@@ -24,8 +25,11 @@ if(isset($_POST ["request"])) {
         if (mysqli_num_rows($result)== 1) {
             $sql = ("INSERT INTO tbl_request(residentnum, name, purpose, document) VALUES ('$rin', '$rname', '$purpose', '$choosedoc')");
             $results = mysqli_query($conn, $sql);
+
+            $_SESSION['status']= "Request Sent Successfully !";
             header("Location: request.php");
             exit();
+
         }else {
             header("Location: request.php?error=Resident data doesn't exist.");
             #exit();

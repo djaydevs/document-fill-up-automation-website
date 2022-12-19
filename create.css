@@ -193,8 +193,12 @@ html {
     padding-left: 2.5em;
 }
 #bday {
+    background: url(assets/ic_date.svg) no-repeat;
+    background-position: 8px 8.2px;
+    background-size: 22px;
     padding-left: 2.5em;
 }
+
 
 
 .input_lname, .input_fname, .input_mi, .u-stay, .u-age, .u-bday, .u-bplace, .contact, .rbtn_gender, .user_address{
@@ -232,7 +236,7 @@ html {
 .btn-back {
     margin-left: 1em;
     color: #0A93E3;
-    background: white;
+    background: rgb(255,255,255,0.5);
     outline: solid #0D4C92;
     outline-width: 1.5px;
     height: 100px;

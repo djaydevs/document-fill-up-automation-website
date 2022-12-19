@@ -119,7 +119,7 @@ h2{
     font-size: 40px;
     text-align: center;
     color: #1074b8;
-    text-shadow: 3px 1px 1px rgb(29, 236, 122);
+    text-shadow: 3px 1px 1px rgb(89, 193, 189, 1);
 }
 
 .container{
@@ -133,7 +133,6 @@ h2{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin-top: 50px;
     border-radius: 13px 13px 0 0;
-
 }
 .content-table{
     border-collapse: collapse;
@@ -141,6 +140,7 @@ h2{
     overflow: hidden;
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 50px;
 }
 .content-table thead tr {
     background-color: cornflowerblue;
@@ -190,7 +190,7 @@ h2{
 }
 .u-btn {
     color: #0A93E3;
-    background: white;
+    background: rgb(255,255,255,0.5);
     outline: solid #0D4C92;
     outline-width: 1.5px;
     height: 100px;
@@ -202,7 +202,7 @@ h2{
     background: rgb(8, 81, 238);
     color: #ffffff;
 }
-button {
+#btn-del {
     width: 90px;
     height: 34px;
     color: #ffffff;
@@ -213,13 +213,37 @@ button {
     cursor: pointer;
     font-size: 15px;
 }
-button:hover {
+#btn-del:hover {
     background: rgb(214, 8, 8);
     color: #ffffff;
 }
 .search-form{
-    margin-left: 76.5em;
+    float: right;
     display: inline-flex;
-    position: absolute;
-    margin-top: 1em;
+    margin-top: 0.5em;
+    margin-right: 16px;
+}
+#search-box {
+    background: url(assets/ic_search.svg) no-repeat;
+    background-position: 8px 5.1px;
+    background-size: 24px;
+    outline: solid #0A93E3;
+    outline-width: 1px;
+    border: none;
+    border-radius: 0.5em;
+    padding-left: 35px;
+}
+#btn-search{
+    width: 90px;
+    height: 34px;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5em;
+    background: #0D4C92;
+    transition: background .3s;
+    cursor: pointer;
+    font-size: 15px;
+}
+#btn-search:hover{
+    background-color: rgb(8, 218, 148);
 }

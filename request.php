@@ -60,6 +60,8 @@ include('requestAuthentication.php');
             <a href="http://localhost/document-fill-up-automation-website/login.php" class="link">Administrator</a>
         </div>
     </div>
+    <script src="js/sweetalert.min.js"></script>
+    <?php include('js/scriptforstatus.php')?>
     <script src="request.js"></script>
 </body>
 </html>
