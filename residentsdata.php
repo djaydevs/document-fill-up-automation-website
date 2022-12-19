@@ -75,7 +75,7 @@
                     <?php
                     if(isset($_POST['search'])){
                         $searchKey = $_POST['search'];
-                        $sql = "SELECT *FROM table_residents WHERE lname LIKE '%$searchKey%' ";
+                        $sql = "SELECT * FROM table_residents WHERE rin LIKE '%$searchKey%' OR lname LIKE '%$searchKey%' OR fname LIKE '%$searchKey%'";
                     }else
                         $sql = "SELECT *FROM table_residents";
                         $result = mysqli_query($conn, $sql);
