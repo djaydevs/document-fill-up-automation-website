@@ -4,53 +4,45 @@ var month = today.toLocaleString('default', { month: 'long' });
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0');
 var yyyy = today.getFullYear();
-
 today = mm + '/' + dd + '/' + yyyy;
 
-var fullname = document.getElementById('fullname');
-var age = document.getElementById('age');
-var address = document.getElementById('address');
-var stay = document.getElementById('stay');
-var purpose = document.getElementById('purpose');
-    
+//initialize table
 var table = document.getElementById('table');
 
-for (var i = 1; i < table.rows.length; i++) {
+for (var i = 1; i < table.rows.length; i++) { //loops through rows in the table
     
-    table.rows[i].onclick = function () {
-        document.getElementById("resname1").value = fullname.innerHTML;
-        document.getElementById("resage1").value = age.innerHTML;
-        document.getElementById("resaddress1").value = address.innerHTML;
-        document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
+    table.rows[i].onclick = function () { //onclick function to display residents data
+        document.getElementById("resname1").value = this.cells[1].innerHTML;
+        document.getElementById("resage1").value = this.cells[2].innerHTML;
+        document.getElementById("resaddress1").value = this.cells[3].innerHTML;
+        document.getElementById("respurpose1").value = this.cells[5].innerHTML.toUpperCase();
         document.getElementById("month1").value = month;
         document.getElementById("day1").value = dd;
         document.getElementById("year1").value = yyyy;
         document.getElementById("date1").value = today;
     
-        document.getElementById("resname2").value = fullname.innerHTML;
-        document.getElementById("resage2").value = age.innerHTML;
-        document.getElementById("resaddress2").value = address.innerHTML;
-        document.getElementById("respurpose2").value = purpose.innerHTML.toUpperCase();
-        document.getElementById("stay2").value = stay.innerHTML;
-        document.getElementById("resname_2").value = fullname.innerHTML;
+        document.getElementById("resname2").value = this.cells[1].innerHTML;
+        document.getElementById("resage2").value = this.cells[2].innerHTML;
+        document.getElementById("resaddress2").value = this.cells[3].innerHTML;
+        document.getElementById("respurpose2").value = this.cells[5].innerHTML.toUpperCase();
+        document.getElementById("stay2").value = this.cells[6].innerHTML;
+        document.getElementById("resname_2").value = this.cells[1].innerHTML;
         document.getElementById("month2").value = month;
         document.getElementById("day2").value = dd;
         document.getElementById("year2").value = yyyy;
         document.getElementById("date2").value = today;
-        document.getElementById("res_name_2").value = fullname.innerHTML.toUpperCase();
+        document.getElementById("res_name_2").value = this.cells[1].innerHTML.toUpperCase();
 
-        document.getElementById("resname3").value = fullname.innerHTML;
-        document.getElementById("resage3").value = age.innerHTML;
-        document.getElementById("resaddress3").value = address.innerHTML;
-        document.getElementById("respurpose3").value = purpose.innerHTML.toUpperCase();
-        document.getElementById("stay3").value = stay.innerHTML;
+        document.getElementById("resname3").value = this.cells[1].innerHTML;
+        document.getElementById("resage3").value = this.cells[2].innerHTML;
+        document.getElementById("resaddress3").value = this.cells[3].innerHTML;
+        document.getElementById("respurpose3").value = this.cells[5].innerHTML.toUpperCase();
+        document.getElementById("stay3").value = this.cells[6].innerHTML;
         document.getElementById("month3").value = month;
         document.getElementById("day3").value = dd;
         document.getElementById("year3").value = yyyy;
         document.getElementById("date3").value = today;
-        document.getElementById("resname_3").value = fullname.innerHTML.toUpperCase();
-        
-        return i;
+        document.getElementById("resname_3").value = this.cells[1].innerHTML.toUpperCase();
     };
     
 }
@@ -60,11 +52,6 @@ const switchDoc1 = function() { //function for indigency
     document.getElementById("docCOI").style.display="block";
     document.getElementById("docCOR").style.display="none";
     document.getElementById("docCOC").style.display="none";
-    
-    //document.getElementById("resname1").value = fname.innerHTML + " " + mi.innerHTML + ". " + lname.innerHTML;
-    //document.getElementById("resage1").value = age.innerHTML;
-    //document.getElementById("resaddress1").value = housenum.innerHTML + " " + street.innerHTML; 
-    //document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
 
     document.getElementById("resname1").style.display="block";
     document.getElementById("resage1").style.display="block";

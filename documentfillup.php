@@ -77,10 +77,10 @@
                         <tbody>
                             <?php //access two tables from database
                                 $connect = mysqli_connect("localhost", "root", "", "brgydb") or die("Connection Failed");
-                                $query = "select res.*,req.document, res.*,req.purpose from table_residents res, tbl_request req where res.rin = req.residentnum";
+                                $query = "select res.*,req.residentnum, res.*,req.document, res.*,req.purpose from table_residents res, tbl_request req where res.rin = req.residentnum";
                                 $result = mysqli_query($connect, $query);
-
-                                while ($row = mysqli_fetch_assoc($result)) {
+                                if(isset($_GET['rin']) == isset($_GET['residentnum'])){
+                                    while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
                                         <tr>
                                             <td><?php echo $row['rin']?></td>
@@ -97,7 +97,8 @@
                                             </td>
                                         </tr>
                                     <?php
-                                }
+                                    }
+                                }    
                             ?>
                         </tbody>
                     </table>
