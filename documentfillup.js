@@ -9,16 +9,37 @@ today = mm + '/' + dd + '/' + yyyy;
 //console.log(month);
 //console.log(today);
 
-//var fname = document.getElementById('firstname');
-//var mi = document.getElementById('initial');
-//var lname = document.getElementById('lastname');
-//var age = document.getElementById('age');
-//var stay = document.getElementById("stay");
-//var purpose = document.getElementById('purpose');
-//var housenum = document.getElementById('housenum');
-//var street = document.getElementById('street');
+var fullname = document.getElementById('fullname');
+var age = document.getElementById('age');
+var address = document.getElementById('address');
+var stay = document.getElementById('stay');
+var purpose = document.getElementById('purpose');
+    
+var table = document.getElementById('table');
 
+for (var i = 1; i < table.rows.length; i++) {
 
+    table.rows[i].onclick = function () {
+        document.getElementById("resname1").value = fullname.innerHTML;
+        document.getElementById("resage1").value = age.innerHTML;
+        document.getElementById("resaddress1").value = address.innerHTML;
+        document.getElementById("respurpose1").value = purpose.innerHTML;
+        document.getElementById("month1").value = month;
+        document.getElementById("day1").value = dd;
+        document.getElementById("year1").value = yyyy;
+        document.getElementById("date1").value = today;
+    
+        document.getElementById("resname2").value = fullname.innerHTML;
+        document.getElementById("resage2").value = age.innerHTML;
+        document.getElementById("resaddress2").value = address.innerHTML;
+        document.getElementById("respurpose2").value = purpose.innerHTML;
+        document.getElementById("stay2").value = stay.innerHTML;
+        document.getElementById("month2").value = month;
+        document.getElementById("day2").value = dd;
+        document.getElementById("year2").value = yyyy;
+        document.getElementById("date2").value = today;
+    };
+}
 const switchDoc1 = function() { //function for indigency
     //let swithDocu = document.querySelector("#docpic");
     //swithDocu.setAttribute("src", fileName);
@@ -30,10 +51,6 @@ const switchDoc1 = function() { //function for indigency
     //document.getElementById("resage1").value = age.innerHTML;
     //document.getElementById("resaddress1").value = housenum.innerHTML + " " + street.innerHTML; 
     //document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
-    document.getElementById("month1").value = month;
-    document.getElementById("day1").value = dd;
-    document.getElementById("year1").value = yyyy;
-    document.getElementById("date1").value = today;
 
     document.getElementById("resname1").style.display="block";
     document.getElementById("resage1").style.display="block";
@@ -72,12 +89,6 @@ const switchDoc2 = function() { //function for residency
     document.getElementById("docCOI").style.display="none";
     document.getElementById("docCOR").style.display="block";
     document.getElementById("docCOC").style.display="none";
-
-    document.getElementById("month2").value = month;
-    document.getElementById("day2").value = dd;
-    document.getElementById("year2").value = yyyy;
-    document.getElementById("date2").value = today;
-    //console.log(today);
 
     document.getElementById("resname2").style.display="block";
     document.getElementById("resage2").style.display="block";
