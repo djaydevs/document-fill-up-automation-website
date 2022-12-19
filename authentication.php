@@ -32,7 +32,6 @@ session_start();
                 $row = mysqli_fetch_assoc($result);
                 if($row['username'] === $uname && $row['password'] === $pass) 
                 {
-                    $_SESSION['username'] = $row['username'];
                     header("Location: documentfillup.php");
                     exit();
                 }                
