@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="residentsdata.css ?v=<?php echo time(); ?>">
-    <title>Residents Data</title>
+    <title>Document Fill-Up Automation Website - Residents Data</title>
   
 </head>
 <body>
@@ -29,14 +29,14 @@
                     <li class="ul-li-acc"><a href="request.php">Log Out</a></li>
                 </ul>
             </li>
-            <li><a href="residentsdata.php">Residents Data</a>
+            <li><a class="active" href="residentsdata.php">Residents Data</a>
                 <ul>
                     <li><a href="residentsdata.php">Residents Table View</a></li>
                     <li><a href="create.php">Residents Registration</a></li>
                     <li><a href="">Residents Modification</a></li>
                 </ul>
             </li>
-            <li><a class="active" href="#">Document Fill-Up</a>
+            <li><a href="#">Document Fill-Up</a>
                 <ul>
                     <li><a href="indigency.php">Certificate of Indigency</a></li>
                     <li><a href="residency.php">Certificate of Residency</a></li>
@@ -47,8 +47,13 @@
     </nav>
     <div class="container">
         <h2 class="header">RESIDENTS TABLE</h2>
+        <form action=""class="search-form" method="GET">
+                <input type="text" name="search" value="<?php if(isset($_GET['search'])) {echo $_GET['search']; }?>" class="" placeholder="Search Record">
+                <button type="submit" class="btn-search">Search</button>
+        </form>
         <a class="new-btn" id="btn-new"href="/document-fill-up-automation-website/create.php" role = button>
         <ion-icon name="add-outline"></ion-icon>NEW RECORD
+       
         </a>
         <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;"> 
             <table class="content-table">
@@ -105,10 +110,8 @@
 
                         }else {
                             echo "No Record Found";
-                        }
-                        
+                        }                  
                     ?>
-                
                 </tbody>
             </table>
         </div>
