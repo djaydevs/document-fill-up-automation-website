@@ -1,5 +1,6 @@
+<!-- DATABASE CONNECTION -->
 <?php
-    //session_start();
+    
     $sname = "localhost";
     $uname = "root";
     $password = "";
@@ -9,6 +10,5 @@
 
     if (!$conn) {
         die('Connection Failed'. mysqli_connect_error());
-    }
-    
+    } 
 ?>

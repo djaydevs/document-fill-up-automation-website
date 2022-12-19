@@ -38,8 +38,10 @@
                 <li><a href="documentfillup.php">Document Fill-Up</a></li>
             </ul>
         </nav>
+    
     <div class="container">
         <h2 class="header">RESIDENTS TABLE</h2>
+        <!-- SEARCH AND NEW RECORD FORM-->
         <div class="new-search-container">
             <div class="float-r">
                 <form action=""class="search-form" method="POST">
@@ -51,6 +53,7 @@
                 <ion-icon class="ion-icon" name="add-outline"></ion-icon>   NEW RECORD
             </a>
         </div>
+        <!-- RESIDENTS RECORD TABLE -->
         <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;"> 
             <table class="content-table">
                 <thead>
@@ -71,11 +74,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- SEARCH RECORD FROM THE DATABASE AND FILTER TABLE -->
                     <?php
                     if(isset($_POST['search'])){
                         $searchKey = $_POST['search'];
                         $sql = "SELECT * FROM table_residents WHERE rin LIKE '%$searchKey%' OR lname LIKE '%$searchKey%' OR fname LIKE '%$searchKey%'";
                     }else
+                        // DISPLAY RESIDENTS RECORD FROM DATABASE TO TABLE
                         $sql = "SELECT *FROM table_residents";
                         $result = mysqli_query($conn, $sql);
 
@@ -100,12 +105,9 @@
                                         <form action="crud.php" method="POST" class="btn-form">
                                             <button type="submit" id="btn-del" name="delete_record" value="<?=$row['rin'];?>" onclick="return confirmDelete();">Delete</button>
                                         </form> 
-                                        <!-- <button type="button" value="<?=$row['rin'];?>" class="confirm_del_btn">Deletetest</button>   -->
                                     </td>
                                 </tr>
-
                                 <?php
-
                             }
 
                         }else {
@@ -115,7 +117,8 @@
                 </tbody>
             </table>
         </div>
-    </div> 
+    </div>
+    <!-- SCRIPT FOR ALERT -->
     <script src="js/sweetalert.min.js"></script>
     <?php include('js/scriptforstatus.php')?>
     <script>

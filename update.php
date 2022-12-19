@@ -1,4 +1,5 @@
 <?php
+// DATABASE CONNECTION
 require 'connection.php';
 
 ?>
@@ -36,7 +37,8 @@ require 'connection.php';
                 <li><a href="documentfillup.php">Document Fill-Up</a></li>
             </ul>
     </nav>
-    <div class="container"> 
+    <div class="container">
+    <!-- SELECT OR GET DATA FROM DATABASE AND DISPLAY IN EDIT REGISTRATION FORM -->
     <?php 
         if(isset($_GET['rin'])){
 
@@ -48,10 +50,12 @@ require 'connection.php';
                 
                 $row = mysqli_fetch_array($result);
                 ?>
-        <div class="left-column">       
+        <div class="left-column"> 
+            <!-- EDIT REGISTRATION FORM    -->
             <form action="crud.php" method="POST" class="residents-form">
             <h1 class="form-title">Edit Residents Data</h2>
             <input type="hidden" name="residents_rin"  value="<?=$row ['rin'];?>">
+                <!-- RESIDENT NAME -->
                 <div class="user_info">
                     <div class="input_lname">
                     <label for="lname">Last Name</label><br>
@@ -69,7 +73,7 @@ require 'connection.php';
                     <input type="text" name="initial" id="initial" placeholder="Enter your middle initial" value="<?=$row['mi'];?>">
                     </div>
                 </div>
-
+                <!-- RESIDENT ADDRESS -->
                 <div class="user_address">
                     <label for="address">Address</label>
                     <br>
@@ -77,13 +81,13 @@ require 'connection.php';
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="text" name="street" id="street" placeholder="Enter street" value="<?=$row['street'];?>">
                 </div>
-
+                <!-- RESIDENT GENDER -->
                 <div class="rbtn_gender">
                     <span class="gender-title">Gender</span>
                     <input type="radio" name="gender"  id="gender" value="Male"> Male
                     <input type="radio" name="gender"   id="gender" value="Female"> Female
                 </div>
-
+                <!-- RESIDENT AGE AND YEAR OF STAY-->
                 <div class="userAY">
                     <div class="u-age">
                         <label for="age">Age</label><br>
@@ -95,6 +99,7 @@ require 'connection.php';
                         <input type="number" name="yos" id="yos" placeholder="Enter year of stay"value="<?=$row['yearofstay'];?>">
                     </div>
                 </div>
+                <!-- RESIDENT BIRTHDAY AND BIRTHPLACE -->
                 <div class="u-bp">
                     <div class="u-bday">
                         <label for="birthday">Date of birth</label><br>
@@ -106,13 +111,13 @@ require 'connection.php';
                     <input type="text" name="bplace" id="bplace" placeholder="Enter your birthplace" value="<?=$row['birthplace'];?>">
                     </div>
                 </div>
-
+                <!-- RESIDENT CONTACT -->
                 <div class="contact">
                     <label for="contactnum">Contact number</label>
                     <br>
                     <input type="number" name="contact" id="contact" placeholder="Enter your contact number" value="<?=$row['contact'];?>">
                 </div>
-
+                <!-- SAVE AND GO BACK BUTTON -->
                 <div class="form-btn">
                     <button type="submit" name="update_record" class="btn-save" >Update</button>
                     <a href="residentsdata.php" class="btn-back">Back</a>
@@ -120,8 +125,6 @@ require 'connection.php';
                 
             </form>
             <?php
-                
-
             } else {
                 echo"No Such RIN Found";
             }

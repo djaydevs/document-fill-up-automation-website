@@ -1,4 +1,5 @@
 <?php
+// SESSION FOR ALERT
 session_start();
 ?>
 <!DOCTYPE html>
@@ -38,9 +39,10 @@ session_start();
     
     <div class="container"> 
         <div class="left-column">
+            <!-- REGISTRATION FORM -->
             <form action="crud.php" method="POST" class="residents-form">
                 <h1 class="form-title">Residents Registration</h2>
-
+                <!-- RESIDENT NAME -->
                 <div class="user_info">
                     <div class="input_lname">
                         <label for="lname">Last Name</label><br>
@@ -56,7 +58,7 @@ session_start();
                     </div>
 
                 </div>
-
+                <!-- RESIDENT ADDRESS -->
                 <div class="user_address">
                     <label for="address">Address</label>
                     <br>
@@ -64,13 +66,13 @@ session_start();
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="text" name="street" id="street"  placeholder="Enter street">
                 </div>
-
+                <!-- RESIDENT GENDER -->
                 <div class="rbtn_gender">
                     <span class="gender-title">Gender</span>
                     <input type="radio" name="gender"  id="gender" value="Male"> Male
                     <input type="radio" name="gender"  id="gender" value="Female"> Female
                 </div>
-
+                <!-- RESIDENT AGE AND YEAR OF STAY-->
                 <div class="userAY">
 
                     <div class="u-age">
@@ -82,9 +84,8 @@ session_start();
                         <label for="yearofstay">Year of stay</label><br>
                         <input type="number" name="yos" id="yos" placeholder="Enter year of stay">
                     </div>
-
                 </div>
-
+                <!-- RESIDENT BIRTHDAY AND BIRTHPLACE -->
                 <div class="u-bp">
                     <div class="u-bday">
                         <label for="birthday">Date of birth</label><br>
@@ -96,13 +97,13 @@ session_start();
                     <input type="text" name="bplace"  id="bplace" placeholder="Enter your birthplace">
                     </div>
                 </div>
-
+                <!-- RESIDENT CONTACT -->
                 <div class="contact">
                     <label for="contactnum">Contact number</label>
                     <br>
                     <input type="number" name="contact" id="contact" placeholder="Enter your contact number">
                 </div>
-
+                <!-- SAVE AND GO BACK BUTTON -->
                 <div class="form-btn">
                 <input type="submit" value="SAVE" class="btn-save" name="save_record">
                 <a href="residentsdata.php" class="btn-back">Back</a>

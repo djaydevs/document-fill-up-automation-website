@@ -1,7 +1,11 @@
 <?php
+// SESSION FOR ALERT
 session_start();
+// DATABASE CONNECTION
 require 'connection.php';
 
+
+// ADD RESIDENTS DATA TO DATABASE
 if(isset($_POST['save_record']))
 {
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
@@ -33,7 +37,7 @@ if(isset($_POST['save_record']))
         header("Location: create.php");
     }
 }
-
+// UPDATE RESIDENTS DATA IN THE DATABASE
 if(isset($_POST['update_record'])){
     $residents_rin = mysqli_real_escape_string($conn, $_POST['residents_rin']);
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
@@ -65,7 +69,7 @@ if(isset($_POST['update_record'])){
 
     }
 }
-
+// DELETE RECORD FROM THE DATABASE
 if(isset($_POST['delete_record'])) {
     $residents_rin = mysqli_real_escape_string($conn, $_POST['delete_record']);
 

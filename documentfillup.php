@@ -83,7 +83,7 @@
                                 }    
                             ?>
                              <?php 
-                                //delete request from the database
+                                // DELETE REQUEST FROM THE DATABASE AND TABLE
                                 if(isset($_POST['btn-delete'])) {
                                     $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
 
