@@ -64,7 +64,7 @@ form {
     width: max-content;
     height: max-content;
     margin-left: 4%;
-    background: rgb(255, 255, 255, 0.3);
+    background: rgb(255, 255, 255, 0.5);
     outline: solid #0D4C92;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -88,6 +88,23 @@ h2 {
     padding: 1em 0.9em 0.9em 0.9em;
     margin: 10px auto;
     border-radius: 5px;
+    border: none;
+    outline: solid #0A93E3;
+    outline-width: 1.9px;
+    padding-left: 40px;
+    font-size: 15px;
+}
+
+.input-user{
+    background: url(assets/ic_username.svg)no-repeat;
+    background-size: 25px;
+    background-position: 8.5px 13px;
+}
+
+.input-pass{
+    background: url(assets/ic_password.svg)no-repeat;
+    background-size: 30px;
+    background-position: 6px 11px;
 }
 
 label {
@@ -100,11 +117,13 @@ label {
     background: #0D4C92;    
     padding: 0.6em 0.5em 0.6em 0.1em;
     color: #fff;    
-    width: 22em;
+    width: 25em;
+    height: 3.5em;
     border-radius: 15px;
     margin-bottom: 20px;
     font-size: 15px;
     border: none;
+    text-align: center;
 }
 
 .btn-login:hover {

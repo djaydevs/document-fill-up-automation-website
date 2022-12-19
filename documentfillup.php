@@ -1,4 +1,6 @@
-<?php require "connection.php"; 
+<?php 
+    session_start();
+    require 'connection.php'; 
     //delete request from the database
     if(isset($_POST['btn-delete'])) {
         $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
@@ -8,13 +10,12 @@
 
         if($result){
 
-            $_SESSION['status']= "Residents Data Deleted Successfully !";
+            $_SESSION['status']= "Residents Request Deleted Successfully !";
             header("Location: documentfillup.php");
 
         }else {
 
-            $_SESSION['status']= "Residents Data failed to delete !";
-            header("Location: documentfillup.php");
+            $_SESSION['status']= "Residents Request failed to delete !";
 
         }
     }
@@ -33,7 +34,7 @@
     <body>
         <!-- NAVIGATION BAR -->
         <nav class="topnav"> 
-            <img class="logo" src="assets/fatimalogo.svg" alt="logo">
+            <img class="logo" src="css/assets/fatimalogo.svg" alt="logo">
             <p class="tntitle">Barangay Fatima 1</p>
             <ul>
                 <li><a href="#">Account</a>
@@ -92,7 +93,7 @@
                                             <td style="display:none;" id="stay"><?php echo $row['yearofstay']?></td>
                                             <td>
                                                 <form method="POST" class="btn-form">
-                                                    <button type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>"></button>
+                                                    <button type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>" onclick="return confirmDelete();"></button>
                                                 </form> 
                                             </td>
                                         </tr>
@@ -140,9 +141,9 @@
                         <input type="text" name="date" id="date3" value="">
                         <input type="text" name="resname" id="resname_3" value="">
                         <!-- DOCUMENT IMAGES -->
-                        <img src="assets/docindigency.svg" id="docCOI" alt="">
-                        <img src="assets/docresidency.svg" id="docCOR" alt="">
-                        <img src="assets/docclearance.svg" id="docCOC" alt="">
+                        <img src="css/assets/docindigency.svg" id="docCOI" alt="">
+                        <img src="css/assets/docresidency.svg" id="docCOR" alt="">
+                        <img src="css/assets/docclearance.svg" id="docCOC" alt="">
                     </div>
                     <button id="btnsave">Save or Print Document</button>
                 </div>
@@ -157,5 +158,12 @@
             referrerpolicy="no-referrer"></script>
          <!-- SCRIPT FOR DISPLAYING DATA AND ONCLICK EVENTS -->
         <script src="js/documentfillup.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+        <?php include('js/scriptforstatus.php');?>
+        <script>
+            function confirmDelete() {
+            return confirm('Are you sure you want to delete this record?');
+            }
+        </script>
     </body>
 </html>

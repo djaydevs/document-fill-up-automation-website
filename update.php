@@ -18,7 +18,7 @@ require 'connection.php';
 <body>
     <!-- NAVIGATION BAR -->
     <nav class="topnav"> 
-            <img class="logo" src="assets/fatimalogo.svg" alt="logo">
+            <img class="logo" src="css/assets/fatimalogo.svg" alt="logo">
             <p class="tntitle">Barangay Fatima 1</p>
             <ul>
                 <li><a href="#">Account</a>

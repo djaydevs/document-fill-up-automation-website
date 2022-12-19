@@ -17,7 +17,7 @@ include("connection.php");
 <body>
     <div class="grid-container">
         <div class="leftsection">
-            <img src="assets/logovector.svg" alt="">
+            <img src="css/assets/logovector.svg" alt="">
             <p class="title">Document Fill-Up Automation</p>
             <p class="description">Document request and fill-up is now easy and convenient!</p>
         </div>

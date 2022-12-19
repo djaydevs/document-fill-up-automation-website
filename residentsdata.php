@@ -1,7 +1,6 @@
 <?php
     session_start();
     require 'connection.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- NAVIGATION BAR -->
     <nav class="topnav"> 
-            <img class="logo" src="assets/fatimalogo.svg" alt="logo">
+            <img class="logo" src="css/assets/fatimalogo.svg" alt="logo">
             <p class="tntitle">Barangay Fatima 1</p>
             <ul>
                 <li><a href="#">Account</a>
