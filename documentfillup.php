@@ -1,25 +1,7 @@
-<?php require "connection.php"; 
-    //delete request from the database
-    if(isset($_POST['btn-delete'])) {
-        $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
-
-        $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
-        $result = mysqli_query($conn, $sql);
-
-        if($result){
-
-            $_SESSION['status']= "Residents Data Deleted Successfully !";
-            header("Location: documentfillup.php");
-
-        }else {
-
-            $_SESSION['status']= "Residents Data failed to delete !";
-            header("Location: documentfillup.php");
-
-        }
-    }
+<?php
+    require 'connection.php';
+    session_start(); 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,7 +15,7 @@
     <body>
         <!-- NAVIGATION BAR -->
         <nav class="topnav"> 
-            <img class="logo" src="assets/fatimalogo.svg" alt="logo">
+            <img class="logo" src="css/assets/fatimalogo.svg" alt="logo">
             <p class="tntitle">Barangay Fatima 1</p>
             <ul>
                 <li><a href="#">Account</a>
@@ -57,9 +39,9 @@
                 <!-- ON CLICK SWITCH DOCUMENT -->
                 <p class="doc-text">Choose Document</p>
                 <div class="switchdoc">
-                    <button class="btndoc" onclick="switchDoc1()" >Certificate of Indigency</button><br>
-                    <button class="btndoc" onclick="switchDoc2()" >Certificate of Residency</button><br>
-                    <button class="btndoc" onclick="switchDoc3()" >Barangay Clearance</button>
+                    <button class="btndoc" onclick="switchDoc1()" id="COI">Certificate of Indigency</button><br>
+                    <button class="btndoc" onclick="switchDoc2()" id="COR" >Certificate of Residency</button><br>
+                    <button class="btndoc" onclick="switchDoc3()" id="COC" >Barangay Clearance</button>
                 </div>
                 <p class="request-text">Residents Request</p>
                 <!--TABLE-->
@@ -92,13 +74,34 @@
                                             <td style="display:none;" id="stay"><?php echo $row['yearofstay']?></td>
                                             <td>
                                                 <form method="POST" class="btn-form">
-                                                    <button type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>"></button>
+                                                    <button type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>" onclick="return confirmDelete();"></button>
                                                 </form> 
                                             </td>
                                         </tr>
                                     <?php
                                     }
                                 }    
+                            ?>
+                             <?php 
+                                //delete request from the database
+                                if(isset($_POST['btn-delete'])) {
+                                    $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
+
+                                    $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if($result){
+
+                                        $_SESSION['status']= "Residents Request Deleted Successfully !";
+                                        header("Location: documentfillup.php");
+                                        exit();
+
+                                    }else {
+
+                                        $_SESSION['status']= "Residents Request failed to delete !";
+                                        header("Location: documentfillup.php");
+                                    }
+                                }
                             ?>
                         </tbody>
                     </table>
@@ -140,14 +143,15 @@
                         <input type="text" name="date" id="date3" value="">
                         <input type="text" name="resname" id="resname_3" value="">
                         <!-- DOCUMENT IMAGES -->
-                        <img src="assets/docindigency.svg" id="docCOI" alt="">
-                        <img src="assets/docresidency.svg" id="docCOR" alt="">
-                        <img src="assets/docclearance.svg" id="docCOC" alt="">
+                        <img src="css/assets/docindigency.svg" id="docCOI" alt="">
+                        <img src="css/assets/docresidency.svg" id="docCOR" alt="">
+                        <img src="css/assets/docclearance.svg" id="docCOC" alt="">
                     </div>
                     <button id="btnsave">Save or Print Document</button>
                 </div>
             </div>
         </div>
+        
         <!-- SCRIPT FOR SAVING/PRINTING DOCUMENT -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
         <script
@@ -157,5 +161,13 @@
             referrerpolicy="no-referrer"></script>
          <!-- SCRIPT FOR DISPLAYING DATA AND ONCLICK EVENTS -->
         <script src="js/documentfillup.js"></script>
-    </body>
+        <script src="js/sweetalert.min.js"></script>
+        <?php include('js/scriptforstatus.php');?>
+        <script>
+            function confirmDelete() {
+            return confirm('Are you sure you want to delete this record?');
+            }
+        </script>
+       
+</body>
 </html>

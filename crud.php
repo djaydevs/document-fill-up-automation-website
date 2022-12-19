@@ -74,15 +74,14 @@ if(isset($_POST['delete_record'])) {
   
     if($result){
 
-        $_SESSION['status']= "Residents Data Deleted Successfully !";
+        $_SESSION['status'] = "Residents Data Deleted Successfully !";
         header("Location: residentsdata.php");
 
     }else {
 
-        $_SESSION['status']= "Residents Data failed to delete !";
+        $_SESSION['status'] = "Residents Data failed to delete !";
         header("Location: residentsdata.php");
     }
 }
-
 
 ?>

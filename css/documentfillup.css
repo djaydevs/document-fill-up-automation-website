@@ -221,6 +221,7 @@ html {
     font-size: 15px;
     border-bottom: 1px solid #59C1BD;
     background: linear-gradient(90deg, #99cde8 0%, #aae7e2 100%);
+    transition: all .25s ease-in-out;
     cursor: pointer;
 }
 
