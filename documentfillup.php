@@ -1,37 +1,7 @@
-<?php require "connection.php"; ?>
-<?php
+<?php 
     session_start();
-    require "connection.php";
+    require "connection.php"; ?>
 
-    if(isset($_GET['residentnum'])){
-        //CROSS JOIN to merge the two tables
-        $residents_rin = mysqli_real_escape_string($conn, $_GET['residentnum']);
-        $sql = "INSERT INTO transaction (fname, mi, lname, age, yearofstay, housenum, street, purpose) SELECT table_residents.fname, table_residents.mi, table_residents.lname, 
-        table_residents.age, table_residents.yearofstay, table_residents.housenum, table_residents.street, 
-        tbl_request.purpose FROM table_residents CROSS JOIN tbl_request";
-        $result = mysqli_query($conn, $sql);
-    }
-    
-    //delete the record from the database
-    if(isset($_POST['btn-delete'])) {
-        $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
-    
-        $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
-        $result = mysqli_query($conn, $sql);
-    
-        if($result){
-    
-            $_SESSION['status']= "Residents Data Deleted Successfully !";
-            header("Location: documentfillup.php");
-    
-        }else {
-    
-            $_SESSION['status']= "Residents Data failed to delete !";
-            header("Location: documentfillup.php");
-    
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +56,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- WRONG -->
                         <?php
                             $sql = "SELECT *FROM tbl_request";
                             $result = mysqli_query($conn, $sql);
@@ -99,11 +70,11 @@
                                     <td><?= $row['name']; ?></td>
                                     <td><?= $row['purpose']; ?></td>
                                     <td>
-                                        <a class="u-btn"href="documentfillup.php?residentnum=<?=$row['residentnum'];?>">Create</a>
+                                        <button onclick="create()" class="btnrequest" name="btncreate" value="<?=$row['residentnum'];?>">Create</button>
                                         <form action="fillup.php" method="POST" class="btn-form">
                                             <button type="submit" name="btn-delete" value="<?=$row['residentnum'];?>">Delete</button>
                                         </form> 
-                                        </td>
+                                    </td>
                                     </tr>
                                     <?php
                                 }
@@ -175,7 +146,7 @@
                     <input type="text" name="day" id="day3" value="">
                     <input type="text" name="year" id="year3" value="">
                     <input type="text" name="date" id="date3" value="">
-                    <input type="text" name="resname" id="resname_3" value=""
+                    <input type="text" name="resname" id="resname_3" value="">
                     <!-- DOCUMENT IMAGES -->
                     <img src="assets/docindigency.svg" id="docCOI" alt="">
                     <img src="assets/docresidency.svg" id="docCOR" alt="">
@@ -192,7 +163,42 @@
 		integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer"></script>
-    
     <script src="documentfillup.js"></script>
+    <script type="text/javascript">
+        const create = function () {
+            var fname = document.getElementById('firstname');
+            var mi = document.getElementById('initial');
+            var lname = document.getElementById('lastname');
+            var age = document.getElementById('age');
+            var stay = document.getElementById("stay");
+            var purpose = document.getElementById('purpose');
+            var housenum = document.getElementById('housenum');
+            var street = document.getElementById('street');
+            
+            <?php
+                $sql = "SELECT *FROM  transaction";
+                $result = mysqli_query($conn, $sql);
+
+                if( mysqli_num_rows($result) > 0) {
+                    foreach($result as $row){ 
+            ?>
+                    document.getElementById("resname1").value = fname.innerHTML + " " + mi.innerHTML + ". " + lname.innerHTML;
+                    document.getElementById("resage1").value = age.innerHTML;
+                    document.getElementById("resaddress1").value =  housenum.innerHTML + " " + street.innerHTML;
+                    document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
+
+                    document.getElementById("resname2").value = "<?= $row['fname']; ?> <?= $row['mi']; ?>. <?= $row['lname']; ?>";
+                    document.getElementById("resage2").value = "<?= $row['age']; ?>";
+                    document.getElementById("resaddress2").value = "<?= $row['housenum']; ?> <?= $row['street']; ?>";
+                    document.getElementById("respurpose2").value = "<?= $row['purpose']; ?>".toUpperCase();
+                    document.getElementById("stay2").value = "<?= $row['yearofstay']; ?>";
+            <?php
+                    }
+                }else {
+                    echo "No Record Found";
+                } 
+            ?>
+        }
+    </script>
 </body>
 </html>

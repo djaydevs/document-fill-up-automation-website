@@ -9,14 +9,14 @@ today = mm + '/' + dd + '/' + yyyy;
 //console.log(month);
 //console.log(today);
 
-var fname = document.getElementById('firstname');
-var mi = document.getElementById('initial');
-var lname = document.getElementById('lastname');
-var age = document.getElementById('age');
-var stay = document.getElementById("stay");
-var purpose = document.getElementById('purpose');
-var housenum = document.getElementById('housenum');
-var street = document.getElementById('street');
+//var fname = document.getElementById('firstname');
+//var mi = document.getElementById('initial');
+//var lname = document.getElementById('lastname');
+//var age = document.getElementById('age');
+//var stay = document.getElementById("stay");
+//var purpose = document.getElementById('purpose');
+//var housenum = document.getElementById('housenum');
+//var street = document.getElementById('street');
 
 
 const switchDoc1 = function() { //function for indigency
@@ -26,10 +26,10 @@ const switchDoc1 = function() { //function for indigency
     document.getElementById("docCOR").style.display="none";
     document.getElementById("docCOC").style.display="none";
     
-    document.getElementById("resname1").value = fname.innerHTML + " " + mi.innerHTML + ". " + lname.innerHTML;
-    document.getElementById("resage1").value = age.innerHTML;
-    document.getElementById("resaddress1").value = housenum.innerHTML + " " + street.innerHTML; 
-    document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
+    //document.getElementById("resname1").value = fname.innerHTML + " " + mi.innerHTML + ". " + lname.innerHTML;
+    //document.getElementById("resage1").value = age.innerHTML;
+    //document.getElementById("resaddress1").value = housenum.innerHTML + " " + street.innerHTML; 
+    //document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
     document.getElementById("month1").value = month;
     document.getElementById("day1").value = dd;
     document.getElementById("year1").value = yyyy;
