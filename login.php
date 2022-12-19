@@ -11,7 +11,7 @@ include("connection.php");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="login.css ?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/login.css ?v=<?php echo time(); ?>">
     <title>Document Fill-Up Automation Website - Log in</title>
 </head>
 <body>

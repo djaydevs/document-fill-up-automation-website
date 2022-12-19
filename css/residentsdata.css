@@ -101,6 +101,7 @@ html {
 
 .topnav a.active {
     background-color: #68B9E1;
+    color: #fff;
 }
 
 .topnav ul li a:hover {
@@ -123,15 +124,90 @@ h2{
 }
 
 .container{
+    position: relative;
     width: fit-content;
-    align-items: center;
     margin: auto;
     margin-top: 100px;
 }
+
+.new-search-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 800px;
+    margin-top: 1.5em;
+}
+
+.float-r {
+    width: 500px;
+    margin-left: 12em;
+}
+.search-form{
+    display: inline-flex;
+    margin-top: 0.5em;
+}
+#search-box {
+    background: url(assets/ic_search.svg) no-repeat center;
+    background-position: 10px 13px;
+    background-size: 24px;
+    outline: 1px solid #0A93E3;
+    border: none;
+    border-radius: 0.5em 0 0 0.5em;
+    padding: 1em 1em 1em 3.3em;
+    width: 500px;
+    height: fit-content;
+    font-size: 15px;
+    font-weight: 600;
+}
+#btn-search{
+    width: 95px;
+    padding: 1em;
+    color: #ffffff;
+    border: none;
+    outline: 1px solid #0A93E3;
+    border-radius: 0 0.5em 0.5em 0;
+    background: #0D4C92;
+    transition: background .3s;
+    cursor: pointer;
+    font-size: 15px;
+}
+#btn-search:hover{
+    background-color: rgb(89, 193, 189, 1);
+}
+
+.new-btn {  
+    align-items: center;
+    place-items: center;
+    justify-content: center;
+    width: fit-content;
+    color: #ffffff;
+    background: #3dafaa;
+    border-radius: 10px;
+    place-items: center;
+    text-decoration: none;  
+    letter-spacing: 2px;
+    margin-left: 3.5em; 
+    padding: 1em;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background .3s;
+}
+.new-btn:hover{
+    color: #fff;
+    background: linear-gradient(90deg, #0D4C92  0%, #3dafaa 100%);
+    transition: background .3s;   
+}
+
+.ion-icon {
+    margin: 1% auto 0% auto;
+}
+
 .tableview {
+    width: fit-content;
+    margin: 0% auto 0% auto;
     height: 650px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-top: 50px;
+    margin-top: 1em;
     border-radius: 13px 13px 0 0;
 }
 .content-table{
@@ -140,7 +216,6 @@ h2{
     overflow: hidden;
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-top: 50px;
 }
 .content-table thead tr {
     background-color: cornflowerblue;
@@ -163,27 +238,7 @@ h2{
 .content-table tbody tr:last-of-type {
     border-bottom: 2px solid rgba(35, 50, 184, 0.5);
 }
-.new-btn {  
-    align-items: center;
-    place-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 20px;
-    width: 150px;
-    color: #ffffff;
-    background-color: #0651dd;
-    border-radius: 5px 5px 5px 5px;
-    place-items: center;
-    text-decoration: none;  
-    letter-spacing: 2px; 
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-left: 5px;
-}
-.new-btn:hover{
-    color: #ffffff;
-    background-color: rgb(12, 129, 51);
-}
+
 .btn-form{
     display: inline;
     padding-left: 10px;
@@ -217,33 +272,4 @@ h2{
     background: rgb(214, 8, 8);
     color: #ffffff;
 }
-.search-form{
-    float: right;
-    display: inline-flex;
-    margin-top: 0.5em;
-    margin-right: 16px;
-}
-#search-box {
-    background: url(assets/ic_search.svg) no-repeat;
-    background-position: 8px 5.1px;
-    background-size: 24px;
-    outline: solid #0A93E3;
-    outline-width: 1px;
-    border: none;
-    border-radius: 0.5em;
-    padding-left: 35px;
-}
-#btn-search{
-    width: 90px;
-    height: 34px;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.5em;
-    background: #0D4C92;
-    transition: background .3s;
-    cursor: pointer;
-    font-size: 15px;
-}
-#btn-search:hover{
-    background-color: rgb(8, 218, 148);
-}
+

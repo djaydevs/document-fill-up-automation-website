@@ -12,53 +12,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="residentsdata.css ?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/residentsdata.css ?v=<?php echo time(); ?>">
     <title>Document Fill-Up Automation Website - Residents Data</title>
   
 </head>
 <body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <nav class="topnav">
-        <img class="logo" src="assets/fatimalogo.svg" alt="logo">
-        <p class="tntitle">Barangay Fatima 1</p>
-        <ul>
-            <li><a href="#">Account</a>
-                <ul class="ul-acc">
-                    <li class="ul-li-acc"><a href="">Admin</a></li>
-                    <li class="ul-li-acc"><a href="request.php">Log Out</a></li>
-                </ul>
-            </li>
-            <li><a class="active" href="residentsdata.php">Residents Data</a>
-                <ul>
-                    <li><a href="residentsdata.php">Residents Table View</a></li>
-                    <li><a href="create.php">Residents Registration</a></li>
-                    <li><a href="">Residents Modification</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Document Fill-Up</a>
-                <ul>
-                    <li><a href="indigency.php">Certificate of Indigency</a></li>
-                    <li><a href="residency.php">Certificate of Residency</a></li>
-                    <li><a href="clearance.php">Barangay Clearance</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <!-- NAVIGATION BAR -->
+    <nav class="topnav"> 
+            <img class="logo" src="assets/fatimalogo.svg" alt="logo">
+            <p class="tntitle">Barangay Fatima 1</p>
+            <ul>
+                <li><a href="#">Account</a>
+                    <ul class="ul-acc">
+                        <li class="ul-li-acc"><a href="">Admin</a></li>
+                        <li class="ul-li-acc"><a href="request.php">Log Out</a></li>
+                    </ul>
+                </li>
+                <li><a class="active" href="residentsdata.php">Residents Data</a>
+                    <ul>
+                        <li><a class="active" href="residentsdata.php">Residents Table View</a></li>
+                        <li><a href="create.php">Residents Registration</a></li>
+                    </ul>
+                </li>
+                <li><a href="documentfillup.php">Document Fill-Up</a></li>
+            </ul>
+        </nav>
     <div class="container">
         <h2 class="header">RESIDENTS TABLE</h2>
-        
-        <a class="new-btn" id="btn-new"href="/document-fill-up-automation-website/create.php" role = button>
-        <ion-icon name="add-outline"></ion-icon>NEW RECORD
-        </a>
-        <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;"> 
-        <div class="float-r">
-            <form action=""class="search-form" method="POST">
+        <div class="new-search-container">
+            <div class="float-r">
+                <form action=""class="search-form" method="POST">
                     <input type="text" name="search" id="search-box" class="txt-search" placeholder="Search Record">
                     <button id="btn-search">Search</button>
-            </form>
+                </form>
+            </div>
+            <a class="new-btn" id="btn-new"href="create.php" role = button>
+                <ion-icon class="ion-icon" name="add-outline"></ion-icon>   NEW RECORD
+            </a>
         </div>
-
+        <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;"> 
             <table class="content-table">
                 <thead>
                     <tr>

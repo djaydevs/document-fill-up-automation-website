@@ -27,7 +27,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="documentfillup.css ?v=<?php echo time(); ?>">
+        <link rel="stylesheet" href="css/documentfillup.css ?v=<?php echo time(); ?>">
         <title>Document Fill-Up Automation - Certificate of Indigency</title>
     </head>
     <body>
@@ -55,12 +55,13 @@
         <div class="grid-container">
             <div class="request-container">  <!-- LEFT SECTION -->
                 <!-- ON CLICK SWITCH DOCUMENT -->
+                <p class="doc-text">Choose Document</p>
                 <div class="switchdoc">
                     <button class="btndoc" onclick="switchDoc1()" >Certificate of Indigency</button><br>
                     <button class="btndoc" onclick="switchDoc2()" >Certificate of Residency</button><br>
                     <button class="btndoc" onclick="switchDoc3()" >Barangay Clearance</button>
                 </div>
-                <p class="request-text">RESIDENTS REQUEST</p>
+                <p class="request-text">Residents Request</p>
                 <!--TABLE-->
                 <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;">
                     <table class="request-table" id="table">
@@ -154,6 +155,6 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"></script>
          <!-- SCRIPT FOR DISPLAYING DATA AND ONCLICK EVENTS -->
-        <script src="documentfillup.js"></script>
+        <script src="js/documentfillup.js"></script>
     </body>
 </html>

@@ -11,35 +11,29 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel="stylesheet">
-    <link rel="stylesheet" href="create.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/create.css?v=<?php echo time(); ?>">
     <title>Document Fill-Up Automation Website - Resident Registration Form</title>
 </head>
 <body>
-    <nav class="topnav">
-        <img class="logo" src="assets/fatimalogo.svg" alt="logo">
-        <p class="tntitle">Barangay Fatima 1</p>
-        <ul>
-            <li><a href="#">Account</a>
-                <ul class="ul-acc">
-                    <li class="ul-li-acc"><a href="">Admin</a></li>
-                    <li class="ul-li-acc"><a href="request.php">Log Out</a></li>
-                </ul>
-            </li>
-            <li><a href="residentsdata.php">Residents Data</a>
-                <ul>
-                    <li><a href="residentsdata.php">Residents Table View</a></li>
-                    <li><a href="create.php">Residents Registration</a></li>
-                    <li><a href="">Residents Modification</a></li>
-                </ul>
-            </li>
-            <li><a class="active" href="#">Document Fill-Up</a>
-                <ul>
-                    <li><a href="indigency.php">Certificate of Indigency</a></li>
-                    <li><a href="residency.php">Certificate of Residency</a></li>
-                    <li><a href="clearance.php">Barangay Clearance</a></li>
-                </ul>
-            </li>
-        </ul>
+   <!-- NAVIGATION BAR -->
+   <nav class="topnav"> 
+            <img class="logo" src="assets/fatimalogo.svg" alt="logo">
+            <p class="tntitle">Barangay Fatima 1</p>
+            <ul>
+                <li><a href="#">Account</a>
+                    <ul class="ul-acc">
+                        <li class="ul-li-acc"><a href="">Admin</a></li>
+                        <li class="ul-li-acc"><a href="request.php">Log Out</a></li>
+                    </ul>
+                </li>
+                <li><a class="active" href="residentsdata.php">Residents Data</a>
+                    <ul>
+                        <li><a href="residentsdata.php">Residents Table View</a></li>
+                        <li><a class="active" href="create.php">Residents Registration</a></li>
+                    </ul>
+                </li>
+                <li><a href="documentfillup.php">Document Fill-Up</a></li>
+            </ul>
     </nav>
     
     <div class="container"> 

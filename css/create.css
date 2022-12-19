@@ -101,6 +101,7 @@ html {
 
 .topnav a.active {
     background-color: #68B9E1;
+    color: #fff;
 }
 
 .topnav ul li a:hover {

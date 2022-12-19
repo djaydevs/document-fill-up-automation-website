@@ -12,7 +12,7 @@ html {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 630px;
+    grid-gap: 800px;
 }
 
 .topnav {
@@ -107,6 +107,7 @@ html {
 
 .topnav a.active {
     background-color: #68B9E1;
+    color: #fff;
 }
 
 .topnav ul li a:hover {
@@ -129,13 +130,11 @@ html {
 
 .switchdoc {
     position: fixed;
-    left: 21%;
-    margin-top: 0.5em;
-    transform: translate(-50%, 0);
+    margin-top: 2.7em;
     justify-content: center;
     border: 3px solid #68B9E1;
     border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .btndoc {
@@ -159,9 +158,19 @@ html {
     font-weight: bold;
 }
 
+.doc-text {
+    position: fixed;
+    color: #0D4C92;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 3px 1px 1px rgba(89, 193, 189, 1);
+}
+
 .request-text {
     position: fixed;
-    margin-top: 10em;
+    margin-top: 12em;
     color: #0D4C92;
     font-size: 1.5em;
     text-align: center;
@@ -175,7 +184,7 @@ html {
     align-items: left;
     width: max-content;
     height: 350px;
-    margin-top: 18em;
+    margin-top: 21em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -188,7 +197,7 @@ html {
 }
 
 .request-table thead tr {
-    background-color: #59C1BD;
+    background-color: #0D4C92;
     color: #ffffff;
     font-size: 13px;
     text-align: left;
@@ -204,14 +213,27 @@ html {
 .request-table tbody tr {
     font-size: 15px;
     border-bottom: 1px solid #59C1BD;
+    cursor: pointer;
+}
+
+.request-table tbody tr:hover {
+    font-size: 15px;
+    border-bottom: 1px solid #59C1BD;
+    background: linear-gradient(90deg, #99cde8 0%, #aae7e2 100%);
+    cursor: pointer;
 }
 
 .request-table tbody tr:nth-of-type(even) {
-    background-color: rgb(222, 226, 241);
+    background-color: rgb(222, 226, 241, 0.5);
+    cursor: pointer;
+}
+
+.request-table tbody tr:nth-of-type(even):hover {
+    background: linear-gradient(90deg, #99cde8 0%, #aae7e2 100%);
 }
 
 .request-table tbody tr:last-of-type {
-    border-bottom: 2px solid #59C1BD;
+    border-bottom: 2px solid #0D4C92;
 }
 
 /********************** PDF VIEW ***************************/

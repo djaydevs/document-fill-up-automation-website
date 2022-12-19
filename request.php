@@ -12,7 +12,7 @@ include('requestAuthentication.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="request.css ?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/request.css ?v=<?php echo time(); ?>">
     <title>Document Fill-Up - Request Document</title>
 </head>
 <body>
@@ -48,7 +48,7 @@ include('requestAuthentication.php');
                 </div>
                 <div class ="select-doc">
                         <span class="choosedocument">Choose Document</span>
-                        <input type="radio" id="rdCOI" class="rdCOI" name="choosedoc" value="Certificate of Indgency">
+                        <input type="radio" id="rdCOI" class="rdCOI" name="choosedoc" value="Certificate of Indigency">
                         <label for="html">Certificate of Indigency</label> <br>
                         <input type="radio" id="rdCOR" class="rdCOR" name="choosedoc" value="Certificate of Residency">
                         <label for="html">Certificate of Residency</label> <br>
