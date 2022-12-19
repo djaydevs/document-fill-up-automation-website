@@ -96,13 +96,13 @@ h2 {
 }
 
 .input-user{
-    background: url(assets/ic_username.svg)no-repeat;
+    background: url(assets/ic_username.svg) no-repeat;
     background-size: 25px;
     background-position: 8.5px 13px;
 }
 
 .input-pass{
-    background: url(assets/ic_password.svg)no-repeat;
+    background: url(assets/ic_password.svg) no-repeat;
     background-size: 30px;
     background-position: 6px 11px;
 }
@@ -114,22 +114,27 @@ label {
 }
 
 .btn-login {
+    display: flex;
     background: #0D4C92;    
     padding: 0.6em 0.5em 0.6em 0.1em;
     color: #fff;    
-    width: 25em;
+    width: 50%;
     height: 3.5em;
     border-radius: 15px;
     margin-bottom: 20px;
     font-size: 15px;
     border: none;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0% auto 8% auto;
+    transition: background .3s ease-in-out; 
 }
 
 .btn-login:hover {
-    background: linear-gradient(117.79deg, #0D4C92 20.47%, #9584CD 67.26%);
+    background: linear-gradient(90deg, #0D4C92  0%, #3dafaa 100%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    font-weight: bold;
+    letter-spacing: 1.5px;
 }
 
 .error {
