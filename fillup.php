@@ -5,8 +5,8 @@
     if(isset($_POST['btncreate'])){
 
         //CROSS JOIN to merge the two tables
-        $residents_rin = mysqli_real_escape_string($conn, $_POST['btncreate']);
-        $sql = "SELECT table_residents.fname, table_residents.mi, table_residents.lname, 
+        $residents_rin = mysqli_real_escape_string($conn, $_GET['residentnum']);
+        $sql = "INSERT INTO transaction (fname, mi, lname, age, yearofstay, housenum, street, purpose) SELECT table_residents.fname, table_residents.mi, table_residents.lname, 
         table_residents.age, table_residents.yearofstay, table_residents.housenum, table_residents.street, 
         tbl_request.purpose FROM table_residents CROSS JOIN tbl_request";
         $result = mysqli_query($conn, $sql);

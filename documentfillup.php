@@ -56,6 +56,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- WRONG -->
                         <?php
                             $sql = "SELECT *FROM tbl_request";
                             $result = mysqli_query($conn, $sql);
@@ -69,11 +70,37 @@
                                     <td><?= $row['name']; ?></td>
                                     <td><?= $row['purpose']; ?></td>
                                     <td>
-                                        <form method="POST" class="btn-form">
-                                            <button type="submit" class="u-btn" name="btncreate" value="<?=$row['residentnum'];?>">Create</button>
+                                        <button onclick="create()" class="btnrequest" name="btncreate" value="<?=$row['residentnum'];?>">Create</button>
+                                        <form action="fillup.php" method="POST" class="btn-form">
                                             <button type="submit" name="btn-delete" value="<?=$row['residentnum'];?>">Delete</button>
-                                        </form>
-                                        </td>
+                                        </form> 
+                                    </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }else {
+                                echo "No Record Found";
+                            } 
+                        ?>
+                    </tbody>
+                    <tbody style="display:none;">
+                        <?php
+                            $sql = "SELECT *FROM transaction";
+                            $result = mysqli_query($conn, $sql);
+
+                            if( mysqli_num_rows($result) > 0) {
+                                foreach($result as $row){
+                                ?>
+                                    <tr>
+                                        <td><?= $row['trans_id']; ?></td>
+                                        <td id="firstname"><?= $row['fname']; ?></td>
+                                        <td id="initial"><?= $row['mi']; ?></td>
+                                        <td id="lastname"><?= $row['lname']; ?></td>
+                                        <td id="age"><?= $row['age']; ?></td>
+                                        <td id="yearstay"><?= $row['yearofstay']; ?></td>
+                                        <td id="housenum"><?= $row['housenum']; ?></td>
+                                        <td id="street"><?= $row['street']; ?></td>
+                                        <td id="purpose"><?= $row['purpose']; ?></td>
                                     </tr>
                                     <?php
                                 }
@@ -88,29 +115,7 @@
         <div class="pdf-container"> <!-- RIGHT SECTION -->
             <div class="pdf-border">
                 <div id="pdf-view">
-                <?php
-                    $sql = "SELECT *FROM  table_residents CROSS JOIN tbl_request";
-                    $result = mysqli_query($conn, $sql);
-
-                    if( mysqli_num_rows($result) > 0) {
-                        foreach($result as $row){
-                        ?>
-                        <!-- INPUT TYPE FOR INDIGENCY -->
-                        <input type="text" name="resname" id="resname1" value="<?= $row['fname']; ?> <?= $row['mi']; ?>. <?= $row['lname']; ?>">
-                        <input type="text" name="resage" id="resage1" value="<?= $row['age']; ?>">
-                        <input type="text" name="resaddress" id="resaddress1" value="<?= $row['housenum']; ?> <?= $row['street']; ?>">
-                        <input type="text" name="respurpose" id="respurpose1" value="<?= $row['purpose']; ?>">
-                        <input type="text" name="month" id="month1" value="">
-                        <input type="text" name="day" id="day1" value="">
-                        <input type="text" name="year" id="year1" value="">
-                        <input type="text" name="date" id="date1" value="">
-                        <?php
-                        }
-                    }else {
-                        echo "No Record Found";
-                    } 
-                ?>
-                    <!-- INPUT TYPE FOR INDIGENCY 
+                    <!-- INPUT TYPE FOR INDIGENCY -->
                     <input type="text" name="resname" id="resname1" value="">
                     <input type="text" name="resage" id="resage1" value="">
                     <input type="text" name="resaddress" id="resaddress1" value="">
@@ -118,12 +123,12 @@
                     <input type="text" name="month" id="month1" value="">
                     <input type="text" name="day" id="day1" value="">
                     <input type="text" name="year" id="year1" value="">
-                    <input type="text" name="date" id="date1" value=""> -->
+                    <input type="text" name="date" id="date1" value="">
                     <!-- INPUT TYPE FOR RESIDENCY -->
                     <input type="text" name="resname" id="resname2" value="">
                     <input type="text" name="resage" id="resage2" value="">
                     <input type="text" name="resaddress" id="resaddress2" value="">
-                    <input type="text" name="stay" id="stay2" value="<?= $row['yearofstay']; ?>">
+                    <input type="text" name="stay" id="stay2" value="">
                     <input type="text" name="resname" id="resname_2" value="">
                     <input type="text" name="respurpose" id="respurpose2" value="">
                     <input type="text" name="month" id="month2" value="">
@@ -141,7 +146,7 @@
                     <input type="text" name="day" id="day3" value="">
                     <input type="text" name="year" id="year3" value="">
                     <input type="text" name="date" id="date3" value="">
-                    <input type="text" name="resname" id="resname_3" value=""
+                    <input type="text" name="resname" id="resname_3" value="">
                     <!-- DOCUMENT IMAGES -->
                     <img src="assets/docindigency.svg" id="docCOI" alt="">
                     <img src="assets/docresidency.svg" id="docCOR" alt="">
@@ -158,7 +163,42 @@
 		integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer"></script>
-    
     <script src="documentfillup.js"></script>
+    <script type="text/javascript">
+        const create = function () {
+            var fname = document.getElementById('firstname');
+            var mi = document.getElementById('initial');
+            var lname = document.getElementById('lastname');
+            var age = document.getElementById('age');
+            var stay = document.getElementById("stay");
+            var purpose = document.getElementById('purpose');
+            var housenum = document.getElementById('housenum');
+            var street = document.getElementById('street');
+            
+            <?php
+                $sql = "SELECT *FROM  transaction";
+                $result = mysqli_query($conn, $sql);
+
+                if( mysqli_num_rows($result) > 0) {
+                    foreach($result as $row){ 
+            ?>
+                    document.getElementById("resname1").value = fname.innerHTML + " " + mi.innerHTML + ". " + lname.innerHTML;
+                    document.getElementById("resage1").value = age.innerHTML;
+                    document.getElementById("resaddress1").value =  housenum.innerHTML + " " + street.innerHTML;
+                    document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
+
+                    document.getElementById("resname2").value = "<?= $row['fname']; ?> <?= $row['mi']; ?>. <?= $row['lname']; ?>";
+                    document.getElementById("resage2").value = "<?= $row['age']; ?>";
+                    document.getElementById("resaddress2").value = "<?= $row['housenum']; ?> <?= $row['street']; ?>";
+                    document.getElementById("respurpose2").value = "<?= $row['purpose']; ?>".toUpperCase();
+                    document.getElementById("stay2").value = "<?= $row['yearofstay']; ?>";
+            <?php
+                    }
+                }else {
+                    echo "No Record Found";
+                } 
+            ?>
+        }
+    </script>
 </body>
 </html>

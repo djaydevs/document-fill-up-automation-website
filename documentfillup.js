@@ -9,14 +9,14 @@ today = mm + '/' + dd + '/' + yyyy;
 //console.log(month);
 //console.log(today);
 
-var fname = document.getElementById('firstname');
-var mi = document.getElementById('initial');
-var lname = document.getElementById('lastname');
-var age = document.getElementById('age');
-var stay = document.getElementById("stay");
-var purpose = document.getElementById('purpose');
-var housenum = document.getElementById('housenum');
-var street = document.getElementById('street');
+//var fname = document.getElementById('firstname');
+//var mi = document.getElementById('initial');
+//var lname = document.getElementById('lastname');
+//var age = document.getElementById('age');
+//var stay = document.getElementById("stay");
+//var purpose = document.getElementById('purpose');
+//var housenum = document.getElementById('housenum');
+//var street = document.getElementById('street');
 
 
 const switchDoc1 = function() { //function for indigency
