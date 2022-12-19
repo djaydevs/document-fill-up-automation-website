@@ -1,26 +1,7 @@
-<?php 
-    session_start();
-    require 'connection.php'; 
-    //delete request from the database
-    if(isset($_POST['btn-delete'])) {
-        $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
-
-        $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
-        $result = mysqli_query($conn, $sql);
-
-        if($result){
-
-            $_SESSION['status']= "Residents Request Deleted Successfully !";
-            header("Location: documentfillup.php");
-
-        }else {
-
-            $_SESSION['status']= "Residents Request failed to delete !";
-
-        }
-    }
+<?php
+    require 'connection.php';
+    session_start(); 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -101,6 +82,27 @@
                                     }
                                 }    
                             ?>
+                             <?php 
+                                //delete request from the database
+                                if(isset($_POST['btn-delete'])) {
+                                    $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
+
+                                    $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if($result){
+
+                                        $_SESSION['status']= "Residents Request Deleted Successfully !";
+                                        header("Location: documentfillup.php");
+                                        exit();
+
+                                    }else {
+
+                                        $_SESSION['status']= "Residents Request failed to delete !";
+                                        header("Location: documentfillup.php");
+                                    }
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -149,6 +151,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- SCRIPT FOR SAVING/PRINTING DOCUMENT -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
         <script
@@ -165,5 +168,6 @@
             return confirm('Are you sure you want to delete this record?');
             }
         </script>
-    </body>
+       
+</body>
 </html>
