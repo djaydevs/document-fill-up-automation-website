@@ -213,6 +213,7 @@ html {
 .request-table tbody tr {
     font-size: 15px;
     border-bottom: 1px solid #59C1BD;
+    transition: all .25s ease-in-out;
     cursor: pointer;
 }
 
@@ -225,6 +226,7 @@ html {
 
 .request-table tbody tr:nth-of-type(even) {
     background-color: rgb(222, 226, 241, 0.5);
+    transition: all .25s ease-in-out;
     cursor: pointer;
 }
 

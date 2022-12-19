@@ -92,7 +92,7 @@
                                             <td style="display:none;" id="stay"><?php echo $row['yearofstay']?></td>
                                             <td>
                                                 <form method="POST" class="btn-form">
-                                                    <button type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>">D</button>
+                                                    <button type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>"></button>
                                                 </form> 
                                             </td>
                                         </tr>
