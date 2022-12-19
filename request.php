@@ -47,13 +47,18 @@ include('requestAuthentication.php');
                         </select>
                 </div>
                 <div class ="select-doc">
-                        <span class="choosedocument">Choose Document</span>
+
+                        <input type="checkbox" name="choosedoc[]" value="Certificate of Indigency"> Certificate of Indigency <br>
+                        <input type="checkbox" name="choosedoc[]" value="Certificate of Residency"> Certificate of Residency <br>
+                        <input type="checkbox" name="choosedoc[]" value="Barangay Clearance"> Barangay Clearance <br>
+
+                        <!---<span class="choosedocument">Choose Document</span>
                         <input type="radio" id="rdCOI" class="rdCOI" name="choosedoc" value="Certificate of Indigency">
                         <label for="html">Certificate of Indigency</label> <br>
                         <input type="radio" id="rdCOR" class="rdCOR" name="choosedoc" value="Certificate of Residency">
                         <label for="html">Certificate of Residency</label> <br>
                         <input type="radio" id="rdCOC" class="rdCOc" name="choosedoc" value="Barangay Clearance">
-                        <label for="html">Barangay Clearance</label> <br>
+                        <label for="html">Barangay Clearance</label> <br> --->
                 </div>
                 <input type="submit" name="request" class="btn-send" value="SEND REQUEST">
             </form>

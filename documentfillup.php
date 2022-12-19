@@ -87,7 +87,7 @@
                                             <td id="fullname"><?php echo $row['fname']?> <?php echo $row['mi']?>. <?php echo $row['lname']?></td>
                                             <td style="display:none;" id="age"><?php echo $row['age']?></td>
                                             <td style="display:none;" id="address"><?php echo $row['housenum']?> <?php echo $row['street']?></td>
-                                            <td id="document"><?php echo $row['document']?></td>
+                                            <td id="document"><?php echo $row['document']?><br></td>
                                             <td id="purpose"><?php echo $row['purpose']?></td>
                                             <td style="display:none;" id="stay"><?php echo $row['yearofstay']?></td>
                                             <td>
