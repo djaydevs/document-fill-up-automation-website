@@ -1,37 +1,7 @@
-<?php require "connection.php"; ?>
-<?php
+<?php 
     session_start();
-    require "connection.php";
+    require "connection.php"; ?>
 
-    if(isset($_GET['residentnum'])){
-        //CROSS JOIN to merge the two tables
-        $residents_rin = mysqli_real_escape_string($conn, $_GET['residentnum']);
-        $sql = "INSERT INTO transaction (fname, mi, lname, age, yearofstay, housenum, street, purpose) SELECT table_residents.fname, table_residents.mi, table_residents.lname, 
-        table_residents.age, table_residents.yearofstay, table_residents.housenum, table_residents.street, 
-        tbl_request.purpose FROM table_residents CROSS JOIN tbl_request";
-        $result = mysqli_query($conn, $sql);
-    }
-    
-    //delete the record from the database
-    if(isset($_POST['btn-delete'])) {
-        $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
-    
-        $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
-        $result = mysqli_query($conn, $sql);
-    
-        if($result){
-    
-            $_SESSION['status']= "Residents Data Deleted Successfully !";
-            header("Location: documentfillup.php");
-    
-        }else {
-    
-            $_SESSION['status']= "Residents Data failed to delete !";
-            header("Location: documentfillup.php");
-    
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,37 +69,11 @@
                                     <td><?= $row['name']; ?></td>
                                     <td><?= $row['purpose']; ?></td>
                                     <td>
-                                        <a class="u-btn"href="documentfillup.php?residentnum=<?=$row['residentnum'];?>">Create</a>
-                                        <form action="fillup.php" method="POST" class="btn-form">
+                                        <form method="POST" class="btn-form">
+                                            <button type="submit" class="u-btn" name="btncreate" value="<?=$row['residentnum'];?>">Create</button>
                                             <button type="submit" name="btn-delete" value="<?=$row['residentnum'];?>">Delete</button>
-                                        </form> 
+                                        </form>
                                         </td>
-                                    </tr>
-                                    <?php
-                                }
-                            }else {
-                                echo "No Record Found";
-                            } 
-                        ?>
-                    </tbody>
-                    <tbody style="display:none;">
-                        <?php
-                            $sql = "SELECT *FROM transaction";
-                            $result = mysqli_query($conn, $sql);
-
-                            if( mysqli_num_rows($result) > 0) {
-                                foreach($result as $row){
-                                ?>
-                                    <tr>
-                                        <td><?= $row['trans_id']; ?></td>
-                                        <td id="firstname"><?= $row['fname']; ?></td>
-                                        <td id="initial"><?= $row['mi']; ?></td>
-                                        <td id="lastname"><?= $row['lname']; ?></td>
-                                        <td id="age"><?= $row['age']; ?></td>
-                                        <td id="yearstay"><?= $row['yearofstay']; ?></td>
-                                        <td id="housenum"><?= $row['housenum']; ?></td>
-                                        <td id="street"><?= $row['street']; ?></td>
-                                        <td id="purpose"><?= $row['purpose']; ?></td>
                                     </tr>
                                     <?php
                                 }
@@ -144,7 +88,29 @@
         <div class="pdf-container"> <!-- RIGHT SECTION -->
             <div class="pdf-border">
                 <div id="pdf-view">
-                    <!-- INPUT TYPE FOR INDIGENCY -->
+                <?php
+                    $sql = "SELECT *FROM  table_residents CROSS JOIN tbl_request";
+                    $result = mysqli_query($conn, $sql);
+
+                    if( mysqli_num_rows($result) > 0) {
+                        foreach($result as $row){
+                        ?>
+                        <!-- INPUT TYPE FOR INDIGENCY -->
+                        <input type="text" name="resname" id="resname1" value="<?= $row['fname']; ?> <?= $row['mi']; ?>. <?= $row['lname']; ?>">
+                        <input type="text" name="resage" id="resage1" value="<?= $row['age']; ?>">
+                        <input type="text" name="resaddress" id="resaddress1" value="<?= $row['housenum']; ?> <?= $row['street']; ?>">
+                        <input type="text" name="respurpose" id="respurpose1" value="<?= $row['purpose']; ?>">
+                        <input type="text" name="month" id="month1" value="">
+                        <input type="text" name="day" id="day1" value="">
+                        <input type="text" name="year" id="year1" value="">
+                        <input type="text" name="date" id="date1" value="">
+                        <?php
+                        }
+                    }else {
+                        echo "No Record Found";
+                    } 
+                ?>
+                    <!-- INPUT TYPE FOR INDIGENCY 
                     <input type="text" name="resname" id="resname1" value="">
                     <input type="text" name="resage" id="resage1" value="">
                     <input type="text" name="resaddress" id="resaddress1" value="">
@@ -152,12 +118,12 @@
                     <input type="text" name="month" id="month1" value="">
                     <input type="text" name="day" id="day1" value="">
                     <input type="text" name="year" id="year1" value="">
-                    <input type="text" name="date" id="date1" value="">
+                    <input type="text" name="date" id="date1" value=""> -->
                     <!-- INPUT TYPE FOR RESIDENCY -->
                     <input type="text" name="resname" id="resname2" value="">
                     <input type="text" name="resage" id="resage2" value="">
                     <input type="text" name="resaddress" id="resaddress2" value="">
-                    <input type="text" name="stay" id="stay2" value="">
+                    <input type="text" name="stay" id="stay2" value="<?= $row['yearofstay']; ?>">
                     <input type="text" name="resname" id="resname_2" value="">
                     <input type="text" name="respurpose" id="respurpose2" value="">
                     <input type="text" name="month" id="month2" value="">

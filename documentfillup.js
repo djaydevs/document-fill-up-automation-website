@@ -26,10 +26,10 @@ const switchDoc1 = function() { //function for indigency
     document.getElementById("docCOR").style.display="none";
     document.getElementById("docCOC").style.display="none";
     
-    document.getElementById("resname1").value = fname.innerHTML + " " + mi.innerHTML + ". " + lname.innerHTML;
-    document.getElementById("resage1").value = age.innerHTML;
-    document.getElementById("resaddress1").value = housenum.innerHTML + " " + street.innerHTML; 
-    document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
+    //document.getElementById("resname1").value = fname.innerHTML + " " + mi.innerHTML + ". " + lname.innerHTML;
+    //document.getElementById("resage1").value = age.innerHTML;
+    //document.getElementById("resaddress1").value = housenum.innerHTML + " " + street.innerHTML; 
+    //document.getElementById("respurpose1").value = purpose.innerHTML.toUpperCase();
     document.getElementById("month1").value = month;
     document.getElementById("day1").value = dd;
     document.getElementById("year1").value = yyyy;
