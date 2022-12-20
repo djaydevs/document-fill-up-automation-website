@@ -12,7 +12,7 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 800px;
+    grid-gap: 10px;
 }
 
 .topnav {
@@ -124,14 +124,12 @@ body {
 
 .request-container{ /* LEFT-SECTION */
     width: fit-content;
-    margin: auto;
-    margin-top: 100px;
+    margin: 12% 0% 0% 5%;
 }
 
 .switchdoc { /* ON CLICK SWITH DOCUMENT */
     position: fixed;
-    margin-top: 2.7em;
-    justify-content: center;
+    margin: 2.7em auto 0% auto;
     border: 3px solid #68B9E1;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -179,62 +177,18 @@ body {
     text-shadow: 3px 1px 1px rgba(89, 193, 189, 1);
 }
 
-.search-container { /* SEARCH REQUEST */
-    position: fixed;
-    display: block;
-    width: 750px;
-    margin-top: 20.7em;
-}
-
-.search-form{
-    display: inline-flex;
-    
-}
-
-#search-box {
-    background: url(assets/ic_search.svg) no-repeat center;
-    background-color: rgb(222, 226, 241, 0.8);
-    background-position: 10px 13px;
-    background-size: 24px;
-    outline: 1px solid #0A93E3;
-    border: none;
-    border-radius: 0.7em 0 0 0.7em;
-    padding: 1em 1em 1em 3.3em;
-    width: 590px;
-    height: fit-content;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-#btn-search{
-    width: 95px;
-    padding: 0.9em;
-    color: #ffffff;
-    border: none;
-    outline: 1px solid #0A93E3;
-    border-radius: 0 0.7em 0.7em 0;
-    background: #0D4C92;
-    transition: background .3s;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-#btn-search:hover{
-    background-color: rgb(89, 193, 189, 1);
-}
-
 .tableview { /* TABLE CONTAINER */
     position: fixed;
-    align-items: left;
-    width: 750px;
-    height: 350px;
-    margin-top: 25em;
+    width: fit-content;
+    height: 450px;
+    margin-top: 21em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .request-table { /* TABLE */
     border-collapse: collapse;
-    width: 750px;
+    width: 890px;
+    height: 350px;
     font-size: 0.7em;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
@@ -251,13 +205,12 @@ body {
 }
 
 .request-table th, td {
-    padding: 1em 1em;
+    padding: 1em;
     text-align: left;
 }
 
 .request-table tbody tr {
     font-size: 15px;
-    padding: 1em 1em;
     border-bottom: 1px solid #59C1BD;
     background-color: rgb(13, 76, 146, 0.05);
     transition: all .25s ease-in-out;
@@ -280,6 +233,7 @@ body {
 
 .request-table tbody tr:nth-of-type(even):hover {
     background: linear-gradient(90deg, #99cde8 0%, #aae7e2 100%);
+    border-top: 1px solid rgb(13, 76, 146);
 }
 
 .request-table tbody tr:last-of-type {
@@ -305,7 +259,7 @@ body {
     align-items: center;
     margin: auto;
     margin-top: 100px;
-    margin-right: 1em;
+    margin-right: 2em;
     margin-bottom: 3em;
 }
 

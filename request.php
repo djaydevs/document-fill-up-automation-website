@@ -16,16 +16,16 @@ include('requestAuthentication.php');
     <title>Document Fill-Up - Request Document</title>
 </head>
 <body>
-    <div id="splash" style="text-align:center">
+    <!--div id="splash" style="text-align:center">
         <img class="imglogo" src="css/assets/logovector.svg" alt="">
         <p id="title">Document Fill-Up Automation</p>
         <img class="loading" src="css/assets/load.gif" alt="">
-    </div>
+    </div -->
     <div class="grid-container">
         <div class="leftsection">
             <img src="css/assets/logovector.svg" alt="">
             <p class="title">Document Fill-Up Automation</p>
-            <p class="description2">Document request and fill-up is now easy and convenient!</p>
+            <p class="description">Document request and fill-up is now easy and convenient!</p>
         </div>
         <div class="rightsection">
             <form action="request.php" method="POST">
@@ -66,17 +66,16 @@ include('requestAuthentication.php');
                 </div>
                 <input type="submit" name="request" class="btn-send" value="SEND REQUEST">
             </form>
-            <a href="login.php" class="link">Administrator</a>
+            <a data-toggle="tooltip" title="Log in as administrator." href="login.php" class="link">Administrator</a>
         </div>
     </div>
     <script src="js/sweetalert.min.js"></script>
     <?php include('js/scriptforstatus.php')?>
+    <!-- SCRIPT FOR TOOLTIP -->
     <script>
-        var loader = document.getElementById("splash");
-        window.addEventListener('load', function(load) {
-            window.removeEventListener('load', load, false);               
-            setTimeout(function(){loader.style.display = 'none'},2500);
-        },false);
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
 </body>
 </html>
