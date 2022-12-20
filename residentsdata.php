@@ -16,12 +16,12 @@
   
 </head>
 <body>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- NAVIGATION BAR -->
     <nav class="topnav"> 
-            <img class="logo" src="css/assets/fatimalogo.svg" alt="logo">
-            <p class="tntitle">Barangay Fatima 1</p>
+        <img class="logo" src="css/assets/fatimalogo.svg" alt="logo">
+        <p class="tntitle">Barangay Fatima 1</p>
             <ul>
                 <li><a href="#">Account</a>
                     <ul class="ul-acc">
@@ -37,7 +37,7 @@
                 </li>
                 <li><a href="documentfillup.php">Document Fill-Up</a></li>
             </ul>
-        </nav>
+    </nav>
     
     <div class="container">
         <h2 class="header">RESIDENTS TABLE</h2>
@@ -109,16 +109,13 @@
                                 </tr>
                                 <?php
                             }
-
-                        }else {
-                            echo "No Record Found";
-                        }                  
+                        }              
                     ?>
                 </tbody>
             </table>
         </div>
     </div>
-    <!-- SCRIPT FOR ALERT -->
+    <!-- SCRIPT FOR DISPLAYING DATA AND ONCLICK EVENTS -->
     <script src="js/sweetalert.min.js"></script>
     <?php include('js/scriptforstatus.php')?>
     <script>

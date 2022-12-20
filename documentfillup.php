@@ -86,23 +86,22 @@
                                 }
                             ?>
                             <?php //access two tables from database
-                                // $connect = mysqli_connect("localhost", "root", "", "brgydb") or die("Connection Failed");
                                 $query = "select res.*,req.residentnum, res.*,req.document, res.*,req.purpose from table_residents res, tbl_request req where res.rin = req.residentnum";
                                 $result = mysqli_query($conn, $query);
                                 if(isset($_GET['rin']) == isset($_GET['residentnum'])){
                                     while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
-                                        <tr data-toggle="tooltip" title="Click to display data.">
-                                            <td ><a href="residentsdata.php" class="tb-link" data-toggle="tooltip" title="Go to residents data."><?php echo $row['rin']?></a></td>
+                                        <tr>
+                                            <td><?php echo $row['rin']?></td>
                                             <td id="fullname"><?php echo $row['fname']?> <?php echo $row['mi']?>. <?php echo $row['lname']?></td>
                                             <td style="display:none;" id="age"><?php echo $row['age']?></td>
                                             <td style="display:none;" id="address"><?php echo $row['housenum']?> <?php echo $row['street']?></td>
-                                            <td id="document"><?php echo $row['document']?></td>
+                                            <td id="document"><?php echo $row['document']?><br></td>
                                             <td id="purpose"><?php echo $row['purpose']?></td>
                                             <td style="display:none;" id="stay"><?php echo $row['yearofstay']?></td>
                                             <td>
                                                 <form method="POST" class="btn-form">
-                                                    <button data-toggle="tooltip" title="Delete Request" type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>" onclick="return confirmDelete();"></button>
+                                                    <button type="submit" class="del-btn" name="btn-delete" value="<?=$row['rin'];?>" onclick="return confirmDelete();"></button>
                                                 </form> 
                                             </td>
                                         </tr>
@@ -165,9 +164,9 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
             integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
             crossorigin="anonymous"
-            referrerpolicy="no-referrer">
-        </script>
-        <!-- SCRIPT FOR ALERT -->
+            referrerpolicy="no-referrer"></script>
+        <!-- SCRIPT FOR DISPLAYING DATA AND ONCLICK EVENTS -->
+        <script src="js/documentfillup.js"></script>
         <script src="js/sweetalert.min.js"></script>
         <?php include('js/scriptforstatus.php');?>
         <script>
@@ -175,13 +174,6 @@
             return confirm('Are you sure you want to delete this record?');
             }
         </script>
-        <!-- SCRIPT FOR TOOLTIP -->
-        <script>
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
-        <!-- SCRIPT FOR DISPLAYING DATA AND ONCLICK EVENTS -->
-        <script src="js/documentfillup.js"></script>
-    </body>
+       
+</body>
 </html>
