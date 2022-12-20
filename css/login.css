@@ -5,45 +5,48 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html {
+body {
     background: url(assets/bg.svg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
+    overflow: hidden;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 0px;
+    overflow: hidden;
 }
 
 .leftsection img {
-    position: absolute;
-    width: 350px;
+    position: relative;
+    display: flex;
+    width: 900px;
     height: 50%;
-    left: 180px;
+    margin: 5% auto 0% auto;
     top: 70px;
 }
 
 .title {
-    position: absolute;
-    width: 540px;
+    position: relative;
+    width: fit-content;
     height: 53px;
-    left: 90px;
-    top: 470px;
+    top: 90px;
+    margin: 0% auto 0% auto;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 40px;
     line-height: 52px;
     text-align: center;
     color: #161730;
 }
 
 .description {
-    position: absolute;
-    width: 446px;
+    position: relative;
+    width: fit-content;
     height: 23px;
-    left: 137px;
-    top: 530px;
+    top: 100px;
+    margin: 0% auto 0% auto;
     font-weight: bold;
     font-size: 15px;
     line-height: 22px;
@@ -51,34 +54,24 @@ html {
     color: #161730;
 }
 
-/*
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-} */
-
 form {
-    position: absolute;
+    position: relative;
     width: max-content;
     height: max-content;
-    margin-left: 4%;
-    background: rgb(255, 255, 255, 0.5);
+    margin: 23% auto 0% auto;
+    background: rgb(255, 255, 255, 0.3);
     outline: solid #0D4C92;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    padding: 0.9em 2em 0.5em 2em;
-    margin-top: 8em;
-    margin-left: 5em;
+    padding: 2em;
 }
 
 h2 {
     text-align: center;
-    padding: 0.5em 0.8em 1em 0.1em;
     letter-spacing: 1.5px;
     color: #0D4C92;
     font-size: 30px;
+    padding: 1em;
 }
 
 .input-user, .input-pass {
@@ -98,36 +91,36 @@ h2 {
 .input-user{
     background: url(assets/ic_username.svg) no-repeat;
     background-size: 25px;
+    background-color: rgb(255, 255, 255, 0.5);
     background-position: 8.5px 13px;
 }
 
 .input-pass{
     background: url(assets/ic_password.svg) no-repeat;
     background-size: 30px;
+    background-color: rgb(255, 255, 255, 0.5);
     background-position: 6px 11px;
 }
 
 label {
     color: black;
     font-size: 18px;
-    padding: 10px;
 }
 
 .btn-login {
     display: flex;
     background: #0D4C92;    
-    padding: 0.6em 0.5em 0.6em 0.1em;
+    padding: 1em;
     color: #fff;    
     width: 50%;
     height: 3.5em;
     border-radius: 15px;
-    margin-bottom: 20px;
     font-size: 15px;
     border: none;
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin: 0% auto 8% auto;
+    margin: 5% auto 0% auto;
     transition: background .3s ease-in-out; 
 }
 

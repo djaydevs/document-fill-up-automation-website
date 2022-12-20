@@ -12,7 +12,7 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 800px;
+    grid-gap: 10px;
 }
 
 .topnav {
@@ -124,14 +124,12 @@ body {
 
 .request-container{ /* LEFT-SECTION */
     width: fit-content;
-    margin: auto;
-    margin-top: 100px;
+    margin: 12% 0% 0% 5%;
 }
 
 .switchdoc { /* ON CLICK SWITH DOCUMENT */
     position: fixed;
-    margin-top: 2.7em;
-    justify-content: center;
+    margin: 2.7em auto 0% auto;
     border: 3px solid #68B9E1;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -200,7 +198,7 @@ body {
     border: none;
     border-radius: 0.7em 0 0 0.7em;
     padding: 1em 1em 1em 3.3em;
-    width: 590px;
+    width: 255px;
     height: fit-content;
     font-size: 15px;
     font-weight: 600;
@@ -225,16 +223,16 @@ body {
 
 .tableview { /* TABLE CONTAINER */
     position: fixed;
-    align-items: left;
-    width: 750px;
-    height: 350px;
+    width: fit-content;
+    height: fit-content;
     margin-top: 25em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .request-table { /* TABLE */
     border-collapse: collapse;
-    width: 750px;
+    width: 890px;
+    height: 350px;
     font-size: 0.7em;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
