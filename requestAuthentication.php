@@ -27,10 +27,6 @@ if(isset($_POST ["request"])) {
         $choosedoc = $_POST['choosedoc'];
         $chk = implode(", <br/>", $choosedoc); // convert the array to string
 
-        /*FOR EACH CHECKBOX TO DISPLAY IN ONE ROW
-        foreach($choosedoc as $chk1) {
-            $chk .= $chk1 . " ";
-        }*/
         if (mysqli_num_rows($result)== 1) {
             $sql = ("INSERT INTO tbl_request(residentnum, name, purpose, document) VALUES ('$rin', '$rname', '$purpose', '$chk')");
             $results = mysqli_query($conn, $sql);
@@ -40,17 +36,14 @@ if(isset($_POST ["request"])) {
             exit();
 
         }else {
+
             header("Location: request.php?error=Resident data doesn't exist.");
-            #exit();
+
         }
     }elseif(empty($residentname))
     {
         header("Location:request.php?error=Resident number is required.");
-        #exit();
-    }elseif(empty($_POST['purpose'])) {
-        header("Location:request.php?error=Please choose a Purpose.");
-    }elseif(empty($_POST['choosedoc'])) {
-        header("Location:request.php?error=Please choose a Certificate.");
+        
     }
 }
 ?>

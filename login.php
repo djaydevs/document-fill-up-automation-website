@@ -15,6 +15,7 @@ include("connection.php");
     <title>Document Fill-Up Automation Website - Log in</title>
 </head>
 <body>
+    <!-- LOGIN FORM -->
     <div class="grid-container">
         <div class="leftsection">
             <img src="css/assets/logovector.svg" alt="">

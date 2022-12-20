@@ -1,4 +1,5 @@
 <script src="js/sweetalert.min.js"></script>
+<!-- SESSION STATUS FUNCTION -->
 <?php
 if(isset($_SESSION['status']) &&  $_SESSION['status'] !='') {
     ?>

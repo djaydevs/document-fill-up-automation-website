@@ -18,7 +18,7 @@ session_start();
 <body>
    <!-- NAVIGATION BAR -->
    <nav class="topnav"> 
-            <img class="logo" src="assets/fatimalogo.svg" alt="logo">
+            <img class="logo" src="css/assets/fatimalogo.svg" alt="logo">
             <p class="tntitle">Barangay Fatima 1</p>
             <ul>
                 <li><a href="#">Account</a>
@@ -46,15 +46,15 @@ session_start();
                 <div class="user_info">
                     <div class="input_lname">
                         <label for="lname">Last Name</label><br>
-                        <input type="text" name="lname" id="lname" placeholder="Enter your last name">
+                        <input type="text" name="lname" id="lname" placeholder="Enter your last name" required>
                     </div>
                     <div class="input_fname">
                         <label for="fname">First Name</label><br>
-                        <input type="text" name="fname" id="fname"  placeholder="Enter your first name">
+                        <input type="text" name="fname" id="fname"  placeholder="Enter your first name"required>
                     </div>
                     <div class="input_mi">
                         <label for="mi">Middle Initial</label><br>
-                        <input type="text" name="initial" id="initial"  placeholder="Enter your middle initial">
+                        <input type="text" name="initial" id="initial"  placeholder="Enter your middle initial"required>
                     </div>
 
                 </div>
@@ -64,7 +64,7 @@ session_start();
                     <br>
                     <input type="number" name="housenum" id="housenum"  placeholder="Enter house number" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="street" id="street"  placeholder="Enter street">
+                    <input type="text" name="street" id="street"  placeholder="Enter street" required>
                 </div>
                 <!-- RESIDENT GENDER -->
                 <div class="rbtn_gender">
@@ -77,12 +77,12 @@ session_start();
 
                     <div class="u-age">
                         <label for="age">Age</label><br>
-                        <input type="number" name="age" id="age"  placeholder="Enter your age" >
+                        <input type="number" name="age" id="age"  placeholder="Enter your age" required>
                     </div>
 
                     <div class="u-stay">
                         <label for="yearofstay">Year of stay</label><br>
-                        <input type="number" name="yos" id="yos" placeholder="Enter year of stay">
+                        <input type="number" name="yos" id="yos" placeholder="Enter year of stay" required>
                     </div>
                 </div>
                 <!-- RESIDENT BIRTHDAY AND BIRTHPLACE -->
@@ -94,14 +94,14 @@ session_start();
 
                     <div class="u-bplace">
                     <label for="birthplace">Place of birth</label><br>
-                    <input type="text" name="bplace"  id="bplace" placeholder="Enter your birthplace">
+                    <input type="text" name="bplace"  id="bplace" placeholder="Enter your birthplace" required>
                     </div>
                 </div>
                 <!-- RESIDENT CONTACT -->
                 <div class="contact">
                     <label for="contactnum">Contact number</label>
                     <br>
-                    <input type="number" name="contact" id="contact" placeholder="Enter your contact number">
+                    <input type="number" name="contact" id="contact" placeholder="Enter your contact number" required> 
                 </div>
                 <!-- SAVE AND GO BACK BUTTON -->
                 <div class="form-btn">

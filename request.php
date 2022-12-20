@@ -16,11 +16,6 @@ include('requestAuthentication.php');
     <title>Document Fill-Up - Request Document</title>
 </head>
 <body>
-    <!--div id="splash" style="text-align:center">
-        <img class="imglogo" src="css/assets/logovector.svg" alt="">
-        <p id="title">Document Fill-Up Automation</p>
-        <img class="loading" src="css/assets/load.gif" alt="">
-    </div -->
     <div class="grid-container">
         <div class="leftsection">
             <img src="css/assets/logovector.svg" alt="">
@@ -30,6 +25,7 @@ include('requestAuthentication.php');
         <div class="rightsection">
             <form action="request.php" method="POST">
                 <h2>Request Document</h2> 
+                <!-- FOR ERROR MESSAGE -->
                 <?php if (isset($_GET['error'])) { ?>
                     <p class="error"><?php echo $_GET['error']; ?></p>
                 <?php } ?> 
@@ -37,8 +33,9 @@ include('requestAuthentication.php');
                     <label>Resident No. :</label>
                     <input type="text" name="residentnum" placeholder="Ex. 202201" class="input-rin"><br>
                     <label>Name : </label>
-                    <input type="text" name="residentname" placeholder="Firstname MI. Surname" class="input-name"><br>
+                    <input type="text" name="residentname" placeholder="Firstname MI. Surname" class="input-name" required><br>
                 </div>
+                <!-- FOR DROPDOWN PURPOSE -->
                 <div class="choose-purpose">
                     <label for ="purpose">Document Purpose:</label><br>
                     <select  name="purpose" id="purpose" required>
@@ -51,18 +48,12 @@ include('requestAuthentication.php');
                         <option value="Employment">Employment</option>
                     </select>
                 </div>
+                <!-- FOR DOCUMENT CHECKBOX -->
                 <div class ="select-doc">
                     <label for ="purpose">Documents:</label><br>
                         <input type="checkbox" name="choosedoc[]" value="Certificate of Indigency"> Certificate of Indigency <br>
                         <input type="checkbox" name="choosedoc[]" value="Certificate of Residency"> Certificate of Residency <br>
                         <input type="checkbox" name="choosedoc[]" value="Barangay Clearance"> Barangay Clearance <br>
-                        <!---<span class="choosedocument">Choose Document</span>
-                        <input type="radio" id="rdCOI" class="rdCOI" name="choosedoc" value="Certificate of Indigency">
-                        <label for="html">Certificate of Indigency</label> <br>
-                        <input type="radio" id="rdCOR" class="rdCOR" name="choosedoc" value="Certificate of Residency">
-                        <label for="html">Certificate of Residency</label> <br>
-                        <input type="radio" id="rdCOC" class="rdCOc" name="choosedoc" value="Barangay Clearance">
-                        <label for="html">Barangay Clearance</label> <br> --->
                 </div>
                 <input type="submit" name="request" class="btn-send" value="SEND REQUEST">
             </form>

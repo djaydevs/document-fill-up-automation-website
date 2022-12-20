@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="css/splash.css ?v=<?php echo time(); ?>">
     <title>Document Fill-Up Automation</title>
 </head>
+<!-- LOADING SCREEN -->
 <body>
     <div id="splash" style="text-align:center">
         <img class="imglogo" src="css/assets/logovector.svg" alt="">
         <p id="title">Document Fill-Up Automation</p>
         <img class="loading" src="css/assets/load.gif" alt="">
     </div>
+    <!-- 3 SECONDS TIMER -->
     <script>
         function Redirect() {  
             window.location="request.php"; 
