@@ -188,7 +188,7 @@ body {
 .request-table { /* TABLE */
     border-collapse: collapse;
     width: 890px;
-    height: 350px;
+    height: fit-content;
     font-size: 0.7em;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
