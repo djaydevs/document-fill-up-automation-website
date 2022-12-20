@@ -21,9 +21,14 @@ if(isset($_POST ["request"])) {
         $rname = $_POST['residentname'];
         $purpose = $_POST['purpose'];
         $choosedoc = $_POST['choosedoc'];
+        $chk = "";
+
+        foreach($choosedoc as $chk1) {
+            $chk .= $chk1 . " ";
+        }
 
         if (mysqli_num_rows($result)== 1) {
-            $sql = ("INSERT INTO tbl_request(residentnum, name, purpose, document) VALUES ('$rin', '$rname', '$purpose', '$choosedoc')");
+            $sql = ("INSERT INTO tbl_request(residentnum, name, purpose, document) VALUES ('$rin', '$rname', '$purpose', '$chk')");
             $results = mysqli_query($conn, $sql);
 
             $_SESSION['status']= "Request Sent Successfully !";

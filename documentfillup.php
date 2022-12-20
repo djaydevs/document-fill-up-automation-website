@@ -39,9 +39,9 @@
                 <!-- ON CLICK SWITCH DOCUMENT -->
                 <p class="doc-text">Choose Document</p>
                 <div class="switchdoc">
-                    <button class="btndoc" onclick="switchDoc1()" >Certificate of Indigency</button><br>
-                    <button class="btndoc" onclick="switchDoc2()" >Certificate of Residency</button><br>
-                    <button class="btndoc" onclick="switchDoc3()" >Barangay Clearance</button>
+                    <button class="btndoc" onclick="switchDoc1()" id="COI">Certificate of Indigency</button><br>
+                    <button class="btndoc" onclick="switchDoc2()" id="COR" >Certificate of Residency</button><br>
+                    <button class="btndoc" onclick="switchDoc3()" id="COC" >Barangay Clearance</button>
                 </div>
                 <p class="request-text">Residents Request</p>
                 <!--TABLE-->
@@ -90,7 +90,7 @@
                                             <td id="fullname"><?php echo $row['fname']?> <?php echo $row['mi']?>. <?php echo $row['lname']?></td>
                                             <td style="display:none;" id="age"><?php echo $row['age']?></td>
                                             <td style="display:none;" id="address"><?php echo $row['housenum']?> <?php echo $row['street']?></td>
-                                            <td id="document"><?php echo $row['document']?></td>
+                                            <td id="document"><?php echo $row['document']?><br></td>
                                             <td id="purpose"><?php echo $row['purpose']?></td>
                                             <td style="display:none;" id="stay"><?php echo $row['yearofstay']?></td>
                                             <td>
