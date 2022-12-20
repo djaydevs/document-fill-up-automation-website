@@ -23,9 +23,9 @@ Alonzo Lucero
 
 **************************************************************************************
 LANGUAGES: 
-PHP/HTML - 54.4% 
-CSS - 32.9% 
-Javascript - 12.7%
+PHP/HTML - 54% 
+CSS - 34% 
+Javascript - 12%
 
 FRAMEWORK:
 Bootstrap - getbootstrap.com
