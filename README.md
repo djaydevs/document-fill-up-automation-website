@@ -27,6 +27,10 @@ PHP/HTML - 54%
 CSS - 34% 
 Javascript - 12%
 
+WEB SERVER/DATABASE:
+XAMPP - apachefriends.org
+MySQL - mysql.com
+
 FRAMEWORK:
 Bootstrap - getbootstrap.com
 
