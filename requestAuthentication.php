@@ -1,5 +1,7 @@
 <?php
+// SESSION FOR ALERT
 session_start();
+// DATABASE CONNECTION
 $sname = "localhost";
 $uname = "root";
 $password = "";
@@ -11,7 +13,8 @@ if (!$conn) {
     die('Connection Failed'. mysqli_connect_error());
 }
 
-//if the user click the submit button
+
+//INSERT REQUEST TO DATABASE
 if(isset($_POST ["request"])) {
     if(!empty($_POST["residentnum"]))
     {
@@ -22,12 +25,12 @@ if(isset($_POST ["request"])) {
         $rname = $_POST['residentname'];
         $purpose = $_POST['purpose'];
         $choosedoc = $_POST['choosedoc'];
-        $chk = implode(", <br/>", $choosedoc); // convert the array to string
+        $chk = "";
 
-        /*foreach($choosedoc as $chk1) {
+        //FOR EACH CHECKBOX TO DISPLAY IN ONE ROW
+        foreach($choosedoc as $chk1) {
             $chk .= $chk1 . " ";
-        } */
-
+        }
         if (mysqli_num_rows($result)== 1) {
             $sql = ("INSERT INTO tbl_request(residentnum, name, purpose, document) VALUES ('$rin', '$rname', '$purpose', '$chk')");
             $results = mysqli_query($conn, $sql);
@@ -40,9 +43,9 @@ if(isset($_POST ["request"])) {
             header("Location: request.php?error=Resident data doesn't exist.");
             #exit();
         }
-    }elseif(empty($residentname)) 
+    }elseif(empty($residentname))
     {
-        header("Location:request.php?error=Resident name is required.");
+        header("Location:request.php?error=Resident number is required.");
         #exit();
     }elseif(empty($_POST['purpose'])) {
         header("Location:request.php?error=Please choose a Purpose.");
