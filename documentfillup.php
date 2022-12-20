@@ -44,13 +44,13 @@
                     <button class="btndoc" onclick="switchDoc3()" id="COC" >Barangay Clearance</button>
                 </div>
                 <p class="request-text">Residents Request</p>
-                <!-- SEARCH AND NEW RECORD FORM-->
+                <!-- SEARCH AND NEW RECORD FORM
                 <div class="search-container">
                     <form action=""class="search-form" method="POST">
                         <input type="text" name="search" id="search-box" class="txt-search" placeholder="Search Request">
                         <button id="btn-search">Search</button>
                     </form>
-                </div>
+                </div> -->
                 <!--TABLE-->
                 <div class="tableview" style="overflow-x:auto;" style="overflow-y:auto;">
                     <table class="request-table" id="table">
