@@ -5,45 +5,87 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html {
+body {
     background: url(assets/bg.svg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
+    overflow: hidden;
+}
+
+#splash {
+    background: url(assets/bg.svg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.imglogo {
+    position: relative;
+    display: flex;
+    width: 1000px;
+    height: 55%;
+    margin: 5% auto 0% auto;
+}
+
+.loading {
+    width: 100px;
+    margin-top: 4em;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 0px;
+    overflow: hidden;
 }
 
 .leftsection img {
-    position: absolute;
-    width: 350px;
+    position: relative;
+    display: flex;
+    width: 900px;
     height: 50%;
-    left: 180px;
+    margin: 5% auto 0% auto;
     top: 70px;
 }
 
-.title {
-    position: absolute;
-    width: 540px;
+#title, .title {
+    position: relative;
+    width: fit-content;
     height: 53px;
-    left: 90px;
-    top: 470px;
+    top: 90px;
+    margin: 0% auto 0% auto;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 40px;
     line-height: 52px;
     text-align: center;
     color: #161730;
 }
 
-.description {
-    position: absolute;
-    width: 446px;
+#title {
+    top: 40px;
+}
+
+.description1 {
+    position: relative;
+    width: fit-content;
     height: 23px;
-    left: 137px;
-    top: 530px;
+    top: 100px;
+    margin: 1% auto 0% auto;
+    font-size: 25px;
+    line-height: 22px;
+    text-align: center;
+    color: #161730;
+}
+
+.description2 {
+    position: relative;
+    width: fit-content;
+    height: 23px;
+    top: 100px;
+    margin: 0% auto 0% auto;
     font-weight: bold;
     font-size: 15px;
     line-height: 22px;
@@ -57,14 +99,12 @@ html {
     position: relative;
     width: max-content;
     height: max-content;
-    margin-left: 4%;
+    margin: 17% auto 0% auto;
     background: rgb(255, 255, 255, 0.3);
     outline: solid #0D4C92;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     padding: 0 10px 10px 0;
-    margin-top: 7em;
-    margin-left: 5em;
 }
 
 h2 {
@@ -84,25 +124,27 @@ h2 {
 
 .input-rin, .input-name {
     height: 25px;
-    width: fit-content;
+    width: 200px;
     outline: 2px solid #0A93E3;
     border: none;
     border-radius: 6px;
-    padding: 0.3em 0.8em 0.1em 0.6em;
-    background: none;
+    padding: 1.5em;
     margin-top: 1.5em;
+    font-size: 15px;
 }
 
 .input-name {
-    margin-left: 4em;
+    width: 260px;
     background: url(assets/ic_person.svg) no-repeat;
+    background-color: rgb(255, 255, 255, 0.5);
     background-size: 17px;
-    background-position: 5px 2.3px;
+    background-position: 5px;
     padding-left: 2.1em;
 }
 
 .input-rin {
     background: url(assets/ic_hash.svg) no-repeat left;
+    background-color: rgb(255, 255, 255, 0.5);
     background-size: 17px;
     padding-left: 2.1em;
     background-position: 5px;
@@ -119,18 +161,31 @@ form {
 .choose-purpose {
     display: block;
     padding-left: 3em;
-    letter-spacing: 1px;
+    margin-top: 1em;
 }
 
-.choose-purpose label {
-    font-weight: bold;
-    color: #0D4C92;
+.choose-purpose select {
+    width: 335px;
+    height: 45px;
+    margin-top: 0.5em;
+    font-size: 16px;
+    background: rgb(255, 255, 255, 0.5);
+    border-radius: 8px;
+    outline: 2px solid #0A93E3;
+    border: none;
 }
 
-.choosedocument{
-    display: flex;
-    color:#0D4C92;
-    font-weight: bold;
+.choose-purpose select:hover {
+    background: rgb(255, 255, 255);
+}
+
+.select-doc {
+    display: block;
+    margin-top: 1em;
+}
+
+.select-doc input {
+    font-size: 20px;
 }
 
 .rdCOR .rdCOR .rdCOC label {
@@ -139,20 +194,41 @@ form {
 
 .btn-send {
     position: relative;
-    width: 160px;
+    display: flex;
+    width: 200px;
+    height: 55px;
     color: #ffffff;
     border: none;
-    border-radius: 1.5em;
+    border-radius: 1em;
     background: #0D4C92;
     transition: background .3s;
     cursor: pointer;
     padding: 0.9em 0 0.6em 0;
-    margin: 0 0 1.5em 10em;    
+    align-items: center;
+    justify-content: center;
+    margin: 0% auto 0% auto;
+    font-size: 15px;  
+}
+
+.btn-send:hover {
+    background: linear-gradient(90deg, #0D4C92  0%, #3dafaa 100%);
 }
 
 .link {
     position: relative;
-    margin-left: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2em;
+    color: #0D4C92;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+.link:hover {
+    color: #161730;
 }
 
 .error {
@@ -163,5 +239,11 @@ form {
     border-radius: 5px;
     margin: 5px auto;
     font-size: 15px;
+}
+
+label {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #0D4C92;
 }
 

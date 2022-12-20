@@ -16,11 +16,16 @@ include('requestAuthentication.php');
     <title>Document Fill-Up - Request Document</title>
 </head>
 <body>
+    <div id="splash" style="text-align:center">
+        <img class="imglogo" src="css/assets/logovector.svg" alt="">
+        <p id="title">Document Fill-Up Automation</p>
+        <img class="loading" src="css/assets/load.gif" alt="">
+    </div>
     <div class="grid-container">
         <div class="leftsection">
             <img src="css/assets/logovector.svg" alt="">
             <p class="title">Document Fill-Up Automation</p>
-            <p class="description">Document request and fill-up is now easy and convenient!</p>
+            <p class="description2">Document request and fill-up is now easy and convenient!</p>
         </div>
         <div class="rightsection">
             <form action="request.php" method="POST">
@@ -35,23 +40,22 @@ include('requestAuthentication.php');
                     <input type="text" name="residentname" placeholder="Firstname MI. Surname" class="input-name"><br>
                 </div>
                 <div class="choose-purpose">
-                        <label for ="purpose">Purpose</label><br>
-                        <select  name="purpose" id="purpose" required>
-                            <option value="Scholarship">Scholarship</option>
-                            <option value="Food Assistance">Food Assistance</option>
-                            <option value="Medical Assistance">Medical Assistance</option>
-                            <option value="Cash Assistance">Cash Assistance</option>
-                            <option value="Educational Assistance">Educational Assitance</option>
-                            <option value="Police Clearance">Police Clearance</option>
-                            <option value="Employment">Employment</option>
-                        </select>
+                    <label for ="purpose">Document Purpose:</label><br>
+                    <select  name="purpose" id="purpose" required>
+                        <option value="Scholarship">Scholarship</option>
+                        <option value="Food Assistance">Food Assistance</option>
+                        <option value="Medical Assistance">Medical Assistance</option>
+                        <option value="Cash Assistance">Cash Assistance</option>
+                        <option value="Educational Assistance">Educational Assitance</option>
+                        <option value="Police Clearance">Police Clearance</option>
+                        <option value="Employment">Employment</option>
+                    </select>
                 </div>
                 <div class ="select-doc">
-
+                    <label for ="purpose">Documents:</label><br>
                         <input type="checkbox" name="choosedoc[]" value="Certificate of Indigency"> Certificate of Indigency <br>
                         <input type="checkbox" name="choosedoc[]" value="Certificate of Residency"> Certificate of Residency <br>
                         <input type="checkbox" name="choosedoc[]" value="Barangay Clearance"> Barangay Clearance <br>
-
                         <!---<span class="choosedocument">Choose Document</span>
                         <input type="radio" id="rdCOI" class="rdCOI" name="choosedoc" value="Certificate of Indigency">
                         <label for="html">Certificate of Indigency</label> <br>
@@ -62,11 +66,17 @@ include('requestAuthentication.php');
                 </div>
                 <input type="submit" name="request" class="btn-send" value="SEND REQUEST">
             </form>
-            <a href="http://localhost/document-fill-up-automation-website/login.php" class="link">Administrator</a>
+            <a href="login.php" class="link">Administrator</a>
         </div>
     </div>
     <script src="js/sweetalert.min.js"></script>
     <?php include('js/scriptforstatus.php')?>
-    <script src="request.js"></script>
+    <script>
+        var loader = document.getElementById("splash");
+        window.addEventListener('load', function(load) {
+            window.removeEventListener('load', load, false);               
+            setTimeout(function(){loader.style.display = 'none'},2500);
+        },false);
+    </script>
 </body>
 </html>

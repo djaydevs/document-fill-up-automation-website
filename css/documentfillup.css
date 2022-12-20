@@ -3,7 +3,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html {
+body {
     background: url(assets/bg.svg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
@@ -122,13 +122,13 @@ html {
 
 /******************** REQUEST TABLE ************************/
 
-.request-container{
+.request-container{ /* LEFT-SECTION */
     width: fit-content;
     margin: auto;
     margin-top: 100px;
 }
 
-.switchdoc {
+.switchdoc { /* ON CLICK SWITH DOCUMENT */
     position: fixed;
     margin-top: 2.7em;
     justify-content: center;
@@ -158,7 +158,7 @@ html {
     font-weight: bold;
 }
 
-.doc-text {
+.doc-text { /* TITLE TEXT */
     position: fixed;
     color: #0D4C92;
     font-size: 1.5em;
@@ -168,7 +168,7 @@ html {
     text-shadow: 3px 1px 1px rgba(89, 193, 189, 1);
 }
 
-.request-text {
+.request-text { /* TITLE TEXT */
     position: fixed;
     margin-top: 12em;
     color: #0D4C92;
@@ -179,17 +179,62 @@ html {
     text-shadow: 3px 1px 1px rgba(89, 193, 189, 1);
 }
 
-.tableview {
+.search-container { /* SEARCH REQUEST */
+    position: fixed;
+    display: block;
+    width: 750px;
+    margin-top: 20.7em;
+}
+
+.search-form{
+    display: inline-flex;
+    
+}
+
+#search-box {
+    background: url(assets/ic_search.svg) no-repeat center;
+    background-color: rgb(222, 226, 241, 0.8);
+    background-position: 10px 13px;
+    background-size: 24px;
+    outline: 1px solid #0A93E3;
+    border: none;
+    border-radius: 0.7em 0 0 0.7em;
+    padding: 1em 1em 1em 3.3em;
+    width: 590px;
+    height: fit-content;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#btn-search{
+    width: 95px;
+    padding: 0.9em;
+    color: #ffffff;
+    border: none;
+    outline: 1px solid #0A93E3;
+    border-radius: 0 0.7em 0.7em 0;
+    background: #0D4C92;
+    transition: background .3s;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#btn-search:hover{
+    background-color: rgb(89, 193, 189, 1);
+}
+
+.tableview { /* TABLE CONTAINER */
     position: fixed;
     align-items: left;
-    width: max-content;
+    width: 750px;
     height: 350px;
-    margin-top: 21em;
+    margin-top: 25em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.request-table {
+.request-table { /* TABLE */
     border-collapse: collapse;
+    width: 750px;
     font-size: 0.7em;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
@@ -212,21 +257,23 @@ html {
 
 .request-table tbody tr {
     font-size: 15px;
+    padding: 1em 1em;
     border-bottom: 1px solid #59C1BD;
+    background-color: rgb(13, 76, 146, 0.05);
     transition: all .25s ease-in-out;
     cursor: pointer;
 }
 
 .request-table tbody tr:hover {
     font-size: 15px;
-    border-bottom: 1px solid #59C1BD;
+    border-bottom: 1px solid rgb(13, 76, 146);
     background: linear-gradient(90deg, #99cde8 0%, #aae7e2 100%);
     transition: all .25s ease-in-out;
     cursor: pointer;
 }
 
 .request-table tbody tr:nth-of-type(even) {
-    background-color: rgb(222, 226, 241, 0.5);
+    background-color: rgb(222, 226, 241, 0.8);
     transition: all .25s ease-in-out;
     cursor: pointer;
 }
@@ -236,7 +283,19 @@ html {
 }
 
 .request-table tbody tr:last-of-type {
-    border-bottom: 2px solid #0D4C92;
+    border-bottom: 2px solid rgb(13, 76, 146);
+}
+
+.tb-link { /* LINK TO RESIDENTS DATA */
+    outline: none;
+    text-decoration: none;
+    color: rgb(13, 76, 146);
+    font-weight: 600;
+}
+ 
+.tb-link:hover {
+    border-bottom: 1.5px solid;
+    color: #00524e;
 }
 
 /********************** PDF VIEW ***************************/
