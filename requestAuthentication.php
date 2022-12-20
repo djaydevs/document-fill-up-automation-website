@@ -25,7 +25,7 @@ if(isset($_POST ["request"])) {
         $rname = $_POST['residentname'];
         $purpose = $_POST['purpose'];
         $choosedoc = $_POST['choosedoc'];
-        $chk = "";
+        $chk = implode(", <br/>", $choosedoc); // convert the array to string
 
         //FOR EACH CHECKBOX TO DISPLAY IN ONE ROW
         foreach($choosedoc as $chk1) {
