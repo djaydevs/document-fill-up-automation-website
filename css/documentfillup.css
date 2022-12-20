@@ -248,7 +248,7 @@ body {
 }
  
 .tb-link:hover {
-    border-bottom: 1.5px solid;
+    border-bottom: 1.5px solid #00524e;
     color: #00524e;
 }
 
