@@ -57,10 +57,31 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                                // DELETE REQUEST FROM THE DATABASE AND TABLE
+                                if(isset($_POST['btn-delete'])) {
+                                    $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
+
+                                    $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if($result){
+
+                                        $_SESSION['status']= "Residents Request Deleted Successfully !";
+                                        header("Location: documentfillup.php");
+                                        exit();
+
+                                    }else {
+
+                                        $_SESSION['status']= "Residents Request failed to delete !";
+                                        header("Location: documentfillup.php");
+                                    }
+                                }
+                            ?>
                             <?php //access two tables from database
-                                $connect = mysqli_connect("localhost", "root", "", "brgydb") or die("Connection Failed");
+                                // $connect = mysqli_connect("localhost", "root", "", "brgydb") or die("Connection Failed");
                                 $query = "select res.*,req.residentnum, res.*,req.document, res.*,req.purpose from table_residents res, tbl_request req where res.rin = req.residentnum";
-                                $result = mysqli_query($connect, $query);
+                                $result = mysqli_query($conn, $query);
                                 if(isset($_GET['rin']) == isset($_GET['residentnum'])){
                                     while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
@@ -81,27 +102,6 @@
                                     <?php
                                     }
                                 }    
-                            ?>
-                             <?php 
-                                // DELETE REQUEST FROM THE DATABASE AND TABLE
-                                if(isset($_POST['btn-delete'])) {
-                                    $residents_rin = mysqli_real_escape_string($conn, $_POST['btn-delete']);
-
-                                    $sql = "DELETE FROM tbl_request WHERE residentnum='$residents_rin' ";
-                                    $result = mysqli_query($conn, $sql);
-
-                                    if($result){
-
-                                        $_SESSION['status']= "Residents Request Deleted Successfully !";
-                                        header("Location: documentfillup.php");
-                                        exit();
-
-                                    }else {
-
-                                        $_SESSION['status']= "Residents Request failed to delete !";
-                                        header("Location: documentfillup.php");
-                                    }
-                                }
                             ?>
                         </tbody>
                     </table>
