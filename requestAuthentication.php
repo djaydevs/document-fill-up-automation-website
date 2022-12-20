@@ -11,6 +11,7 @@ if (!$conn) {
     die('Connection Failed'. mysqli_connect_error());
 }
 
+//if the user click the submit button
 if(isset($_POST ["request"])) {
     if(!empty($_POST["residentnum"]))
     {
@@ -21,11 +22,11 @@ if(isset($_POST ["request"])) {
         $rname = $_POST['residentname'];
         $purpose = $_POST['purpose'];
         $choosedoc = $_POST['choosedoc'];
-        $chk = "";
+        $chk = implode(", <br/>", $choosedoc); // convert the array to string
 
-        foreach($choosedoc as $chk1) {
+        /*foreach($choosedoc as $chk1) {
             $chk .= $chk1 . " ";
-        }
+        } */
 
         if (mysqli_num_rows($result)== 1) {
             $sql = ("INSERT INTO tbl_request(residentnum, name, purpose, document) VALUES ('$rin', '$rname', '$purpose', '$chk')");
