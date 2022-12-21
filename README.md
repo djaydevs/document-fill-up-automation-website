@@ -5,7 +5,7 @@
 ---
 FINAL PROJECT FOR IT 304 - WEB SYSTEMS AND TECHNOLOGIES (BSIT-3D)
 
-PROUDLY CREATED BY:
+DEVELOPED BY:
 - Reymart Avendaño
 - Danny Jay Flores
 - Jovie Senining
