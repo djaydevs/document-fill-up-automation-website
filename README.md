@@ -5,7 +5,7 @@ DOCUMENT FILL-UP AUTOMATION WEBSITE
 This is a website dedicated to Barangay Fatima 1, and it's intended to conveniently 
 process documents and automatically filled it up with residents data.
 
-Residents can send request online and the barangay staff wil handle those document
+Residents can send request online and the barangay staff will handle those document
 request the resident needs. They can also manage or manipulate residents data 
 aside from document fill-up.
  
@@ -36,6 +36,7 @@ Bootstrap - getbootstrap.com
 
 VERSION CONTROL SYSTEM:
 Git/Github - github.com
+https://github.com/djaydevs/document-fill-up-automation-website
 
 ASSETS:
 Figma - figma.com
