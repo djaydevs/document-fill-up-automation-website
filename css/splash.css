@@ -14,7 +14,7 @@ body {
     background-size: cover;
     position: fixed;
     width: 100%;
-    margin-inline: auto;
+    margin: 3em auto 0 auto;
     z-index: 100;
     overflow: hidden;
 }
@@ -40,8 +40,7 @@ body {
 }
 
 .loading {
-    width: 50%;
-    max-width: 80px;
+    max-width: 70px;
     position: relative;
     display: block;
     margin: 2em auto;
