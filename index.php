@@ -11,10 +11,12 @@
     <title>Document Fill-Up Automation</title>
 </head>
 <!-- LOADING SCREEN -->
-<body>
-    <div id="splash" style="text-align:center">
+<body> 
+    <div id="splash">
         <img class="imglogo" src="css/assets/logovector.svg" alt="">
-        <p id="title">Document Fill-Up Automation</p>
+        <h1 class="fs-primary-heading fw-bold" id="title">Document Fill-Up Automation</h1>
+    </div>
+    <div class="load">
         <img class="loading" src="css/assets/load.gif" alt="">
     </div>
     <!-- 3 SECONDS TIMER -->

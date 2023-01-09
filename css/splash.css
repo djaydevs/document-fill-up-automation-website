@@ -1,11 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+@import url("props_resets.css");
 
+/* GENERAL STYLING*/
 body {
+    font-family: var(--ff-body);
     background: url(assets/bg.svg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
@@ -15,35 +12,82 @@ body {
 #splash {
     background: url(assets/bg.svg) no-repeat center center fixed;
     background-size: cover;
-    width: 100%;
-    height: 100vh;
     position: fixed;
+    width: 100%;
+    margin-inline: auto;
     z-index: 100;
     overflow: hidden;
 }
 
 .imglogo {
-    position: relative;
-    display: flex;
-    width: 1000px;
-    height: 55%;
-    margin: 5% auto 0% auto;
-}
-
-.loading {
-    width: 100px;
-    margin-top: 4em;
+    width: 100%;
+    max-width: 400px;
+    padding: 2em;
+    margin-inline: auto;
 }
 
 #title {
-    position: relative;
-    width: fit-content;
-    height: 53px;
-    top: 40px;
-    margin: 0% auto 0% auto;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 52px;
+    padding: 0 2em;
+    margin-inline: auto;
     text-align: center;
-    color: #161730;
+    color: var(--clr-primary-400);
+}
+
+.load {
+    width:100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.loading {
+    width: 50%;
+    max-width: 80px;
+    position: relative;
+    display: block;
+    margin: 2em auto;
+}
+
+/* MEDIA/COINTAINER QUERIES */
+@media (min-width: 50em) {
+    :root {
+      --fs-primary-heading: var(--fs-800);
+    }
+}
+
+@media (max-width: 50em) {
+    .imglogo {
+        max-width: 350px;
+    }
+
+    .loading {
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 28.125em) {
+    :root {
+      --fs-primary-heading: var(--fs-650);
+    }
+}
+
+@media (max-width: 20em) {
+    :root {
+      --fs-primary-heading: var(--fs-500);
+    }
+}
+
+/* UTILITIES */
+.fw-bold { 
+    font-weight: var(--fw-bold); 
+}
+.fw-semi-bold { 
+    font-weight: var(--fw-semi-bold); 
+}
+.fw-regular { 
+    font-weight: var(--fw-regular); 
+}
+  
+.fs-primary-heading {
+    font-size: var(--fs-primary-heading);
+    line-height: 1.1;
 }

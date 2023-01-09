@@ -26,7 +26,7 @@
                 <li><a href="#">Account</a>
                     <ul class="ul-acc">
                         <li class="ul-li-acc"><a href="">Admin</a></li>
-                        <li class="ul-li-acc"><a href="splash.php">Log Out</a></li>
+                        <li class="ul-li-acc"><a href="index.php">Log Out</a></li>
                     </ul>
                 </li>
                 <li><a class="active" href="residentsdata.php">Residents Data</a>
